@@ -1,0 +1,21 @@
+# Secrets — NEVER commit
+.env
+credentials.json
+token.json
+
+# Temp / intermediate
+.tmp/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# OS
+.DS_Store
+Thumbs.db
