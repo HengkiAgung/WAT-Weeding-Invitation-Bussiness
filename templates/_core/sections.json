@@ -1,0 +1,44 @@
+{
+  "$comment": "Section registry shared by every template. Templates pick ids + order in manifest.json. status core = always rendered; opt = toggled per invitation via window.SECTIONS (fallback: default). requires = data paths (InvitationData) that must be non-empty, else the section is removed even when toggled on. fields = data paths the editor (S6) groups under this section.",
+  "version": 1,
+  "sections": [
+    { "id": "cover",           "status": "core", "default": true,  "label": "section.cover",           "requires": [],                    "fields": ["images.cover", "groom.nickname", "bride.nickname"] },
+    { "id": "hero",            "status": "core", "default": true,  "label": "section.hero",            "requires": [],                    "fields": ["images.hero", "hashtag"] },
+    { "id": "opening",         "status": "core", "default": true,  "label": "section.opening",         "requires": [],                    "fields": ["religion", "opening.greeting", "opening.text"] },
+    { "id": "verse",           "status": "opt",  "default": true,  "label": "section.verse",           "requires": ["@verse"],            "fields": ["verse.preset", "verse.text", "verse.source", "images.background"] },
+    { "id": "couple",          "status": "core", "default": true,  "label": "section.couple",          "requires": [],                    "fields": ["groom", "bride", "coupleOrder", "images.couple"] },
+    { "id": "countdown",       "status": "core", "default": true,  "label": "section.countdown",       "requires": [],                    "fields": [] },
+    { "id": "events",          "status": "core", "default": true,  "label": "section.events",          "requires": [],                    "fields": ["events"] },
+    { "id": "rundown",         "status": "opt",  "default": false, "label": "section.rundown",         "requires": ["rundown"],           "fields": ["rundown"] },
+    { "id": "live",            "status": "opt",  "default": false, "label": "section.live",            "requires": ["live.url"],          "fields": ["live"] },
+    { "id": "story",           "status": "opt",  "default": false, "label": "section.story",           "requires": ["story"],             "fields": ["story"] },
+    { "id": "gallery",         "status": "opt",  "default": true,  "label": "section.gallery",         "requires": ["gallery"],           "fields": ["gallery"], "hideWhenPhotoless": true },
+    { "id": "video",           "status": "opt",  "default": false, "label": "section.video",           "requires": ["@video"],            "fields": ["video"],   "hideWhenPhotoless": true },
+    { "id": "gift",            "status": "opt",  "default": true,  "label": "section.gift",            "requires": ["@gift"],             "fields": ["gift"] },
+    { "id": "rsvp",            "status": "opt",  "default": true,  "label": "section.rsvp",            "requires": [],                    "fields": ["rsvp"] },
+    { "id": "wishes",          "status": "opt",  "default": true,  "label": "section.wishes",          "requires": [],                    "fields": [] },
+    { "id": "turutMengundang", "status": "opt",  "default": false, "label": "section.turutMengundang", "requires": ["@inviters"],         "fields": ["inviters"] },
+    { "id": "qrTicket",        "status": "opt",  "default": false, "label": "section.qrTicket",        "requires": ["@guest"],            "fields": [], "tier": "premium" },
+    { "id": "igFilter",        "status": "opt",  "default": false, "label": "section.igFilter",        "requires": ["igFilter.url"],      "fields": ["igFilter", "hashtag"] },
+    { "id": "dresscode",       "status": "opt",  "default": false, "label": "section.dresscode",       "requires": ["@dresscode"],        "fields": ["dresscode"] },
+    { "id": "protocol",        "status": "opt",  "default": false, "label": "section.protocol",        "requires": [],                    "fields": ["protocol"] },
+    { "id": "closing",         "status": "core", "default": true,  "label": "section.closing",         "requires": [],                    "fields": ["closing", "images.closing"] },
+    { "id": "footer",          "status": "core", "default": true,  "label": "section.footer",          "requires": [],                    "fields": [] }
+  ],
+  "globals": {
+    "$comment": "Not sections: always-available features a template may render.",
+    "music": { "fields": ["music"] },
+    "guestName": { "fields": [] },
+    "photoless": { "fields": ["photoless"] },
+    "language": { "fields": ["lang"] }
+  },
+  "requireRules": {
+    "$comment": "@-prefixed requires are computed checks implemented in runtime/core.js (hasData) and mirrored in tools/validate_template.py docs.",
+    "@verse": "verse.text set, or verse.preset (or the religion default preset) resolves to a verse",
+    "@video": "video.youtubeId or video.src",
+    "@gift": "gift.accounts non-empty, or gift.qris, or gift.address",
+    "@inviters": "inviters.groom or inviters.bride non-empty",
+    "@guest": "a guest (window.GUEST with code) is resolved for this render",
+    "@dresscode": "dresscode.text or dresscode.colors non-empty"
+  }
+}

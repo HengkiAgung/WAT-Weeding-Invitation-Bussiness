@@ -12,7 +12,8 @@ Proyek dikerjakan per sesi (S1–S11). Checkpoint dan keputusan tercatat di **[P
 |---|---|---|
 | S1 | Knowledge base template + graphify | ✅ |
 | S2 | Riset pasar undangan digital Indonesia | ✅ |
-| S3–S4 | Kerangka template (Template Package, schema, varian) | ⏳ |
+| S3 | Kerangka template bagian 1: core schema/runtime + Eloise sebagai Template Package | ✅ |
+| S4 | Template ke-2 dari spesifikasi, build/obfuscate, SOP template baru | ⏳ |
 | S5–S9 | Aplikasi: auth, editor, render publik, Midtrans, tamu massal Excel | — |
 | S10–S11 | Keamanan, admin, deploy | — |
 
@@ -33,13 +34,13 @@ knowledge/          # Hasil analisis template & riset pasar (sumber pengetahuan)
 graphify-out/       # Knowledge graph proyek (graph.json, GRAPH_REPORT.md, graph.html)
 workflows/          # SOP markdown untuk tiap jenis pekerjaan
 tools/              # Script Python/Node deterministik
-templates/          # (S3) Template Package — satu folder per template
+templates/          # Template Package — _core/ (schema, runtime, label) + satu folder per template
 app/                # (S5) Aplikasi Next.js
 PROGRESS.md         # Checkpoint antar sesi
 .env                # Secrets (gitignored) — salin dari .env.example
 ```
 
-`wedding-template/` (template referensi "Eloise") adalah repo git terpisah dan di-gitignore. Salinan yang dikembangkan akan ada di `templates/eloise/`.
+`wedding-template/` (template referensi "Eloise") adalah repo git terpisah dan di-gitignore. Versi yang dikembangkan ada di `templates/eloise/`.
 
 ## Setup
 
@@ -47,7 +48,15 @@ PROGRESS.md         # Checkpoint antar sesi
 python -m venv .venv
 .venv\Scripts\activate          # Windows
 pip install -r requirements.txt
+npm install                      # zod (Node >= 22)
 copy .env.example .env           # lalu isi nilainya
+```
+
+Preview template dengan data contoh:
+
+```
+python tools/validate_template.py templates/eloise
+python tools/render_template.py templates/eloise --variant sage --serve 8080
 ```
 
 Knowledge graph memakai [graphify](https://github.com/safishamsi/graphify):
@@ -65,5 +74,6 @@ Buka `graphify-out/graph.html` di browser untuk melihat graph secara visual.
 - [PROGRESS.md](PROGRESS.md) — roadmap & checkpoint
 - [knowledge/template-anatomy.md](knowledge/template-anatomy.md) — anatomi template Eloise (section, schema, token, lisensi, gap)
 - [knowledge/market/](knowledge/market/) — riset pasar: harga kompetitor, katalog section & tema, matriks fitur
+- [templates/_core/README.md](templates/_core/README.md) — kontrak template: schema data, binding HTML, runtime, API RSVP/ucapan
 - [workflows/analyze_template.md](workflows/analyze_template.md) — SOP analisis template
 - [graphify-out/GRAPH_REPORT.md](graphify-out/GRAPH_REPORT.md) — ringkasan knowledge graph

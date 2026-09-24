@@ -1,0 +1,793 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "GENERATED from templates/_core/schema.ts — do not edit. npm run schema:export",
+  "$defs": {
+    "InvitationData": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "default": 1,
+          "type": "number",
+          "const": 1
+        },
+        "lang": {
+          "default": "id",
+          "type": "string",
+          "enum": [
+            "id",
+            "en"
+          ]
+        },
+        "religion": {
+          "default": "umum",
+          "type": "string",
+          "enum": [
+            "islam",
+            "kristen",
+            "katolik",
+            "hindu",
+            "buddha",
+            "konghucu",
+            "umum"
+          ]
+        },
+        "photoless": {
+          "default": false,
+          "type": "boolean"
+        },
+        "coupleOrder": {
+          "default": "groom_first",
+          "type": "string",
+          "enum": [
+            "groom_first",
+            "bride_first"
+          ]
+        },
+        "groom": {
+          "type": "object",
+          "properties": {
+            "fullName": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "nickname": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            },
+            "childOrder": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 12
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "bungsu",
+                    "tunggal"
+                  ]
+                }
+              ]
+            },
+            "father": {
+              "type": "string",
+              "maxLength": 80
+            },
+            "mother": {
+              "type": "string",
+              "maxLength": 80
+            },
+            "parentsText": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "instagram": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._]{1,30}$"
+            },
+            "photo": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          },
+          "required": [
+            "fullName",
+            "nickname"
+          ]
+        },
+        "bride": {
+          "type": "object",
+          "properties": {
+            "fullName": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "nickname": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 30
+            },
+            "childOrder": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 12
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "bungsu",
+                    "tunggal"
+                  ]
+                }
+              ]
+            },
+            "father": {
+              "type": "string",
+              "maxLength": 80
+            },
+            "mother": {
+              "type": "string",
+              "maxLength": 80
+            },
+            "parentsText": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "instagram": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._]{1,30}$"
+            },
+            "photo": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          },
+          "required": [
+            "fullName",
+            "nickname"
+          ]
+        },
+        "hashtag": {
+          "type": "string",
+          "pattern": "^#?[\\p{L}\\p{N}_]{1,40}$"
+        },
+        "events": {
+          "minItems": 1,
+          "maxItems": 8,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9_-]{1,24}$"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "akad",
+                  "pemberkatan",
+                  "pawiwahan",
+                  "resepsi",
+                  "siraman",
+                  "midodareni",
+                  "mappacci",
+                  "ngunduh_mantu",
+                  "sangjit",
+                  "tea_pai",
+                  "lainnya"
+                ]
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 60
+              },
+              "date": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "timeStart": {
+                "type": "string",
+                "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+              },
+              "timeEnd": {
+                "type": "string",
+                "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+              },
+              "tz": {
+                "default": "WIB",
+                "type": "string",
+                "enum": [
+                  "WIB",
+                  "WITA",
+                  "WIT"
+                ]
+              },
+              "venue": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "address": {
+                "type": "string",
+                "maxLength": 250
+              },
+              "mapUrl": {
+                "type": "string",
+                "maxLength": 500,
+                "format": "uri"
+              },
+              "photo": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "guestGroups": {
+                "default": [],
+                "maxItems": 10,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[\\p{L}\\p{N} _-]{1,30}$"
+                }
+              }
+            },
+            "required": [
+              "type",
+              "date",
+              "timeStart",
+              "venue"
+            ]
+          }
+        },
+        "opening": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "greeting": {
+              "type": "string",
+              "maxLength": 120
+            },
+            "text": {
+              "type": "string",
+              "maxLength": 600
+            }
+          }
+        },
+        "verse": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "preset": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]{1,40}$"
+            },
+            "text": {
+              "type": "string",
+              "maxLength": 800
+            },
+            "source": {
+              "type": "string",
+              "maxLength": 80
+            }
+          }
+        },
+        "closing": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "greeting": {
+              "type": "string",
+              "maxLength": 120
+            },
+            "text": {
+              "type": "string",
+              "maxLength": 600
+            },
+            "familyNames": {
+              "type": "string",
+              "maxLength": 200
+            }
+          }
+        },
+        "story": {
+          "default": [],
+          "maxItems": 8,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "maxLength": 40
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 60
+              },
+              "text": {
+                "type": "string",
+                "maxLength": 600
+              },
+              "photo": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              }
+            },
+            "required": [
+              "title",
+              "text"
+            ]
+          }
+        },
+        "gallery": {
+          "default": [],
+          "maxItems": 60,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "video": {
+          "type": "object",
+          "properties": {
+            "youtubeId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{11}$"
+            },
+            "src": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "poster": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          }
+        },
+        "live": {
+          "type": "object",
+          "properties": {
+            "platform": {
+              "type": "string",
+              "maxLength": 30
+            },
+            "url": {
+              "type": "string",
+              "maxLength": 500,
+              "format": "uri"
+            },
+            "schedule": {
+              "type": "string",
+              "maxLength": 80
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "rundown": {
+          "default": [],
+          "maxItems": 24,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "time": {
+                "type": "string",
+                "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              }
+            },
+            "required": [
+              "time",
+              "title"
+            ]
+          }
+        },
+        "gift": {
+          "type": "object",
+          "properties": {
+            "accounts": {
+              "default": [],
+              "maxItems": 8,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "default": "bank",
+                    "type": "string",
+                    "enum": [
+                      "bank",
+                      "ewallet"
+                    ]
+                  },
+                  "provider": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 40
+                  },
+                  "number": {
+                    "type": "string",
+                    "pattern": "^[0-9 +\\-]{4,30}$"
+                  },
+                  "holder": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "provider",
+                  "number",
+                  "holder"
+                ]
+              }
+            },
+            "qris": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "phone": {
+                  "type": "string",
+                  "maxLength": 30
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 300
+                }
+              },
+              "required": [
+                "name",
+                "text"
+              ]
+            }
+          }
+        },
+        "rsvp": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "maxPax": {
+              "default": 2,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "deadline": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "askEvents": {
+              "default": true,
+              "type": "boolean"
+            }
+          }
+        },
+        "inviters": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "groom": {
+              "default": [],
+              "maxItems": 40,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              }
+            },
+            "bride": {
+              "default": [],
+              "maxItems": 40,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              }
+            }
+          }
+        },
+        "igFilter": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "maxLength": 500,
+              "format": "uri"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "dresscode": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "maxLength": 400
+            },
+            "colors": {
+              "default": [],
+              "maxItems": 6,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              }
+            }
+          }
+        },
+        "protocol": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "maxLength": 600
+            }
+          }
+        },
+        "music": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "autoplay": {
+              "default": true,
+              "type": "boolean"
+            },
+            "title": {
+              "type": "string",
+              "maxLength": 80
+            }
+          },
+          "required": [
+            "src"
+          ]
+        },
+        "images": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "cover": {
+              "default": [],
+              "maxItems": 5,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              }
+            },
+            "hero": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "couple": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "background": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "closing": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          }
+        },
+        "copy": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_.]{1,60}$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "maxLength": 300
+          }
+        }
+      },
+      "required": [
+        "groom",
+        "bride",
+        "events"
+      ]
+    },
+    "Guest": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]{4,16}$"
+        },
+        "group": {
+          "type": "string",
+          "pattern": "^[\\p{L}\\p{N} _-]{1,30}$"
+        },
+        "maxPax": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "phone": {
+          "type": "string",
+          "pattern": "^\\+?[0-9]{8,15}$"
+        }
+      },
+      "required": [
+        "name",
+        "code"
+      ]
+    },
+    "Theme": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]{1,30}$"
+        },
+        "ornamentBase": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "tokens": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^--[a-z0-9-]{1,40}$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "maxLength": 60
+          }
+        }
+      },
+      "required": [
+        "variant"
+      ]
+    },
+    "Sections": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "cover",
+          "hero",
+          "opening",
+          "verse",
+          "couple",
+          "countdown",
+          "events",
+          "rundown",
+          "live",
+          "story",
+          "gallery",
+          "video",
+          "gift",
+          "rsvp",
+          "wishes",
+          "turutMengundang",
+          "qrTicket",
+          "igFilter",
+          "dresscode",
+          "protocol",
+          "closing",
+          "footer"
+        ]
+      },
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "Runtime": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "preview",
+            "demo",
+            "live"
+          ]
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]{3,60}$"
+        },
+        "endpoint": {
+          "default": null,
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 200
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "token": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "brand": {
+          "default": {
+            "name": "Undangan Digital"
+          },
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 60
+            },
+            "url": {
+              "type": "string",
+              "maxLength": 500,
+              "format": "uri"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "mode"
+      ]
+    }
+  }
+}

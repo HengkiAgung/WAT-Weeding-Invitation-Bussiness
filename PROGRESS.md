@@ -27,9 +27,9 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - [x] `graphify add` 6 URLs → `knowledge/market/raw/`; graph rebuilt (`/graphify . --update`): 269 nodes, 455 edges, 16 communities, health OK
 
 ### S3 — Template framework (part 1)
-- [ ] `templates/_core/`: Zod core schema, i18n labels id/en, section registry, runtime binder, API client (RSVP/wish)
-- [ ] Refactor Eloise → `templates/eloise/` (copy, not move): manifest, `data-section`, toggles, i18n, semantic tokens, variants, recolorable ornaments, replace lightGallery/Slick/Selectize, fix known bugs
-- [ ] `tools/validate_template.py`
+- [x] `templates/_core/`: Zod core schema (`schema.ts` → `schema.json`), i18n labels id/en, religion presets, section registry (22 ids), view-model binding list, runtime `core.js` (binder, toggles, i18n, dates/TZ, calendar, RSVP/wish API client, music, QR), fixtures (islam-id full, kristen-en photoless, minimal quick-buy) — contract in `templates/_core/README.md`
+- [x] Refactor Eloise → `templates/eloise/`: manifest, `data-section` ×22, zero literal copy, semantic `--c-*` tokens, 4 variants (olive/sage/dusty-rose/latte), recolored ornament sets, new sections (opening, turutMengundang, qrTicket, dresscode, protocol), photoless mode, known bugs fixed
+- [x] `tools/validate_template.py` (+ `render_template.py` preview, `recolor_svg.py`, `screenshot_page.mjs` CDP screenshot/console check) — Eloise: OK 0 errors; negative test catches all 12 injected violations
 
 ### S4 — Template framework (part 2)
 - [ ] Clone 2nd template from spec (e.g. Jawa / gold) to prove it
@@ -66,3 +66,11 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - 2026-09-24 (S2): Core schema (S3) must add `religion` (drives salam/ayat/event presets), `events[].type/tz/guestGroups`, `childOrder/father/mother`, `inviters[]` (turut mengundang), `gift.qris` + ewallet, `guest{group,maxPax}`, `photoless`.
 - 2026-09-24 (S2): Differentiators to protect: quick buy, self-serve Excel→link+WA text, per-guest open tracking, template switch without re-entry. Deferred: WA blast API (paid), video invitation, custom domain, non-wedding categories, day-of QR check-in/welcome screen.
 - 2026-09-24 (S2): WebFetch blocked on satumomen.com (HTTP 402), inv.acaranya.id (403); tamuspecial.com timed out in `graphify add`. Data for those from search snippets.
+- 2026-09-24 (S3): Render contract = single global `window.INVITE = {data, theme, sections, guest, runtime, labels, presets, registry, template}` (replaces planned WEDDING/THEME/SECTIONS) + HTML markers `<!--@HEAD/@VARIANT/@INVITE/@CORE-->`. `tools/render_template.py` is the reference for the S7 Next.js route.
+- 2026-09-24 (S3): Libraries: jQuery, Slick, Selectize, lightGallery (GPL), Video.js, modal-video, Font Awesome removed → Swiper fade, native select, GLightbox (MIT), own video modal (youtube-nocookie / native video), Phosphor only. Exmouth (commercial) dropped → Pinyon Script. Licensing blocker from S1 resolved. 14 CDN files → 8 scripts + 5 css (html2canvas lazy on click).
+- 2026-09-24 (S3): Eloise sample JPGs (bride.jpg 3.4 MB, unknown license) NOT copied; fixtures use SVG placeholders from `templates/_core/fixtures/assets/`. Real demo photos needed before catalog (S5) — must be licensed.
+- 2026-09-24 (S3): **User to proofread** `templates/_core/presets/religion.json` (salam, ayat, closing per agama) + `i18n/id.json` before launch. Buddha/Konghucu have no default verse (custom only).
+- 2026-09-24 (S3): Color variants: CSS tokens via `[data-variant]` files; ornaments recolored at build (`tools/recolor_svg.py`, hue rules in manifest) into `assets/ornaments/<variant>/`, selected by `theme.ornamentBase`.
+- 2026-09-24 (S3): Zod `Date.parse` accepted `2026-02-30` → IsoDate now round-trip checked. Registry has 22 ids (added `hero`).
+- 2026-09-24 (S3): Headless `chrome --screenshot` cannot capture scrolled pages and has ~500 px min width → `tools/screenshot_page.mjs` (CDP, device emulation, console/`__INVITE_ERRORS__` → exit 1). Template flag `?open=1[#section]` skips envelope + reveal animations (also for editor preview S6).
+- 2026-09-24 (S3): Verified visually: islam-id/olive (guest + group-restricted akad), kristen-en/dusty-rose/photoless, minimal/sage/no guest, all-sections/latte — no console errors. RSVP/wish submit only exercised via localStorage path; real API e2e in S7.

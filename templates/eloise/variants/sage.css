@@ -1,0 +1,8 @@
+/* Eloise variant: Sage Botanical. (c) WAT Wedding Invitation. */
+[data-variant="sage"] {
+  --c-primary: #44533f; --c-primary-2: #5b6b55; --c-primary-3: #2f3a2b; --c-primary-rgb: 68 83 63;
+  --c-on-primary: #f4f3ee; --c-bg: #fbfbf8; --c-surface: #eef0e8;
+  --c-accent: #c9a96e; --c-accent-rgb: 201 169 110; --c-accent-light: #ecdcb5; --c-accent-dark: #9a7a3e;
+  --c-accent-ink: #5e4520; --c-accent-ink-rgb: 94 69 32; --c-heading-alt: #3d4a36;
+  --c-muted: #7f857b; --c-danger: #a0432c; --c-line: #d6dacf; --c-shade-rgb: 22 30 20;
+}
