@@ -2,3 +2,9 @@
 wedding-template/assets/
 .tmp/
 node_modules/
+
+# build output + template art (ornaments documented in manifests)
+dist/
+templates/*/assets/
+templates/_core/fixtures/assets/
+package-lock.json
