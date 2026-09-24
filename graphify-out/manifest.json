@@ -25,19 +25,19 @@
     "semantic_hash": "a0016963163de87e70f1afbe5fcb9f4a"
   },
   "PROGRESS.md": {
-    "mtime": 1790254816.847876,
-    "ast_hash": "c76d34a7852aa0b5917b67bd5f5a89d7",
-    "semantic_hash": "c76d34a7852aa0b5917b67bd5f5a89d7"
+    "mtime": 1790256661.4757886,
+    "ast_hash": "f420b9824d81df8788a32e90107cd537",
+    "semantic_hash": "f420b9824d81df8788a32e90107cd537"
   },
   "README.md": {
-    "mtime": 1790253101.5718555,
-    "ast_hash": "6ccdfcda1e677a3df81dda4f02932d30",
-    "semantic_hash": "6ccdfcda1e677a3df81dda4f02932d30"
+    "mtime": 1790256669.0730999,
+    "ast_hash": "834784d8b6e6782db4964a39aa204c57",
+    "semantic_hash": "834784d8b6e6782db4964a39aa204c57"
   },
   "knowledge/template-anatomy.md": {
-    "mtime": 1790254801.556647,
-    "ast_hash": "a66380084c1e5177734382b041ba783f",
-    "semantic_hash": "a66380084c1e5177734382b041ba783f"
+    "mtime": 1790255865.9108095,
+    "ast_hash": "0428caaba35646cfc1b8e55de3a79dc3",
+    "semantic_hash": "0428caaba35646cfc1b8e55de3a79dc3"
   },
   "requirements.txt": {
     "mtime": 1790253101.5718555,
@@ -60,8 +60,58 @@
     "semantic_hash": "233ce8f2d562f59f7e15e2cf14a04ce1"
   },
   "workflows/analyze_template.md": {
-    "mtime": 1790254825.3170552,
-    "ast_hash": "6c1e5eb1b9485089ee67040c6585b9ac",
-    "semantic_hash": "6c1e5eb1b9485089ee67040c6585b9ac"
+    "mtime": 1790255865.911816,
+    "ast_hash": "4d6be5cee92491cdfdee47d167a76d54",
+    "semantic_hash": "4d6be5cee92491cdfdee47d167a76d54"
+  },
+  "knowledge/market/competitors-pricing.md": {
+    "mtime": 1790256502.4812849,
+    "ast_hash": "125abc3a9348148f8e51159d45b181de",
+    "semantic_hash": "125abc3a9348148f8e51159d45b181de"
+  },
+  "knowledge/market/feature-matrix.md": {
+    "mtime": 1790256581.4238274,
+    "ast_hash": "d70a5103fbcadd7dacdabb48bb962255",
+    "semantic_hash": "d70a5103fbcadd7dacdabb48bb962255"
+  },
+  "knowledge/market/raw/acaranya_id_harga.md": {
+    "mtime": 1790256625.4550667,
+    "ast_hash": "39189da135d91b39d0dc8d2e1f7ac4d9",
+    "semantic_hash": "39189da135d91b39d0dc8d2e1f7ac4d9"
+  },
+  "knowledge/market/raw/hadirly_id_tutorial_buku-tamu-qr.md": {
+    "mtime": 1790256627.646482,
+    "ast_hash": "4cd87c6e1d18db1a9e7807531f240855",
+    "semantic_hash": "4cd87c6e1d18db1a9e7807531f240855"
+  },
+  "knowledge/market/raw/indoinvite_com_harga.md": {
+    "mtime": 1790256621.1880372,
+    "ast_hash": "7974a5e0b84f03b2a9dbe98de68459df",
+    "semantic_hash": "7974a5e0b84f03b2a9dbe98de68459df"
+  },
+  "knowledge/market/raw/inv_akaddigitech_id_adat-jawa.md": {
+    "mtime": 1790256603.4306886,
+    "ast_hash": "f1043b97fe93cc5cd6af59d0eed6f920",
+    "semantic_hash": "f1043b97fe93cc5cd6af59d0eed6f920"
+  },
+  "knowledge/market/raw/invitato_id_pricing.md": {
+    "mtime": 1790256620.468115,
+    "ast_hash": "045ee9937a9ad39fe4dfdc1a32531fa4",
+    "semantic_hash": "045ee9937a9ad39fe4dfdc1a32531fa4"
+  },
+  "knowledge/market/raw/sangmempelai_id_pricelist.md": {
+    "mtime": 1790256626.0983517,
+    "ast_hash": "3052728b024ac184d40d2d9fcd9e1ba8",
+    "semantic_hash": "3052728b024ac184d40d2d9fcd9e1ba8"
+  },
+  "knowledge/market/section-catalog.md": {
+    "mtime": 1790256561.5780132,
+    "ast_hash": "a2e4481f320237fc40ad63edd75c3944",
+    "semantic_hash": "a2e4481f320237fc40ad63edd75c3944"
+  },
+  "knowledge/market/theme-catalog.md": {
+    "mtime": 1790256527.1388319,
+    "ast_hash": "6c34732d75f768c15546b21fe7bd7b5d",
+    "semantic_hash": "6c34732d75f768c15546b21fe7bd7b5d"
   }
 }
