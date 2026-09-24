@@ -2,7 +2,7 @@
   "$locale": "id-ID",
   "invitation.title": "Undangan Pernikahan",
   "meta.title": "Undangan Pernikahan {names}",
-  "meta.description": "Dengan penuh sukacita kami mengundang Anda ke pernikahan {names} — {date}.",
+  "meta.description": "Dengan penuh sukacita, kami mengundang Anda untuk hadir di pernikahan {names} — {date}.",
 
   "section.cover": "Sampul",
   "section.hero": "Pembuka",
@@ -70,8 +70,8 @@
   "countdown.minutes": "Menit",
   "countdown.seconds": "Detik",
   "countdown.addCalendar": "Simpan ke Kalender",
-  "countdown.gcal": "atau buka di Google Calendar",
-  "countdown.icsDone": "File kalender diunduh",
+  "countdown.gcal": "atau simpan di Google Calendar",
+  "countdown.icsDone": "Berkas kalender diunduh",
   "countdown.calendarTitle": "Pernikahan {names}",
 
   "events.title": "Acara Pernikahan",
@@ -112,7 +112,7 @@
   "gift.text": "Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberikan tanda kasih, dapat melalui:",
   "gift.copy": "Salin",
   "gift.copyAria": "Salin nomor {provider}",
-  "gift.copied": "Nomor rekening disalin",
+  "gift.copied": "Nomor berhasil disalin",
   "gift.holder": "a.n. {name}",
   "gift.address": "Kirim Kado",
   "gift.copyAddress": "Salin Alamat",
@@ -168,7 +168,7 @@
   "igFilter.title": "Filter Instagram",
   "igFilter.text": "Abadikan momen di hari bahagia kami dengan filter Instagram khusus dan bagikan dengan hashtag kami.",
   "igFilter.button": "Coba Filter",
-  "igFilter.copyHashtag": "Salin hashtag",
+  "igFilter.copyHashtag": "Salin Hashtag",
   "igFilter.hashCopied": "Hashtag disalin",
 
   "dresscode.title": "Dress Code",
