@@ -54,7 +54,22 @@ No literal copy in template HTML — the validator fails on text nodes.
 `W.V` view model · `W.t(key, vars)` · `W.isOn(id)` · `W.section(id, fn)` (runs only when on, errors isolated) · `W.bind(scope)` ·
 `W.esc` · `W.safeUrl` · `W.cssUrl` · `W.toast` · `W.copy` · `W.download` · `W.countdown(cb)` · `W.calendar.ics()` / `.gcalUrl()` ·
 `W.api.rsvp(p)` / `.savedRsvp()` / `.wishes(cursor)` / `.addWish(w)` · `W.music.attach(audio, btn)` / `.start()` · `W.qr(el, text)` · `W.guestQrText()` ·
-`W.onOpen(fn)` / `W.open()` (fires `invitation-open`) · `W.errors` (also `window.__INVITE_ERRORS__`).
+`W.onOpen(fn)` / `W.open()` (fires `invitation-open`) · `W.errors` (also `window.__INVITE_ERRORS__`) · `W.loadScript(src, globalFn)` · `W.fmtDate(iso, opts)`.
+
+## Widgets (`W.ui`) — shared behaviour, template-owned markup
+Interactive sections are implemented once in `core.js`; templates only write the markup (fixed ids below) and CSS, then call the widget inside `W.section`.
+
+| Call | Required ids / markup |
+|---|---|
+| `W.section('rsvp', W.ui.rsvp)` | `#rsvpForm` (radios `name=attending` yes/no/maybe, submit button) · `#rsvpName` · `#rsvpPax` (select) · `#rsvpPaxRow` · `#rsvpEvents` (fieldset, `hidden`; checkboxes generated as `<label><input name=events><span>`) · `#rsvpDone` (`hidden`) · `#ticket` · `#rsvpStatus` · `#rsvpMsg` · `#ticketMeta` · `#changeRSVP` · `#saveTicket` (html2canvas lazy) |
+| `W.section('wishes', () => W.ui.wishes({item}))` | `#wishForm` · `#wishName` · `#wishMsg` · `#wishList` · `#wishMore` (`hidden`). Default item `.wish-item > b + time + p`; `item(w, dateText)` overrides |
+| `W.section('video', W.ui.video)` | `#videoBox` (thumb, `img[data-src=video.poster]`) · `#videoModal` (`hidden`) · `#videoHost` · `#videoClose` |
+| `W.section('qrTicket', W.ui.qrTicket)` | `#qrBox` · `#qrCode` |
+| `W.section('countdown', W.ui.countdown)` | `#cdD #cdH #cdM #cdS` · `#addToCalendar` · `#gcalLink` (all optional) |
+| `W.ui.copyButtons(el)` | buttons `[data-copy="text"][data-copy-msg="label.key"]` inside `el` (gift cards) |
+| `W.ui.inviters({col})` / `W.ui.swatches()` | return HTML for turut mengundang (couple order) / dress-code swatches |
+| `W.ui.reveal(instant)` | reveal-on-scroll for `[data-rv]`: adds `html.rv-on`, then `.in` when visible. Hide targets **only** under `.rv-on`. `instant` (`?open=1`) shows all |
+| `W.ui.validate([inputs])` | marks empty inputs `.invalid`, returns bool |
 
 ## API endpoints expected in `live` mode (implemented in S7)
 Header `X-Render-Token: <runtime.token>` on every call. Other modes keep RSVP/wishes in `localStorage`.
@@ -77,4 +92,4 @@ node tools/screenshot_page.mjs "http://127.0.0.1:8080/" out.png --click "#openBt
 node tools/build_template.mjs templates/sekar            # production build → dist/templates/ (npm run build:templates = all)
 ```
 
-Templates: `templates/eloise/` (rich reference, GSAP/Swiper/AOS) · `templates/sekar/` (minimal reference, no animation lib). New template: `workflows/create_new_template.md`.
+Templates: `templates/eloise/` (rich reference, GSAP/Swiper/AOS) · `templates/sekar/` (Jawa, no animation lib) · `templates/raudhah/` (Islami photoless-first, smallest — start new templates from this one). New template: `workflows/create_new_template.md`.

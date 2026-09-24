@@ -61,7 +61,7 @@ python tools/render_template.py templates/eloise --variant sage --serve 8080
 python tools/render_template.py templates/sekar --variant perak --serve 8080
 ```
 
-Template tersedia: **Eloise** (rustic botani, amplop) dan **Sekar** (Jawa keraton, pintu gebyok + gunungan).
+Template tersedia: **Eloise** (rustic botani, amplop), **Sekar** (Jawa keraton, pintu gebyok + gunungan), dan **Raudhah** (Islami minimalis, bisa tanpa foto).
 
 Build produksi (minify + obfuscate + header copyright → `dist/templates/`, gitignored):
 

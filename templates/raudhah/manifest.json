@@ -1,0 +1,73 @@
+{
+  "$schemaVersion": 1,
+  "id": "raudhah",
+  "name": "Raudhah",
+  "version": "1.0.0",
+  "category": "islami",
+  "tags": ["islamic", "minimalist", "photoless", "mihrab", "geometric", "lantern"],
+  "description": {
+    "id": "Islami minimalis yang lembut: lengkung mihrab, pola bintang khatam, lentera gantung. Dirancang untuk tanpa foto — monogram dan inisial menggantikan foto.",
+    "en": "Soft Islamic minimalism: mihrab arches, khatam star pattern and hanging lanterns. Designed photoless-first — monogram and initials replace photos."
+  },
+  "supportsPhotoless": true,
+  "photolessFirst": true,
+  "languages": ["id", "en"],
+  "entry": "index.html",
+  "styles": ["css/style.css"],
+  "scripts": ["js/raudhah.js"],
+  "sections": [
+    { "id": "cover" },
+    { "id": "hero" },
+    { "id": "opening" },
+    { "id": "verse" },
+    { "id": "couple" },
+    { "id": "countdown" },
+    { "id": "events" },
+    { "id": "rundown" },
+    { "id": "live" },
+    { "id": "story" },
+    { "id": "gallery" },
+    { "id": "video" },
+    { "id": "rsvp" },
+    { "id": "qrTicket" },
+    { "id": "gift" },
+    { "id": "wishes" },
+    { "id": "turutMengundang" },
+    { "id": "dresscode" },
+    { "id": "protocol" },
+    { "id": "igFilter" },
+    { "id": "closing" },
+    { "id": "footer" }
+  ],
+  "defaultVariant": "sage",
+  "variants": [
+    { "id": "sage", "name": "Sage & Gold", "css": "variants/sage.css", "swatch": ["#3f5a4a", "#fbfaf5", "#b89a5a"], "ornaments": null },
+    {
+      "id": "ivory", "name": "Ivory & Gold", "css": "variants/ivory.css", "swatch": ["#5e4f3d", "#fffdf8", "#b89a5a"],
+      "ornaments": { "rules": [{ "hue": [80, 170], "to": 32, "sat": 0.55, "light": 0.02 }] }
+    },
+    {
+      "id": "navy", "name": "Navy & Gold", "css": "variants/navy.css", "swatch": ["#22324f", "#fbfaf6", "#b89a5a"],
+      "ornaments": { "rules": [{ "hue": [80, 170], "to": 215, "sat": 0.8, "light": -0.04 }] }
+    },
+    {
+      "id": "dusty-rose", "name": "Dusty Rose", "css": "variants/dusty-rose.css", "swatch": ["#6e4650", "#fffaf8", "#bc9a6a"],
+      "ornaments": { "rules": [{ "hue": [80, 170], "to": 345, "sat": 1.5, "light": 0.02 }] }
+    }
+  ],
+  "ornaments": { "source": "assets/svg/", "generated": "assets/ornaments/{variant}/" },
+  "fonts": [
+    { "family": "Marcellus", "source": "Google Fonts", "license": "OFL-1.1" },
+    { "family": "Lora", "source": "Google Fonts", "license": "OFL-1.1" },
+    { "family": "Alex Brush", "source": "Google Fonts", "license": "OFL-1.1" }
+  ],
+  "libs": [
+    { "name": "GLightbox", "version": "3.3.1", "license": "MIT" },
+    { "name": "qrcode-generator", "version": "1.4.4", "license": "MIT" },
+    { "name": "html2canvas", "version": "1.4.1", "license": "MIT", "lazy": true },
+    { "name": "Phosphor Icons", "version": "2.1.1", "license": "MIT" }
+  ],
+  "limits": { "gallery": 24, "story": 6, "events": 4, "coverImages": 0 },
+  "previewImages": [],
+  "extraFields": {}
+}

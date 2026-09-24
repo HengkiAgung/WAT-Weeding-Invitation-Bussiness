@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Khatam 8-point star lattice tile (CSS mask; color from --c-accent). (c) WAT Wedding Invitation. All rights reserved. -->
+  <g fill="none" stroke="#000" stroke-width="1.1" stroke-linejoin="round">
+    <g id="s"><rect x="14" y="14" width="20" height="20"/><rect x="14" y="14" width="20" height="20" transform="rotate(45 24 24)"/></g>
+    <use href="#s" x="-24" y="-24"/><use href="#s" x="24" y="-24"/><use href="#s" x="-24" y="24"/><use href="#s" x="24" y="24"/>
+    <path d="M34 24h4M10 24h4M24 10v4M24 34v4"/>
+  </g>
+</svg>

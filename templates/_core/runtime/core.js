@@ -406,6 +406,204 @@
   };
   W.guestQrText = function () { return V.guest.code ? 'INV:' + (RT.slug || W.fileSlug) + ':' + V.guest.code : ''; };
 
+  /* ---------- shared UI widgets (W.ui) ----------
+   * Behaviour for the interactive sections, shared by every template. Templates own the markup/CSS;
+   * widgets find their elements by the fixed ids listed in templates/_core/README.md ("Widgets").
+   * Call them inside W.section('<id>', ...) so they only run when the section is on. */
+  var validateFields = function (fields) {
+    var ok = true;
+    fields.forEach(function (el) {
+      var bad = !el.value.trim();
+      el.classList.toggle('invalid', bad);
+      if (bad) { ok = false; el.addEventListener('input', function h() { el.classList.remove('invalid'); el.removeEventListener('input', h); }); }
+    });
+    return ok;
+  };
+  /** Load a script once; resolves with globalFn() or rejects ({offline:true} on network error). */
+  W.loadScript = function (src, globalFn) {
+    return new Promise(function (resolve, reject) {
+      if (globalFn()) return resolve(globalFn());
+      var s = doc.createElement('script'); s.src = src; s.async = true;
+      s.onload = function () { globalFn() ? resolve(globalFn()) : reject({}); };
+      s.onerror = function () { reject({ offline: true }); };
+      doc.head.appendChild(s);
+    });
+  };
+  var HTML2CANVAS = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+
+  W.ui = {
+    validate: validateFields,
+
+    /** Copy buttons: any [data-copy="text"][data-copy-msg="label.key"] inside `box`. */
+    copyButtons: function (box) {
+      if (box) box.addEventListener('click', function (e) {
+        var b = e.target.closest && e.target.closest('[data-copy]');
+        if (b) W.copy(b.getAttribute('data-copy'), t(b.getAttribute('data-copy-msg') || 'common.copied'));
+      });
+    },
+
+    /** RSVP form + result ticket. ids: rsvpForm rsvpName rsvpPax rsvpPaxRow rsvpEvents rsvpDone rsvpStatus rsvpMsg ticketMeta changeRSVP saveTicket ticket.
+     *  Radios name=attending (yes|no|maybe). Event checkboxes are generated as <label><input name=events><span>title</span></label>. */
+    rsvp: function () {
+      var form = $('#rsvpForm'), pax = $('#rsvpPax'), evBox = $('#rsvpEvents'), nameEl = $('#rsvpName');
+      if (!form) return;
+      for (var g = 1; g <= V.rsvp.maxPax; g++) { var o = doc.createElement('option'); o.value = g; o.textContent = t('rsvp.paxUnit', { n: g }); pax.appendChild(o); }
+      if (V.rsvp.askEvents && evBox) {
+        evBox.hidden = false;
+        evBox.insertAdjacentHTML('beforeend', V.events.map(function (e) {
+          return '<label><input type="checkbox" name="events" value="' + esc(e.id) + '" checked><span>' + esc(e.title) + '</span></label>';
+        }).join(''));
+      }
+      if (V.guest.has) nameEl.value = V.guest.name;
+      var radios = $$('input[name=attending]', form);
+      var attending = function () { var c = $('input[name=attending]:checked', form); return c ? c.value : 'yes'; };
+      var sync = function () {
+        var yes = attending() !== 'no';
+        $('#rsvpPaxRow').hidden = !yes; if (V.rsvp.askEvents && evBox) evBox.hidden = !yes;
+      };
+      radios.forEach(function (i) { i.addEventListener('change', sync); });
+
+      function show(r) {
+        var yes = r.attending === 'yes', no = r.attending === 'no';
+        $('#rsvpStatus').textContent = t(yes ? 'rsvp.yes' : no ? 'rsvp.no' : 'rsvp.maybe');
+        $('#rsvpMsg').textContent = t(yes ? 'rsvp.thanksYes' : no ? 'rsvp.thanksNo' : 'rsvp.thanksMaybe');
+        $('#ticketMeta').textContent = t('rsvp.meta', { name: r.name, pax: t('rsvp.paxUnit', { n: r.pax }), date: V.date.short });
+        form.hidden = true; $('#rsvpDone').hidden = false;
+        $('#saveTicket').hidden = !yes;
+      }
+      var saved = W.api.savedRsvp(); if (saved) show(saved);
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validateFields([nameEl])) { nameEl.focus(); return; }
+        var btn = form.querySelector('[type=submit]'), a = attending();
+        var payload = {
+          name: nameEl.value.trim().slice(0, 60),
+          attending: a,
+          pax: a === 'no' ? 0 : (+pax.value || 1),
+          events: a === 'no' ? [] : (V.rsvp.askEvents && evBox ? $$('input[name=events]:checked', evBox).map(function (i) { return i.value; }) : V.events.map(function (x) { return x.id; }))
+        };
+        btn.disabled = true; btn.textContent = t('rsvp.sending');
+        W.api.rsvp(payload).then(show, function () { W.toast(t('rsvp.error')); }).then(function () { btn.disabled = false; btn.textContent = t('rsvp.submit'); });
+      });
+      $('#changeRSVP').addEventListener('click', function () {
+        var r = W.api.savedRsvp(); $('#rsvpDone').hidden = true; form.hidden = false;
+        if (r) {
+          nameEl.value = r.name;
+          radios.forEach(function (i) { i.checked = i.value === r.attending; });
+          if (r.pax) pax.value = r.pax;
+          if (evBox) $$('input[name=events]', evBox).forEach(function (i) { i.checked = (r.events || []).indexOf(i.value) > -1; });
+          sync();
+        }
+        nameEl.focus();
+      });
+      $('#saveTicket').addEventListener('click', function () {
+        W.loadScript(HTML2CANVAS, function () { return root.html2canvas; }).then(function (h2c) {
+          var bg = getComputedStyle(doc.documentElement).getPropertyValue('--c-bg').trim() || '#ffffff';
+          return h2c($('#ticket'), { backgroundColor: bg, scale: 2 }).then(function (cv) { W.download(cv.toDataURL('image/png'), 'rsvp-' + W.fileSlug + '.png'); });
+        }).catch(function (err) { W.toast(t(err && err.offline ? 'rsvp.saveOffline' : 'rsvp.saveFailed')); });
+      });
+    },
+
+    /** Wishes list + form. ids: wishList wishMore wishForm wishName wishMsg. opts.item(w, dateText) → html (default .wish-item). */
+    wishes: function (opts) {
+      opts = opts || {};
+      var list = $('#wishList'), more = $('#wishMore'), cursor = null, items = [];
+      if (!list) return;
+      var when = function (at) { var d = new Date(at); return isNaN(d) ? '' : d.toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' }); };
+      var item = opts.item || function (w, date) {
+        return '<div class="wish-item"><b>' + esc(w.name) + '</b><time datetime="' + esc(w.at) + '">' + esc(date) + '</time><p>' + esc(w.message) + '</p></div>';
+      };
+      var render = function () {
+        list.innerHTML = items.length ? items.map(function (w) { return item(w, when(w.at)); }).join('') : '<p class="wish-empty">' + esc(t('wishes.empty')) + '</p>';
+        if (more) more.hidden = !cursor;
+      };
+      var load = function () {
+        return W.api.wishes(cursor).then(function (res) { items = items.concat((res && res.items) || []); cursor = res && res.next || null; render(); }, function () { render(); });
+      };
+      load();
+      if (more) more.addEventListener('click', load);
+      var n = $('#wishName'), m = $('#wishMsg'), form = $('#wishForm');
+      if (V.guest.has) n.value = V.guest.name;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('[type=submit]');
+        if (!validateFields([n, m])) return;
+        btn.disabled = true;
+        W.api.addWish({ name: n.value.trim().slice(0, 60), message: m.value.trim().slice(0, 400) }).then(function (w) {
+          items.unshift(w); m.value = ''; render(); list.scrollTop = 0; W.toast(t('wishes.thanks'));
+        }, function () { W.toast(t('wishes.error')); }).then(function () { btn.disabled = false; });
+      });
+    },
+
+    /** Video thumbnail → modal (YouTube nocookie iframe or native <video>). ids: videoBox videoModal videoHost videoClose. Pauses music while open. */
+    video: function () {
+      var box = $('#videoBox'), modal = $('#videoModal'), host = $('#videoHost'), v = V.video;
+      if (!box || !modal || !v) return;
+      var img = $('img', box);
+      if (img) img.addEventListener('error', function () { this.onerror = null; if (V.images.background) this.src = V.images.background; });
+      var open = function () {
+        host.innerHTML = v.youtubeId
+          ? '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.youtubeId) + '?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="' + esc(t('video.title')) + '"></iframe>'
+          : '<video controls autoplay playsinline src="' + esc(safeUrl(v.src)) + '"></video>';
+        modal.hidden = false;
+        if (W.music.audio && !W.music.audio.paused) { W.music.audio.pause(); modal.dataset.resume = '1'; }
+      };
+      var close = function () {
+        host.innerHTML = ''; modal.hidden = true;
+        if (modal.dataset.resume) { delete modal.dataset.resume; W.music.audio.play().catch(function () {}); }
+      };
+      box.addEventListener('click', open);
+      box.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      $('#videoClose').addEventListener('click', close);
+      modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+      doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+    },
+
+    /** Guest QR ticket. ids: qrBox qrCode. */
+    qrTicket: function () {
+      var box = $('#qrBox');
+      if (!box) return;
+      if (!W.qr(box, W.guestQrText())) box.hidden = true;
+      box.setAttribute('aria-label', t('qr.alt', { name: V.guest.name }));
+      $('#qrCode').textContent = t('qr.code', { code: V.guest.code });
+    },
+
+    /** Countdown + calendar. ids: cdD cdH cdM cdS addToCalendar gcalLink (all optional). */
+    countdown: function () {
+      var set = function (id, v) { var el = $(id); if (el) el.textContent = v; };
+      W.countdown(function (c) { set('#cdD', c.days); set('#cdH', c.hours); set('#cdM', c.minutes); set('#cdS', c.seconds); });
+      var add = $('#addToCalendar'); if (add) add.addEventListener('click', function () { W.calendar.ics(); });
+      var g = $('#gcalLink'); if (g) g.href = W.calendar.gcalUrl();
+    },
+
+    /** Turut mengundang columns in couple order. opts.col(title, names) → html (default <div><h3/><ul/></div>). Returns html. */
+    inviters: function (opts) {
+      var col = (opts && opts.col) || function (title, names) { return '<div><h3>' + esc(title) + '</h3><ul>' + names.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul></div>'; };
+      return [V.couple.first.role, V.couple.second.role].map(function (r) {
+        return V.inviters[r].length ? col(t(r === 'groom' ? 'inviters.groom' : 'inviters.bride'), V.inviters[r]) : '';
+      }).join('');
+    },
+
+    /** Reveal-on-scroll for [data-rv] (or `sel`): adds .in when visible. Adds html.rv-on first, so templates hide
+     *  reveal targets ONLY under .rv-on and content stays visible if this never runs. `instant` (e.g. ?open=1) shows all. */
+    reveal: function (instant, sel) {
+      var els = $$((sel || '[data-rv]') + ':not(.in)');
+      var reduce = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (instant || reduce || !('IntersectionObserver' in root)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+      doc.documentElement.classList.add('rv-on');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+      els.forEach(function (el) { io.observe(el); });
+    },
+
+    /** Dress-code swatches html (only #rrggbb values). */
+    swatches: function () {
+      return V.dresscode.colors.map(function (c) { return /^#[0-9a-f]{6}$/i.test(c) ? '<i style="background:' + c + '" title="' + c + '"></i>' : ''; }).join('');
+    }
+  };
+
   /* ---------- open event ---------- */
   var openFns = [];
   W.onOpen = function (fn) { openFns.push(fn); };

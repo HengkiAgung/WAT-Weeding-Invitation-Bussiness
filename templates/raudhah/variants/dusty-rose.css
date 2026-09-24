@@ -1,0 +1,8 @@
+/* Raudhah variant: Dusty Rose. (c) WAT Wedding Invitation. */
+[data-variant="dusty-rose"] {
+  --c-primary: #6e4650; --c-primary-2: #875b66; --c-primary-3: #4b2e36; --c-primary-rgb: 110 70 80;
+  --c-on-primary: #fbf5f4; --c-bg: #fffaf8; --c-surface: #f6e9e7;
+  --c-accent: #bc9a6a; --c-accent-rgb: 188 154 106; --c-accent-light: #eedcc2; --c-accent-dark: #8d6f45;
+  --c-accent-ink: #3f2f1c; --c-accent-ink-rgb: 63 47 28; --c-heading-alt: #875b66;
+  --c-muted: #9a8a8c; --c-line: #eadcda; --c-danger: #a0432c; --c-shade-rgb: 36 20 24;
+}

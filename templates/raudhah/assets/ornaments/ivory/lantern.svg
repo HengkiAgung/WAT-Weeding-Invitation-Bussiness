@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 160" width="60" height="160">
+  <!-- Hanging lantern (fanous). (c) WAT Wedding Invitation. All rights reserved. -->
+  <defs>
+    <radialGradient id="glow" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#fff6d6"/><stop offset="1" stop-color="#e9cf8a"/></radialGradient>
+  </defs>
+  <path d="M30 0v46" stroke="#8a7238" stroke-width="1.2"/>
+  <circle cx="30" cy="48" r="3" fill="none" stroke="#8a7238" stroke-width="1.4"/>
+  <path d="M30 51c-9 0-15 7-17 15h34c-2-8-8-15-17-15Z" fill="#b89a5a" stroke="#6e5a28" stroke-width="1.2"/>
+  <path d="M12 66h36v4H12Z" fill="#8a7238"/>
+  <path d="M14 70h32l-4 50H18Z" fill="url(#glow)" stroke="#6e5a28" stroke-width="1.4"/>
+  <g stroke="#8a7238" stroke-width="1.2" fill="none">
+    <path d="M24 70l-2 50M36 70l2 50M30 70v50"/>
+    <path d="M16 84c5 4 23 4 28 0M17 102c5 4 21 4 26 0"/>
+  </g>
+  <path d="M20 90l10-8 10 8-10 8Z" fill="none" stroke="#b89a5a" stroke-width="1.2"/>
+  <path d="M16 120h28l-3 6H19Z" fill="#b89a5a" stroke="#6e5a28" stroke-width="1.2"/>
+  <path d="M22 126h16l-8 14Z" fill="#8a7238"/>
+  <path d="M30 140v12" stroke="#8a7238" stroke-width="1.2"/>
+  <circle cx="30" cy="155" r="3" fill="#b89a5a"/>
+</svg>
