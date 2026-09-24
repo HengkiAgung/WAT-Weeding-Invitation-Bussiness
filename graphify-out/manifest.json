@@ -1,0 +1,67 @@
+{
+  "tools/_shared.py": {
+    "mtime": 1790253101.5729396,
+    "ast_hash": "020990f163b9b761bea963f6b45f778c",
+    "semantic_hash": "020990f163b9b761bea963f6b45f778c"
+  },
+  "wedding-template/js/config.js": {
+    "mtime": 1790253173.6273494,
+    "ast_hash": "89d66b548c31a3467ce07e122bfad689",
+    "semantic_hash": "89d66b548c31a3467ce07e122bfad689"
+  },
+  "wedding-template/js/main.js": {
+    "mtime": 1790253173.6273494,
+    "ast_hash": "81029639d11e8cd6b291cb420b52a292",
+    "semantic_hash": "81029639d11e8cd6b291cb420b52a292"
+  },
+  "wedding-template/tools/build-assets.js": {
+    "mtime": 1790253173.6273494,
+    "ast_hash": "d8bfd536c41c426006b2dc72247f00d1",
+    "semantic_hash": "d8bfd536c41c426006b2dc72247f00d1"
+  },
+  "CLAUDE.md": {
+    "mtime": 1790253101.5718555,
+    "ast_hash": "a0016963163de87e70f1afbe5fcb9f4a",
+    "semantic_hash": "a0016963163de87e70f1afbe5fcb9f4a"
+  },
+  "PROGRESS.md": {
+    "mtime": 1790254816.847876,
+    "ast_hash": "c76d34a7852aa0b5917b67bd5f5a89d7",
+    "semantic_hash": "c76d34a7852aa0b5917b67bd5f5a89d7"
+  },
+  "README.md": {
+    "mtime": 1790253101.5718555,
+    "ast_hash": "6ccdfcda1e677a3df81dda4f02932d30",
+    "semantic_hash": "6ccdfcda1e677a3df81dda4f02932d30"
+  },
+  "knowledge/template-anatomy.md": {
+    "mtime": 1790254801.556647,
+    "ast_hash": "a66380084c1e5177734382b041ba783f",
+    "semantic_hash": "a66380084c1e5177734382b041ba783f"
+  },
+  "requirements.txt": {
+    "mtime": 1790253101.5718555,
+    "ast_hash": "d773e3064d081d15771d4693771e9552",
+    "semantic_hash": "d773e3064d081d15771d4693771e9552"
+  },
+  "wedding-template/README.md": {
+    "mtime": 1790253173.595073,
+    "ast_hash": "4cf201328814d8fee4ec471c057f6f76",
+    "semantic_hash": "4cf201328814d8fee4ec471c057f6f76"
+  },
+  "wedding-template/index.html": {
+    "mtime": 1790253173.6258364,
+    "ast_hash": "8662c62352be43d4fc9e7d50c5a43999",
+    "semantic_hash": "8662c62352be43d4fc9e7d50c5a43999"
+  },
+  "workflows/_template.md": {
+    "mtime": 1790253101.5729396,
+    "ast_hash": "233ce8f2d562f59f7e15e2cf14a04ce1",
+    "semantic_hash": "233ce8f2d562f59f7e15e2cf14a04ce1"
+  },
+  "workflows/analyze_template.md": {
+    "mtime": 1790254825.3170552,
+    "ast_hash": "6c1e5eb1b9485089ee67040c6585b9ac",
+    "semantic_hash": "6c1e5eb1b9485089ee67040c6585b9ac"
+  }
+}
