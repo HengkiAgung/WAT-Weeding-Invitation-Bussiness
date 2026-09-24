@@ -180,10 +180,17 @@ def check_js(tpl: Path, m: dict, labels: dict[str, dict], r: Report) -> None:
     ids = {s["id"] if isinstance(s, dict) else s for s in m.get("sections", [])}
     for js in m.get("scripts", []):
         src = (tpl / js).read_text(encoding="utf-8")
-        for k in set(re.findall(r"\bt\('([A-Za-z0-9_.]+)'", src)):
+        for k in set(re.findall(r"\bt\('([A-Za-z0-9_.]+)'\s*[,)]", src)):
             for lang, lab in labels.items():
                 if k not in lab:
                     r.err("js", f"{js}: t({k!r}) missing in i18n/{lang}.json")
+        # any other 'ns.key' literal whose namespace is a label namespace (ternaries, data-copy-msg, …)
+        namespaces = {k.split(".")[0] for lab in labels.values() for k in lab if "." in k}
+        for k in set(re.findall(r"""['"]([a-z][A-Za-z]*\.[A-Za-z0-9_.]*[A-Za-z0-9_])['"]""", src)):
+            if k.split(".")[0] in namespaces:
+                for lang, lab in labels.items():
+                    if k not in lab:
+                        r.err("js", f"{js}: label literal {k!r} missing in i18n/{lang}.json")
         for dyn in set(re.findall(r"\bt\('([A-Za-z0-9_.]+\.)'\s*\+", src)):
             r.warn("js", f"{js}: dynamic label prefix {dyn!r}… not statically checked")
         for sid in set(re.findall(r"W\.section\('([A-Za-z]+)'", src)):

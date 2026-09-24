@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--
+  Sekar — Javanese keraton wedding invitation template (gebyok gate, gunungan, kawung batik).
+  (c) WAT Wedding Invitation. All rights reserved. Licensed per invitation;
+  copying, redistribution or reuse on another domain is prohibited.
+  Bindings: data-section / data-t / data-l / data-l-attr / data-if / data-href / data-src / data-bg / data-orn / data-photo
+  (contract: templates/_core/README.md). Reveal animation: data-rv (js/sekar.js). No literal copy in this file.
+-->
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Undangan</title>
+<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta name="copyright" content="WAT Wedding Invitation">
+<!--@HEAD-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Italianno&display=swap">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
+<link rel="stylesheet" href="css/style.css">
+<!--@VARIANT-->
+</head>
+
+<body>
+
+<div id="loader" role="status" data-l-attr="aria-label:common.loading"><img data-orn="gunungan.svg" alt="" width="60" height="90"></div>
+
+<!-- =====================  COVER / GEBYOK GATE  ===================== -->
+<div class="gate" id="gate" data-section="cover">
+  <div class="gate-door gate-l" aria-hidden="true"><img data-orn="gate.svg" alt=""></div>
+  <div class="gate-door gate-r" aria-hidden="true"><img data-orn="gate.svg" alt=""></div>
+  <div class="gate-petals" id="petals" aria-hidden="true"></div>
+
+  <div class="gate-content" id="gateContent">
+    <img class="gate-gunungan" data-orn="gunungan.svg" alt="" width="120" height="180">
+    <p class="gate-label" data-l="cover.label"></p>
+    <h1 class="script gate-names" data-t="couple.names"></h1>
+    <p class="gate-date" data-t="date.short"></p>
+    <div class="gate-guest">
+      <p data-l="cover.to"></p>
+      <strong data-t="guest.name"></strong>
+      <small data-l="cover.apology"></small>
+    </div>
+    <button class="btn btn-gold" id="openBtn" type="button" data-l-attr="aria-label:cover.openAria">
+      <i class="ph ph-envelope-open" aria-hidden="true"></i> <span data-l="cover.open"></span>
+    </button>
+  </div>
+</div>
+
+<!-- music (global, not a section) -->
+<button class="music-btn" id="musicBtn" type="button" data-l-attr="aria-label:music.toggle" aria-pressed="false">
+  <i class="ph ph-music-notes" aria-hidden="true"></i>
+</button>
+<audio id="bgm" loop preload="none"></audio>
+
+<!-- =====================  PAGE  ===================== -->
+<main class="page" id="main">
+
+  <section class="hero dark" id="hero" data-section="hero">
+    <img class="corner c-tl" data-orn="corner.svg" alt="">
+    <img class="corner c-tr" data-orn="corner.svg" alt="">
+    <p class="hero-kicker" data-rv data-l="hero.kicker"></p>
+    <div class="arch" data-rv data-photo data-if="images.hero"><img data-src="images.hero" alt=""></div>
+    <img class="hero-gunungan" data-rv data-orn="gunungan.svg" data-if="!images.hero" alt="" width="160" height="240">
+    <h2 class="script hero-names" data-rv data-t="couple.names"></h2>
+    <p class="hero-date" data-rv data-t="date.long"></p>
+    <p class="hero-hash" data-rv data-t="hashtag" data-if="hashtag"></p>
+    <i class="ph ph-caret-double-down hero-scroll" aria-hidden="true"></i>
+  </section>
+
+  <section class="block" id="opening" data-section="opening">
+    <img class="divider" data-orn="divider.svg" alt="" data-rv>
+    <p class="greeting" data-rv data-t="opening.greeting"></p>
+    <p class="lead" data-rv data-t="opening.text"></p>
+  </section>
+
+  <section class="block surface verse" id="verse" data-section="verse">
+    <i class="ph ph-quotes verse-mark" aria-hidden="true"></i>
+    <p class="verse-text" data-rv data-t="verse.text"></p>
+    <p class="verse-src" data-rv data-t="verse.source" data-if="verse.source"></p>
+  </section>
+
+  <section class="block couple" id="couple" data-section="couple">
+    <h2 class="title" data-rv data-l="couple.title"></h2>
+    <img class="divider" data-orn="divider.svg" alt="" data-rv>
+    <article class="person" data-rv>
+      <div class="ring" data-photo data-if="couple.first.photo"><img data-src="couple.first.photo" alt=""></div>
+      <p class="p-label" data-t="couple.first.label"></p>
+      <h3 class="script p-nick" data-t="couple.first.nickname"></h3>
+      <p class="p-full" data-t="couple.first.fullName"></p>
+      <p class="p-parents" data-t="couple.first.childLine" data-if="couple.first.childLine"></p>
+      <p class="p-parents strong" data-t="couple.first.parentsNames" data-if="couple.first.parentsNames"></p>
+      <p class="p-parents" data-t="couple.first.parentsLine" data-if="!couple.first.parentsNames"></p>
+      <a class="p-ig" target="_blank" rel="noopener" data-href="couple.first.instagramUrl" data-if="couple.first.instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i> <span data-t="couple.first.instagram"></span></a>
+    </article>
+    <div class="amp script" aria-hidden="true" data-rv data-l="common.and"></div>
+    <article class="person" data-rv>
+      <div class="ring" data-photo data-if="couple.second.photo"><img data-src="couple.second.photo" alt=""></div>
+      <p class="p-label" data-t="couple.second.label"></p>
+      <h3 class="script p-nick" data-t="couple.second.nickname"></h3>
+      <p class="p-full" data-t="couple.second.fullName"></p>
+      <p class="p-parents" data-t="couple.second.childLine" data-if="couple.second.childLine"></p>
+      <p class="p-parents strong" data-t="couple.second.parentsNames" data-if="couple.second.parentsNames"></p>
+      <p class="p-parents" data-t="couple.second.parentsLine" data-if="!couple.second.parentsNames"></p>
+      <a class="p-ig" target="_blank" rel="noopener" data-href="couple.second.instagramUrl" data-if="couple.second.instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i> <span data-t="couple.second.instagram"></span></a>
+    </article>
+  </section>
+
+  <section class="block dark countdown" id="countdown" data-section="countdown">
+    <h2 class="title light" data-rv data-l="countdown.title"></h2>
+    <p class="cd-date" data-rv data-t="date.long"></p>
+    <div class="cd-grid" data-rv>
+      <div><b id="cdD">00</b><span data-l="countdown.days"></span></div>
+      <div><b id="cdH">00</b><span data-l="countdown.hours"></span></div>
+      <div><b id="cdM">00</b><span data-l="countdown.minutes"></span></div>
+      <div><b id="cdS">00</b><span data-l="countdown.seconds"></span></div>
+    </div>
+    <button class="btn btn-gold" id="addToCalendar" type="button" data-rv><i class="ph ph-calendar-plus" aria-hidden="true"></i> <span data-l="countdown.addCalendar"></span></button>
+    <a class="text-link" id="gcalLink" target="_blank" rel="noopener" href="#" data-l="countdown.gcal"></a>
+  </section>
+
+  <section class="block events" id="events" data-section="events">
+    <h2 class="title" data-rv data-l="events.title"></h2>
+    <img class="divider" data-orn="divider.svg" alt="" data-rv>
+    <p class="lead" data-rv data-l="events.text"></p>
+    <div id="eventList"></div>
+  </section>
+
+  <section class="block surface" id="rundown" data-section="rundown">
+    <h2 class="title" data-rv data-l="rundown.title"></h2>
+    <ol class="rundown" id="timeline"></ol>
+  </section>
+
+  <section class="block dark live" id="live" data-section="live">
+    <i class="ph ph-broadcast big-icon" aria-hidden="true"></i>
+    <h2 class="title light" data-rv data-l="live.title"></h2>
+    <p class="note" data-t="live.schedule" data-if="live.schedule"></p>
+    <p class="lead" data-rv data-l="live.text"></p>
+    <a class="btn btn-gold" target="_blank" rel="noopener" data-href="live.url" data-l="live.button"></a>
+  </section>
+
+  <section class="block story" id="story" data-section="story">
+    <h2 class="title" data-rv data-l="story.title"></h2>
+    <img class="divider" data-orn="divider.svg" alt="" data-rv>
+    <ol class="story-list" id="storyList"></ol>
+  </section>
+
+  <section class="block surface" id="gallery" data-section="gallery">
+    <h2 class="title" data-rv data-l="gallery.title"></h2>
+    <img class="divider" data-orn="divider.svg" alt="" data-rv>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <section class="block" id="video" data-section="video">
+    <h2 class="title" data-rv data-l="video.title"></h2>
+    <div class="video-thumb" id="videoBox" role="button" tabindex="0" data-rv data-l-attr="aria-label:video.play">
+      <img data-src="video.poster" alt="">
+      <span class="play"><i class="ph ph-play" aria-hidden="true"></i></span>
+    </div>
+    <p class="note" data-l="video.label"></p>
+  </section>
+
+  <section class="block dark rsvp" id="rsvp" data-section="rsvp">
+    <h2 class="title light" data-rv data-l="rsvp.title"></h2>
+    <p class="lead" data-rv data-l="rsvp.text"></p>
+    <p class="note" data-t="rsvp.deadline" data-if="rsvp.deadline"></p>
+
+    <form class="form" id="rsvpForm" data-rv novalidate>
+      <label for="rsvpName" data-l="rsvp.name"></label>
+      <input id="rsvpName" name="name" type="text" autocomplete="name" required maxlength="60" data-l-attr="placeholder:rsvp.namePlaceholder">
+      <fieldset class="seg">
+        <legend data-l="rsvp.attend"></legend>
+        <label><input type="radio" name="attending" value="yes" checked><span data-l="rsvp.yes"></span></label>
+        <label><input type="radio" name="attending" value="no"><span data-l="rsvp.no"></span></label>
+        <label><input type="radio" name="attending" value="maybe"><span data-l="rsvp.maybe"></span></label>
+      </fieldset>
+      <div id="rsvpPaxRow">
+        <label for="rsvpPax" data-l="rsvp.pax"></label>
+        <select id="rsvpPax" name="pax"></select>
+      </div>
+      <fieldset class="checks" id="rsvpEvents" hidden>
+        <legend data-l="rsvp.events"></legend>
+      </fieldset>
+      <button class="btn btn-gold" type="submit" data-l="rsvp.submit"></button>
+    </form>
+
+    <div class="rsvp-done" id="rsvpDone" hidden>
+      <div class="ticket" id="ticket">
+        <img data-orn="gunungan.svg" alt="" width="44" height="66">
+        <h3 id="rsvpStatus"></h3>
+        <p id="rsvpMsg"></p>
+        <p class="ticket-meta" id="ticketMeta"></p>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-line" id="changeRSVP" type="button" data-l="rsvp.change"></button>
+        <button class="btn btn-line" id="saveTicket" type="button"><i class="ph ph-download-simple" aria-hidden="true"></i> <span data-l="rsvp.saveImage"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block qr" id="qrTicket" data-section="qrTicket">
+    <h2 class="title" data-rv data-l="qr.title"></h2>
+    <p class="lead" data-rv data-l="qr.text"></p>
+    <div class="qr-card" data-rv>
+      <div class="qr-box" id="qrBox"></div>
+      <p class="qr-name" data-t="guest.name"></p>
+      <p class="qr-code" id="qrCode"></p>
+    </div>
+  </section>
+
+  <section class="block surface" id="gift" data-section="gift">
+    <h2 class="title" data-rv data-l="gift.title"></h2>
+    <img class="divider" data-orn="divider.svg" alt="" data-rv>
+    <p class="lead" data-rv data-l="gift.text"></p>
+    <div class="gifts" id="gifts"></div>
+  </section>
+
+  <section class="block wishes" id="wishes" data-section="wishes">
+    <h2 class="title" data-rv data-l="wishes.title"></h2>
+    <p class="lead" data-rv data-l="wishes.text"></p>
+    <form class="form" id="wishForm" data-rv novalidate>
+      <label for="wishName" data-l="wishes.name"></label>
+      <input id="wishName" type="text" required maxlength="60" autocomplete="name" data-l-attr="placeholder:wishes.namePlaceholder">
+      <label for="wishMsg" data-l="wishes.message"></label>
+      <textarea id="wishMsg" rows="4" required maxlength="400" data-l-attr="placeholder:wishes.messagePlaceholder"></textarea>
+      <button class="btn" type="submit" data-l="wishes.submit"></button>
+    </form>
+    <div class="wish-list" id="wishList" aria-live="polite"></div>
+    <button class="btn btn-line wish-more" id="wishMore" type="button" hidden data-l="wishes.more"></button>
+  </section>
+
+  <section class="block surface" id="turutMengundang" data-section="turutMengundang">
+    <h2 class="title" data-rv data-l="inviters.title"></h2>
+    <div class="inviters" id="inviters" data-rv></div>
+  </section>
+
+  <section class="block" id="dresscode" data-section="dresscode">
+    <h2 class="title" data-rv data-l="dresscode.title"></h2>
+    <p class="lead" data-rv data-t="dresscode.text" data-if="dresscode.text"></p>
+    <div class="swatches" id="swatches" data-l-attr="aria-label:dresscode.colors"></div>
+  </section>
+
+  <section class="block surface" id="protocol" data-section="protocol">
+    <i class="ph ph-hand-heart big-icon" aria-hidden="true"></i>
+    <h2 class="title" data-rv data-l="protocol.title"></h2>
+    <p class="lead" data-rv data-t="protocol.text"></p>
+  </section>
+
+  <section class="block dark" id="igFilter" data-section="igFilter">
+    <i class="ph ph-instagram-logo big-icon" aria-hidden="true"></i>
+    <h2 class="title light" data-rv data-l="igFilter.title"></h2>
+    <p class="lead" data-rv data-l="igFilter.text"></p>
+    <button class="hash-pill" id="hashCopy" type="button" data-if="hashtag" data-l-attr="aria-label:igFilter.copyHashtag"><span data-t="hashtag"></span> <i class="ph ph-copy" aria-hidden="true"></i></button>
+    <a class="btn btn-gold" target="_blank" rel="noopener" data-href="igFilter.url" data-l="igFilter.button"></a>
+  </section>
+
+  <section class="closing dark" id="closing" data-section="closing">
+    <div class="closing-bg" data-bg="images.closing" data-photo></div>
+    <div class="closing-inner">
+      <img class="closing-gunungan" data-orn="gunungan.svg" alt="" width="90" height="135" data-rv>
+      <p class="lead" data-rv data-t="closing.text"></p>
+      <p class="greeting" data-rv data-t="closing.greeting"></p>
+      <h2 class="script closing-title" data-rv data-l="closing.title"></h2>
+      <p class="note" data-rv data-t="closing.signature"></p>
+      <p class="script closing-names" data-rv data-t="couple.names"></p>
+      <p class="note" data-rv data-t="closing.familyNames" data-if="closing.familyNames"></p>
+    </div>
+  </section>
+
+  <footer class="footer" data-section="footer"><a target="_blank" rel="noopener" data-href="credit.url" data-t="credit.text"></a></footer>
+</main>
+
+<div class="video-modal" id="videoModal" hidden>
+  <button class="video-close" id="videoClose" type="button" data-l-attr="aria-label:video.close"><i class="ph ph-x" aria-hidden="true"></i></button>
+  <div class="video-host" id="videoHost"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!--@INVITE-->
+<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<!--@CORE-->
+<script src="js/sekar.js"></script>
+</body>
+</html>

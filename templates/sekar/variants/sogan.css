@@ -1,0 +1,8 @@
+/* Sekar variant: Sogan (batik brown & gold). (c) WAT Wedding Invitation. */
+[data-variant="sogan"] {
+  --c-primary: #4a2c17; --c-primary-2: #633d22; --c-primary-3: #2e1a0c; --c-primary-rgb: 74 44 23;
+  --c-on-primary: #f6ead6; --c-bg: #fbf5ea; --c-surface: #efdfc3;
+  --c-accent: #c79a45; --c-accent-rgb: 199 154 69; --c-accent-light: #ead08f; --c-accent-dark: #8a641c;
+  --c-accent-ink: #452f07; --c-accent-ink-rgb: 69 47 7; --c-heading-alt: #6e4424;
+  --c-muted: #8a7c6c; --c-line: #e2d0ac; --c-danger: #a0432c; --c-shade-rgb: 28 16 6;
+}

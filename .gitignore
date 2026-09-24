@@ -30,3 +30,6 @@ graphify-out/.graphify_root
 
 # Node
 node_modules/
+
+# Template production builds (tools/build_template.mjs)
+dist/

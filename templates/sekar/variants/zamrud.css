@@ -1,0 +1,8 @@
+/* Sekar variant: Zamrud (emerald & gold). (c) WAT Wedding Invitation. */
+[data-variant="zamrud"] {
+  --c-primary: #123d33; --c-primary-2: #1c5446; --c-primary-3: #0a2620; --c-primary-rgb: 18 61 51;
+  --c-on-primary: #f2ecd9; --c-bg: #f8f6ee; --c-surface: #e7e8d6;
+  --c-accent: #c9a24a; --c-accent-rgb: 201 162 74; --c-accent-light: #ecd494; --c-accent-dark: #8f6b1e;
+  --c-accent-ink: #3f2e07; --c-accent-ink-rgb: 63 46 7; --c-heading-alt: #1c5446;
+  --c-muted: #7d8479; --c-line: #d9d6bd; --c-danger: #a0432c; --c-shade-rgb: 6 22 18;
+}

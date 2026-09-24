@@ -4,6 +4,7 @@
 //
 // Usage:
 //   node tools/screenshot_page.mjs <url> <out.png> [--width 412] [--height 915] [--full] [--wait 4000] [--scroll "#gift"] [--clip 3000]
+//                                  [--click "#openBtn"] [--after-click 2500]   # click first (e.g. open the cover), then capture
 // Chrome path: CHROME_PATH env or the default Windows install location.
 import { spawn } from 'node:child_process';
 import { writeFileSync, mkdtempSync } from 'node:fs';
@@ -13,7 +14,7 @@ import { join } from 'node:path';
 const args = process.argv.slice(2);
 const opt = (name, def) => { const i = args.indexOf('--' + name); return i > -1 ? args[i + 1] : def; };
 const flag = (name) => args.includes('--' + name);
-const VALUED = ['--width', '--height', '--wait', '--scroll', '--clip'];
+const VALUED = ['--width', '--height', '--wait', '--scroll', '--clip', '--click', '--after-click'];
 const [url, out] = args.filter((a, i) => !a.startsWith('--') && !VALUED.includes(args[i - 1]));
 if (!url || !out) { console.error('usage: screenshot_page.mjs <url> <out.png> [--width 412] [--height 915] [--full] [--wait 4000] [--scroll "#id"] [--clip px]'); process.exit(2); }
 const width = +opt('width', 412), height = +opt('height', 915), wait = +opt('wait', 4000), clipMax = +opt('clip', 6000);
@@ -50,6 +51,13 @@ try {
   if (width < 700) await send('Emulation.setTouchEmulationEnabled', { enabled: true });
   await send('Page.navigate', { url });
   await sleep(wait);
+  const click = opt('click');
+  if (click) {
+    // real click on the element (e.g. the cover's open button), then let the opening animation run
+    const r = await send('Runtime.evaluate', { expression: `(() => { const el = document.querySelector(${JSON.stringify(click)}); if (!el) return null; el.click(); return true; })()`, returnByValue: true });
+    if (!r.result.value) logs.push('ERROR click target not found: ' + click);
+    await sleep(+opt('after-click', 2500));
+  }
   const scroll = opt('scroll');
   if (scroll) {
     // scroll twice: lazy images and GSAP pin spacers shift layout after the first jump

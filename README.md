@@ -13,8 +13,9 @@ Proyek dikerjakan per sesi (S1–S11). Checkpoint dan keputusan tercatat di **[P
 | S1 | Knowledge base template + graphify | ✅ |
 | S2 | Riset pasar undangan digital Indonesia | ✅ |
 | S3 | Kerangka template bagian 1: core schema/runtime + Eloise sebagai Template Package | ✅ |
-| S4 | Template ke-2 dari spesifikasi, build/obfuscate, SOP template baru | ⏳ |
-| S5–S9 | Aplikasi: auth, editor, render publik, Midtrans, tamu massal Excel | — |
+| S4 | Template ke-2 dari spesifikasi, build/obfuscate, SOP template baru | ✅ |
+| S5 | Scaffold aplikasi Next.js + Prisma + Auth + katalog | ⏳ |
+| S6–S9 | Aplikasi: editor, render publik, Midtrans, tamu massal Excel | — |
 | S10–S11 | Keamanan, admin, deploy | — |
 
 ## Konsep produk
@@ -48,7 +49,7 @@ PROGRESS.md         # Checkpoint antar sesi
 python -m venv .venv
 .venv\Scripts\activate          # Windows
 pip install -r requirements.txt
-npm install                      # zod (Node >= 22)
+npm install                      # zod, esbuild, javascript-obfuscator (Node >= 22)
 copy .env.example .env           # lalu isi nilainya
 ```
 
@@ -57,6 +58,16 @@ Preview template dengan data contoh:
 ```
 python tools/validate_template.py templates/eloise
 python tools/render_template.py templates/eloise --variant sage --serve 8080
+python tools/render_template.py templates/sekar --variant perak --serve 8080
+```
+
+Template tersedia: **Eloise** (rustic botani, amplop) dan **Sekar** (Jawa keraton, pintu gebyok + gunungan).
+
+Build produksi (minify + obfuscate + header copyright → `dist/templates/`, gitignored):
+
+```
+npm run build:templates
+python tools/render_template.py dist/templates/sekar --serve 8080    # cek hasil build
 ```
 
 Knowledge graph memakai [graphify](https://github.com/safishamsi/graphify):
@@ -76,4 +87,5 @@ Buka `graphify-out/graph.html` di browser untuk melihat graph secara visual.
 - [knowledge/market/](knowledge/market/) — riset pasar: harga kompetitor, katalog section & tema, matriks fitur
 - [templates/_core/README.md](templates/_core/README.md) — kontrak template: schema data, binding HTML, runtime, API RSVP/ucapan
 - [workflows/analyze_template.md](workflows/analyze_template.md) — SOP analisis template
+- [workflows/create_new_template.md](workflows/create_new_template.md) — SOP membuat template baru (scaffold → validasi → QA visual → build)
 - [graphify-out/GRAPH_REPORT.md](graphify-out/GRAPH_REPORT.md) — ringkasan knowledge graph

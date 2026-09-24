@@ -4,12 +4,18 @@
   "type": "module",
   "scripts": {
     "schema:export": "node --experimental-strip-types --no-warnings templates/_core/scripts/export-schema.ts",
-    "schema:check": "node --experimental-strip-types --no-warnings templates/_core/scripts/check-fixtures.ts"
+    "schema:check": "node --experimental-strip-types --no-warnings templates/_core/scripts/check-fixtures.ts",
+    "build:templates": "node tools/build_template.mjs --all",
+    "validate:templates": "python tools/validate_template.py templates/eloise && python tools/validate_template.py templates/sekar"
   },
   "engines": {
     "node": ">=22.6"
   },
   "dependencies": {
     "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "javascript-obfuscator": "5.8.0"
   }
 }

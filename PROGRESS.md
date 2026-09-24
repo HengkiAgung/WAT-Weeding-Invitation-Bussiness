@@ -32,9 +32,9 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - [x] `tools/validate_template.py` (+ `render_template.py` preview, `recolor_svg.py`, `screenshot_page.mjs` CDP screenshot/console check) — Eloise: OK 0 errors; negative test catches all 12 injected violations
 
 ### S4 — Template framework (part 2)
-- [ ] Clone 2nd template from spec (e.g. Jawa / gold) to prove it
-- [ ] `tools/build_template` (bundle, minify, obfuscate, copyright header)
-- [ ] `workflows/create_new_template.md`
+- [x] 2nd template `templates/sekar/` (Jawa keraton: gebyok gate, gunungan, kawung batik; 4 variants maroon/sogan/zamrud/perak; 22 sections; no animation lib) — built from the contract only, zero `_core` changes; validator OK, visual QA 4 fixtures × variants, no console errors
+- [x] `tools/build_template.mjs` (validate → bundle → esbuild minify → javascript-obfuscator → copyright header → content-hashed files in `dist/templates/`; `render_template.py` renders dist builds) — both templates render from build, no leaked globals
+- [x] `workflows/create_new_template.md`
 
 ### S5 — App scaffold
 - [ ] Next.js + Prisma schema + migrations, Auth.js (Google + magic link), seed templates from manifests, catalog + demo preview
@@ -74,3 +74,9 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - 2026-09-24 (S3): Zod `Date.parse` accepted `2026-02-30` → IsoDate now round-trip checked. Registry has 22 ids (added `hero`).
 - 2026-09-24 (S3): Headless `chrome --screenshot` cannot capture scrolled pages and has ~500 px min width → `tools/screenshot_page.mjs` (CDP, device emulation, console/`__INVITE_ERRORS__` → exit 1). Template flag `?open=1[#section]` skips envelope + reveal animations (also for editor preview S6).
 - 2026-09-24 (S3): Verified visually: islam-id/olive (guest + group-restricted akad), kristen-en/dusty-rose/photoless, minimal/sage/no guest, all-sections/latte — no console errors. RSVP/wish submit only exercised via localStorage path; real API e2e in S7.
+- 2026-09-24 (S4): Sekar proves the contract: new template needed **no change** to `_core` (schema, labels, runtime). Only validator fixes (see below). Same data/fixtures render in both templates → template switch without re-entry holds.
+- 2026-09-24 (S4): Sekar is library-light (GLightbox + qrcode-generator + Phosphor; html2canvas lazy) — reveal via IntersectionObserver `[data-rv]` hidden only after JS adds `html.rv-on`; gate = CSS transitions. Batik pattern = CSS `mask` + `--c-accent` (recolors by token, no generated SVG). Fonts Cinzel / Cormorant Garamond / Italianno (OFL).
+- 2026-09-24 (S4): Validator: `t('key')` regex matched dynamic prefixes (`t('rsvp.' + x)`) → now requires `'` then `,`/`)`; plus every `'ns.key'` string literal in JS whose namespace is a label namespace must exist (covers ternaries, `data-copy-msg`).
+- 2026-09-24 (S4): Build: esbuild 0.28.2 + javascript-obfuscator 5.8.0 (devDeps, exact). Obfuscator hoists string-array helpers (`_0x…`) to program scope even inside an IIFE → output wrapped **after** obfuscation (checked: 0 leaked globals). `renameGlobals`/`transformObjectKeys` off (contract names), `controlFlowFlattening`/`deadCodeInjection` off (cheap phones). Seeded by source hash → reproducible. `dist/` gitignored; deploy (S5/S7) runs `npm run build:templates`. Sizes: sekar js 30 kB / css 19 kB, eloise js 40 kB / css 29 kB, core separate.
+- 2026-09-24 (S4): RSVP / wishes / gift / video-modal JS is duplicated between Eloise and Sekar (~150 lines). Candidate to move into `_core` as optional widgets when template #3 arrives — not done now to keep templates free to restyle markup.
+- 2026-09-24 (S4): `tools/screenshot_page.mjs --click "#openBtn" [--after-click ms]` added to QA cover-open animations headlessly.

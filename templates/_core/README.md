@@ -73,4 +73,8 @@ python tools/recolor_svg.py templates/eloise             # regenerate variant or
 python tools/validate_template.py templates/eloise       # contract check (exit 1 on errors)
 python tools/render_template.py templates/eloise --variant sage --serve 8080       # preview
 node tools/screenshot_page.mjs "http://127.0.0.1:8080/?open=1" out.png --scroll "#gift"   # screenshot + console errors
+node tools/screenshot_page.mjs "http://127.0.0.1:8080/" out.png --click "#openBtn"           # cover-open animation
+node tools/build_template.mjs templates/sekar            # production build → dist/templates/ (npm run build:templates = all)
 ```
+
+Templates: `templates/eloise/` (rich reference, GSAP/Swiper/AOS) · `templates/sekar/` (minimal reference, no animation lib). New template: `workflows/create_new_template.md`.
