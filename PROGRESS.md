@@ -21,10 +21,10 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - [x] Commit
 
 ### S2 — Indonesian market research
-- [ ] Research demo sites (Shopee/Tokopedia sellers, Satu Momen, Viding, Invitato, etc.)
-- [ ] `knowledge/market/` — competitors & pricing, section catalog, theme catalog (Jawa, Sunda, Islami, rustic, luxury, Bali, Minang, Chinese…), feature matrix
-- [ ] Final list: standard sections + Indonesia-specific sections (ayat, turut mengundang, amplop digital/QRIS, QR check-in…)
-- [ ] `graphify add` notable demo URLs; rebuild graph (`/graphify . --update`)
+- [x] Research demo sites (Satu Momen, Viding, Invitato, Indoinvite, Sangmempelai, Acaranya, Menica, Kekondangan, Tokopedia sellers, akaddigitech/tamuspecial demos)
+- [x] `knowledge/market/` — `competitors-pricing.md`, `section-catalog.md`, `theme-catalog.md`, `feature-matrix.md`
+- [x] Final list: section registry (22 ids, core/opt) + core-schema additions → `knowledge/market/section-catalog.md`
+- [x] `graphify add` 6 URLs → `knowledge/market/raw/`; graph rebuilt (`/graphify . --update`): 269 nodes, 455 edges, 16 communities, health OK
 
 ### S3 — Template framework (part 1)
 - [ ] `templates/_core/`: Zod core schema, i18n labels id/en, section registry, runtime binder, API client (RSVP/wish)
@@ -62,3 +62,7 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - 2026-09-24 (S1): SVG ornaments have baked-in colors → color variants need recolorable SVG strategy (S3).
 - 2026-09-24 (S1): graphify output lives at project root `graphify-out/` (skill query fast-path expects cwd). Health check: 5 dangling-endpoint + 2 collapsed edges (minor, graph usable).
 - 2026-09-24 (S1): `wedding-template/` gitignored (user decision) — stays as read-only reference; S3 copies it into `templates/eloise/` which is tracked.
+- 2026-09-24 (S2): Market = DIY Rp0–150rb (saturated), mid Rp200–750rb, service Rp1–2jt+. Proposed positioning DIY-plus Rp79/149/249rb — **price not locked, user decides in S8**.
+- 2026-09-24 (S2): Core schema (S3) must add `religion` (drives salam/ayat/event presets), `events[].type/tz/guestGroups`, `childOrder/father/mother`, `inviters[]` (turut mengundang), `gift.qris` + ewallet, `guest{group,maxPax}`, `photoless`.
+- 2026-09-24 (S2): Differentiators to protect: quick buy, self-serve Excel→link+WA text, per-guest open tracking, template switch without re-entry. Deferred: WA blast API (paid), video invitation, custom domain, non-wedding categories, day-of QR check-in/welcome screen.
+- 2026-09-24 (S2): WebFetch blocked on satumomen.com (HTTP 402), inv.acaranya.id (403); tamuspecial.com timed out in `graphify add`. Data for those from search snippets.

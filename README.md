@@ -11,8 +11,8 @@ Proyek dikerjakan per sesi (S1–S11). Checkpoint dan keputusan tercatat di **[P
 | Sesi | Fokus | Status |
 |---|---|---|
 | S1 | Knowledge base template + graphify | ✅ |
-| S2 | Riset pasar undangan digital Indonesia | ⏳ |
-| S3–S4 | Kerangka template (Template Package, schema, varian) | — |
+| S2 | Riset pasar undangan digital Indonesia | ✅ |
+| S3–S4 | Kerangka template (Template Package, schema, varian) | ⏳ |
 | S5–S9 | Aplikasi: auth, editor, render publik, Midtrans, tamu massal Excel | — |
 | S10–S11 | Keamanan, admin, deploy | — |
 
@@ -64,5 +64,6 @@ Buka `graphify-out/graph.html` di browser untuk melihat graph secara visual.
 
 - [PROGRESS.md](PROGRESS.md) — roadmap & checkpoint
 - [knowledge/template-anatomy.md](knowledge/template-anatomy.md) — anatomi template Eloise (section, schema, token, lisensi, gap)
+- [knowledge/market/](knowledge/market/) — riset pasar: harga kompetitor, katalog section & tema, matriks fitur
 - [workflows/analyze_template.md](workflows/analyze_template.md) — SOP analisis template
 - [graphify-out/GRAPH_REPORT.md](graphify-out/GRAPH_REPORT.md) — ringkasan knowledge graph
