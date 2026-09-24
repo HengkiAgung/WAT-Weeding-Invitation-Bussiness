@@ -1,26 +1,68 @@
-# WAT Project
+# Undangan Digital — Wedding Invitation Business
 
-Workflows, Agents, Tools. Probabilistic AI reasons; deterministic code executes.
+Platform jualan undangan digital pernikahan untuk pasar Indonesia. Pengguna memilih template, mengisi data (nama, tanggal, lokasi, dll), membayar, lalu membagikan link undangan per tamu.
 
-## Layout
+Dibangun di atas **WAT framework** (Workflows, Agents, Tools): AI mengatur alur kerja, kode deterministik menjalankan eksekusi. Detail aturan kerja ada di [CLAUDE.md](CLAUDE.md).
+
+## Status
+
+Proyek dikerjakan per sesi (S1–S11). Checkpoint dan keputusan tercatat di **[PROGRESS.md](PROGRESS.md)** — baca file ini dulu sebelum mulai kerja.
+
+| Sesi | Fokus | Status |
+|---|---|---|
+| S1 | Knowledge base template + graphify | ✅ |
+| S2 | Riset pasar undangan digital Indonesia | ⏳ |
+| S3–S4 | Kerangka template (Template Package, schema, varian) | — |
+| S5–S9 | Aplikasi: auth, editor, render publik, Midtrans, tamu massal Excel | — |
+| S10–S11 | Keamanan, admin, deploy | — |
+
+## Konsep produk
+
+- **Model hybrid**: template kurasi (layout & komponen tetap), pengguna mengisi data, memilih varian warna/font, dan menyalakan/mematikan section.
+- **Schema data bersama**: semua template memakai struktur data yang sama, jadi pengguna bisa ganti template tanpa isi ulang.
+- **Quick buy**: beli dengan form minimal untuk pengguna yang tidak mau repot.
+- **Tamu massal**: upload Excel daftar tamu → link unik per tamu + teks WhatsApp siap kirim.
+- **Proteksi**: copyright di template, render lock per domain, aset diakses lewat URL bertoken sementara.
+
+Stack yang direncanakan: Next.js (App Router) + Prisma + PostgreSQL, Midtrans, Cloudflare R2, deploy di Vercel.
+
+## Struktur folder
+
 ```
-.tmp/           # Disposable intermediates (gitignored)
-tools/          # Python execution scripts
-workflows/      # Markdown SOPs
-.env            # Secrets (gitignored) — copy from .env.example
+knowledge/          # Hasil analisis template & riset pasar (sumber pengetahuan)
+graphify-out/       # Knowledge graph proyek (graph.json, GRAPH_REPORT.md, graph.html)
+workflows/          # SOP markdown untuk tiap jenis pekerjaan
+tools/              # Script Python/Node deterministik
+templates/          # (S3) Template Package — satu folder per template
+app/                # (S5) Aplikasi Next.js
+PROGRESS.md         # Checkpoint antar sesi
+.env                # Secrets (gitignored) — salin dari .env.example
 ```
+
+`wedding-template/` (template referensi "Eloise") adalah repo git terpisah dan di-gitignore. Salinan yang dikembangkan akan ada di `templates/eloise/`.
 
 ## Setup
+
 ```
 python -m venv .venv
-.venv\Scripts\activate        # Windows
+.venv\Scripts\activate          # Windows
 pip install -r requirements.txt
-copy .env.example .env         # then fill values
+copy .env.example .env           # lalu isi nilainya
 ```
 
-## How it works
-- **Workflows** (`workflows/*.md`) define objective, inputs, tools, outputs, edge cases.
-- **Agent** reads workflow, sequences tools, handles failures.
-- **Tools** (`tools/*.py`) do the deterministic work. Import helpers from `tools/_shared.py`.
+Knowledge graph memakai [graphify](https://github.com/safishamsi/graphify):
 
-New workflow: copy `workflows/_template.md`. New tool: import `_shared`, read secrets via `require_env`.
+```
+pip install graphifyy
+graphify install --platform claude
+graphify explain "window.WEDDING config object (js/config.js)"   # contoh query
+```
+
+Buka `graphify-out/graph.html` di browser untuk melihat graph secara visual.
+
+## Dokumen penting
+
+- [PROGRESS.md](PROGRESS.md) — roadmap & checkpoint
+- [knowledge/template-anatomy.md](knowledge/template-anatomy.md) — anatomi template Eloise (section, schema, token, lisensi, gap)
+- [workflows/analyze_template.md](workflows/analyze_template.md) — SOP analisis template
+- [graphify-out/GRAPH_REPORT.md](graphify-out/GRAPH_REPORT.md) — ringkasan knowledge graph
