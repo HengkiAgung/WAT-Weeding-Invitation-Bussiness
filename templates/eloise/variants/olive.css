@@ -1,0 +1,8 @@
+/* Eloise variant: Olive & Cream (default — mirrors css/style.css :root). (c) WAT Wedding Invitation. */
+[data-variant="olive"] {
+  --c-primary: #353a20; --c-primary-2: #4a5030; --c-primary-3: #252915; --c-primary-rgb: 53 58 32;
+  --c-on-primary: #f5f0e8; --c-bg: #ffffff; --c-surface: #f6eed7;
+  --c-accent: #d9b680; --c-accent-rgb: 217 182 128; --c-accent-light: #f4e2b4; --c-accent-dark: #a97f3c;
+  --c-accent-ink: #6b4a1c; --c-accent-ink-rgb: 90 58 18; --c-heading-alt: #452812;
+  --c-muted: #878787; --c-danger: #a0432c; --c-line: #d4cfc2; --c-shade-rgb: 20 24 10;
+}

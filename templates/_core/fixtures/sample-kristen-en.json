@@ -1,0 +1,16 @@
+{
+  "lang": "en",
+  "religion": "kristen",
+  "coupleOrder": "groom_first",
+  "photoless": true,
+  "groom": { "fullName": "Daniel Hutapea", "nickname": "Daniel", "childOrder": 2, "father": "Robert Hutapea", "mother": "Maria Simanjuntak" },
+  "bride": { "fullName": "Grace Siregar", "nickname": "Grace", "childOrder": "tunggal", "father": "Samuel Siregar", "mother": "Ruth Nainggolan" },
+  "hashtag": "DanielGraceForever",
+  "events": [
+    { "type": "pemberkatan", "date": "2027-02-06", "timeStart": "10:00", "timeEnd": "12:00", "tz": "WIB", "venue": "HKBP Kebayoran Baru", "address": "Jl. Melawai Raya No. 1, Jakarta Selatan", "mapUrl": "https://maps.google.com/?q=HKBP+Kebayoran+Baru" },
+    { "type": "resepsi", "date": "2027-02-06", "timeStart": "18:00", "timeEnd": "21:00", "tz": "WIB", "venue": "Balai Kartini", "address": "Jl. Gatot Subroto Kav. 37, Jakarta" }
+  ],
+  "verse": { "preset": "kejadian-2-24" },
+  "gift": { "accounts": [{ "type": "bank", "provider": "BNI", "number": "0123456789", "holder": "Grace Siregar" }] },
+  "rsvp": { "maxPax": 3 }
+}

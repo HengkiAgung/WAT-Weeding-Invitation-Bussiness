@@ -1,0 +1,93 @@
+{
+  "lang": "id",
+  "religion": "islam",
+  "coupleOrder": "groom_first",
+  "groom": {
+    "fullName": "Reza Pratama, S.T.",
+    "nickname": "Reza",
+    "childOrder": 1,
+    "father": "H. Dudi Sanjaya",
+    "mother": "Hj. Rina Marlina",
+    "instagram": "reza.pratama",
+    "photo": "fixtures/assets/groom.svg"
+  },
+  "bride": {
+    "fullName": "Nurul Aisyah, S.Pd.",
+    "nickname": "Nurul",
+    "childOrder": "bungsu",
+    "father": "Jeremy Gunawan",
+    "mother": "Kelly Fransiska",
+    "instagram": "nurul.aisyah",
+    "photo": "fixtures/assets/bride.svg"
+  },
+  "hashtag": "NurulToReza",
+  "events": [
+    {
+      "id": "akad",
+      "type": "akad",
+      "date": "2026-12-12",
+      "timeStart": "08:00",
+      "timeEnd": "10:00",
+      "tz": "WIB",
+      "venue": "Masjid Pusdai",
+      "address": "Jl. Diponegoro No. 63, Bandung, Jawa Barat",
+      "mapUrl": "https://maps.google.com/?q=Masjid+Pusdai+Bandung",
+      "photo": "fixtures/assets/akad.svg",
+      "guestGroups": ["keluarga"]
+    },
+    {
+      "id": "resepsi",
+      "type": "resepsi",
+      "date": "2026-12-12",
+      "timeStart": "11:00",
+      "tz": "WIB",
+      "venue": "Grand Willow Hall",
+      "address": "Jl. Asia Afrika No. 88, Bandung, Jawa Barat",
+      "mapUrl": "https://maps.google.com/?q=Bandung",
+      "photo": "fixtures/assets/resepsi.svg"
+    }
+  ],
+  "closing": { "familyNames": "Kel. Bpk. H. Dudi Sanjaya & Kel. Bpk. Jeremy Gunawan" },
+  "story": [
+    { "date": "2019", "title": "Pertama Bertemu", "text": "Semua berawal dari obrolan sederhana di sebuah acara kampus, yang perlahan tumbuh menjadi persahabatan penuh tawa.", "photo": "fixtures/assets/story-1.svg" },
+    { "date": "2023", "title": "Kencan Pertama", "text": "Satu meja, satu malam, dan percakapan yang tidak pernah terasa cukup. Malam itu kami sama-sama tahu sesuatu yang istimewa telah dimulai.", "photo": "fixtures/assets/story-2.svg" },
+    { "date": "2025", "title": "Lamaran", "text": "Di bawah langit penuh bintang, sebuah pertanyaan diajukan dan dijawab dengan \"iya\". Kini kami memulai selamanya bersama.", "photo": "fixtures/assets/story-3.svg" }
+  ],
+  "gallery": [
+    "fixtures/assets/gallery-1.svg", "fixtures/assets/gallery-2.svg", "fixtures/assets/gallery-3.svg",
+    "fixtures/assets/gallery-4.svg", "fixtures/assets/gallery-5.svg", "fixtures/assets/gallery-6.svg",
+    "fixtures/assets/gallery-7.svg", "fixtures/assets/gallery-8.svg", "fixtures/assets/gallery-9.svg"
+  ],
+  "video": { "youtubeId": "aqz-KE-bpKQ" },
+  "live": { "platform": "YouTube", "url": "https://www.youtube.com/", "schedule": "Sabtu, 12 Desember 2026 · 08.00 WIB" },
+  "rundown": [
+    { "time": "11:00", "title": "Penerimaan Tamu" },
+    { "time": "11:30", "title": "Kirab Pengantin" },
+    { "time": "12:00", "title": "Sambutan Keluarga" },
+    { "time": "12:30", "title": "Ramah Tamah & Santap Siang" },
+    { "time": "13:30", "title": "Sesi Foto" },
+    { "time": "14:00", "title": "Penutup" }
+  ],
+  "gift": {
+    "accounts": [
+      { "type": "bank", "provider": "BCA", "number": "1234567890", "holder": "Nurul Aisyah" },
+      { "type": "bank", "provider": "Mandiri", "number": "9876543210", "holder": "Reza Pratama" },
+      { "type": "ewallet", "provider": "GoPay", "number": "081234567890", "holder": "Nurul Aisyah" }
+    ],
+    "address": { "name": "Nurul Aisyah", "phone": "+62 812-3456-7890", "text": "Jl. Dago Asri No. 5, Bandung, Jawa Barat 40135" }
+  },
+  "rsvp": { "maxPax": 2, "deadline": "2026-12-05" },
+  "inviters": {
+    "groom": ["Kel. Besar Bpk. Sanjaya", "Kel. Besar Alm. Bpk. Marlan"],
+    "bride": ["Kel. Besar Bpk. Gunawan", "Kel. Besar Ibu Fransiska"]
+  },
+  "igFilter": { "url": "https://www.instagram.com/" },
+  "dresscode": { "text": "Mohon mengenakan busana bernuansa earth tone.", "colors": ["#353a20", "#d9b680", "#f5f0e8"] },
+  "images": {
+    "cover": ["fixtures/assets/hero-1.svg", "fixtures/assets/hero-2.svg"],
+    "hero": "fixtures/assets/hero-1.svg",
+    "couple": "fixtures/assets/hero-2.svg",
+    "background": "fixtures/assets/quote-bg.svg",
+    "closing": "fixtures/assets/thanks.svg"
+  }
+}

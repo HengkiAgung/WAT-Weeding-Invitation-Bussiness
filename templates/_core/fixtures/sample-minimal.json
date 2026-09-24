@@ -1,0 +1,5 @@
+{
+  "groom": { "fullName": "Budi Santoso", "nickname": "Budi" },
+  "bride": { "fullName": "Siti Rahma", "nickname": "Siti" },
+  "events": [ { "type": "resepsi", "date": "2026-11-21", "timeStart": "10:00", "venue": "Gedung Serbaguna Kelurahan" } ]
+}

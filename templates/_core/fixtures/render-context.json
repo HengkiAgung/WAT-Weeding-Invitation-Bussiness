@@ -1,0 +1,6 @@
+{
+  "$comment": "Default non-data context for tools/render_template.py previews. Override via CLI flags.",
+  "sections": {},
+  "guest": { "name": "Bapak Andi Wijaya & Partner", "code": "AB12CD", "group": "keluarga", "maxPax": 2 },
+  "runtime": { "mode": "preview", "slug": "reza-nurul", "endpoint": null, "brand": { "name": "Undangan Digital" } }
+}
