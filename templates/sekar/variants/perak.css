@@ -1,0 +1,8 @@
+/* Sekar variant: Perak (navy & silver; ornaments recolored gold → silver). (c) WAT Wedding Invitation. */
+[data-variant="perak"] {
+  --c-primary: #1d2a44; --c-primary-2: #2b3b5c; --c-primary-3: #111a2c; --c-primary-rgb: 29 42 68;
+  --c-on-primary: #eef0f4; --c-bg: #f7f8fa; --c-surface: #e6e9ef;
+  --c-accent: #b3bac6; --c-accent-rgb: 179 186 198; --c-accent-light: #e1e5ec; --c-accent-dark: #737c8c;
+  --c-accent-ink: #1d2a44; --c-accent-ink-rgb: 29 42 68; --c-heading-alt: #2b3b5c;
+  --c-muted: #7c8391; --c-line: #d3d8e1; --c-danger: #a0432c; --c-shade-rgb: 8 12 22;
+}

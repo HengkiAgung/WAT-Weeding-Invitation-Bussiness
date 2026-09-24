@@ -11,6 +11,7 @@ Usage:
     python tools/render_template.py templates/eloise
     python tools/render_template.py templates/eloise --data templates/_core/fixtures/sample-kristen-en.json --variant dusty-rose
     python tools/render_template.py templates/eloise --no-guest --sections '{"gallery": false}' --serve 8080
+    python tools/render_template.py dist/templates/sekar          # production build from tools/build_template.mjs
 """
 from __future__ import annotations
 
@@ -93,7 +94,10 @@ def render(template_dir: Path, data_path: Path, variant_id: str | None, sections
     shutil.copytree(template_dir, out_dir)
     shutil.copytree(CORE / "fixtures" / "assets", out_dir / "fixtures" / "assets")
     (out_dir / "_core").mkdir()
-    shutil.copy2(CORE / "runtime" / "core.js", out_dir / "_core" / "core.js")
+    # built package (tools/build_template.mjs) ships its own minified runtime
+    build = manifest.get("build") or {}
+    core_src = (template_dir / build["core"]).resolve() if build.get("core") else CORE / "runtime" / "core.js"
+    shutil.copy2(core_src, out_dir / "_core" / "core.js")
     out = out_dir / "index.html"
     out.write_text(html, encoding="utf-8")
     return out

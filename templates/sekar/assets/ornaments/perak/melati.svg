@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <!-- Melati (jasmine) blossom. (c) WAT Wedding Invitation. All rights reserved. -->
+  <g fill="#f8f8f9" stroke="#8c919c" stroke-width="1">
+    <path d="M20 20C16 12 17 4 20 2c3 2 4 10 0 18Z"/>
+    <path d="M20 20C16 12 17 4 20 2c3 2 4 10 0 18Z" transform="rotate(72 20 20)"/>
+    <path d="M20 20C16 12 17 4 20 2c3 2 4 10 0 18Z" transform="rotate(144 20 20)"/>
+    <path d="M20 20C16 12 17 4 20 2c3 2 4 10 0 18Z" transform="rotate(216 20 20)"/>
+    <path d="M20 20C16 12 17 4 20 2c3 2 4 10 0 18Z" transform="rotate(288 20 20)"/>
+  </g>
+  <circle cx="20" cy="20" r="3.2" fill="#8c919c"/>
+</svg>

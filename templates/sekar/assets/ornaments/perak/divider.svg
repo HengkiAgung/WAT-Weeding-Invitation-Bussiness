@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 40" width="320" height="40">
+  <!-- Section divider. (c) WAT Wedding Invitation. All rights reserved. -->
+  <g fill="none" stroke="#8c919c" stroke-linecap="round">
+    <path d="M10 20h110" stroke-width="1.4"/><path d="M200 20h110" stroke-width="1.4"/>
+    <path d="M120 20c10-12 22-12 28-4" stroke-width="1.8"/><path d="M120 20c10 12 22 12 28 4" stroke-width="1.8"/>
+    <path d="M200 20c-10-12-22-12-28-4" stroke-width="1.8"/><path d="M200 20c-10 12-22 12-28 4" stroke-width="1.8"/>
+  </g>
+  <path d="M160 6l12 14-12 14-12-14Z" fill="#8c919c" stroke="#585e6a" stroke-width="1.2"/>
+  <path d="M160 13l6 7-6 7-6-7Z" fill="#c5c8cf"/>
+  <g fill="#8c919c"><circle cx="100" cy="20" r="2.6"/><circle cx="220" cy="20" r="2.6"/><circle cx="10" cy="20" r="2"/><circle cx="310" cy="20" r="2"/></g>
+</svg>

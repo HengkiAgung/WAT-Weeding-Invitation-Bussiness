@@ -1,0 +1,8 @@
+/* Sekar variant: Maroon Keraton (default — mirrors css/style.css :root). (c) WAT Wedding Invitation. */
+[data-variant="maroon"] {
+  --c-primary: #5b1a1f; --c-primary-2: #74262c; --c-primary-3: #3d0f13; --c-primary-rgb: 91 26 31;
+  --c-on-primary: #f7ecd9; --c-bg: #fbf6ec; --c-surface: #f3e6cc;
+  --c-accent: #c9a24a; --c-accent-rgb: 201 162 74; --c-accent-light: #ecd494; --c-accent-dark: #8f6b1e;
+  --c-accent-ink: #4a3508; --c-accent-ink-rgb: 74 53 8; --c-heading-alt: #7a2a2f;
+  --c-muted: #8c7f72; --c-line: #e3d3b0; --c-danger: #a0432c; --c-shade-rgb: 30 8 10;
+}

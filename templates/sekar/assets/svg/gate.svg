@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 600" width="200" height="600" preserveAspectRatio="none">
+  <!-- Gebyok door panel (carved frame). (c) WAT Wedding Invitation. All rights reserved. -->
+  <g fill="none" stroke="#c9a24a">
+    <rect x="12" y="12" width="176" height="576" rx="4" stroke-width="3"/>
+    <rect x="24" y="24" width="152" height="552" rx="2" stroke-width="1.2"/>
+    <rect x="40" y="48" width="120" height="220" rx="60" stroke-width="1.8"/>
+    <rect x="40" y="300" width="120" height="250" rx="6" stroke-width="1.8"/>
+    <path d="M100 70v176M62 158h76" stroke-width="1" opacity=".7"/>
+    <path d="M100 330c-20 20-20 40 0 60 20-20 20-40 0-60Zm0 90c-20 20-20 40 0 60 20-20 20-40 0-60Z" stroke-width="1.4"/>
+  </g>
+  <g fill="#c9a24a"><circle cx="100" cy="158" r="5"/><circle cx="100" cy="405" r="4"/></g>
+</svg>
