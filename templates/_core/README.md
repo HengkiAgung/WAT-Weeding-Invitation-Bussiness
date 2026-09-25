@@ -84,12 +84,12 @@ Header `X-Render-Token: <runtime.token>` on every call. Other modes keep RSVP/wi
 ```bash
 npm run schema:export                                    # regenerate schema.json after editing schema.ts
 npm run schema:check                                     # fixtures vs Zod + label/preset consistency
-python tools/recolor_svg.py templates/eloise             # regenerate variant ornaments after editing SVGs/rules
-python tools/validate_template.py templates/eloise       # contract check (exit 1 on errors)
-python tools/render_template.py templates/eloise --variant sage --serve 8080       # preview
+python tools/recolor_svg.py templates/rimbun             # regenerate variant ornaments after editing SVGs/rules
+python tools/validate_template.py templates/rimbun       # contract check (exit 1 on errors)
+python tools/render_template.py templates/rimbun --variant sage --serve 8080       # preview
 node tools/screenshot_page.mjs "http://127.0.0.1:8080/?open=1" out.png --scroll "#gift"   # screenshot + console errors
 node tools/screenshot_page.mjs "http://127.0.0.1:8080/" out.png --click "#openBtn"           # cover-open animation
 node tools/build_template.mjs templates/sekar            # production build → dist/templates/ (npm run build:templates = all)
 ```
 
-Templates: `templates/eloise/` (rich reference, GSAP/Swiper/AOS) · `templates/sekar/` (Jawa, no animation lib) · `templates/raudhah/` (Islami photoless-first, smallest — start new templates from this one). New template: `workflows/create_new_template.md`.
+Templates: `templates/rimbun/` (tropical garden, rich reference: GSAP/Swiper/AOS/tsParticles) · `templates/sekar/` (Jawa, no animation lib) · `templates/raudhah/` (Islami photoless-first, smallest — start new templates from this one). New template: `workflows/create_new_template.md`.

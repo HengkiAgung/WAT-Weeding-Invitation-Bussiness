@@ -12,7 +12,7 @@
 //
 // Usage:
 //   node tools/build_template.mjs templates/sekar
-//   node tools/build_template.mjs templates/eloise --no-obfuscate      # debugging a prod-only issue
+//   node tools/build_template.mjs templates/rimbun --no-obfuscate      # debugging a prod-only issue
 //   node tools/build_template.mjs --all                                # every templates/<id>/manifest.json
 // Options: --out dist/templates  --skip-validate  --no-obfuscate
 import { spawnSync } from 'node:child_process';

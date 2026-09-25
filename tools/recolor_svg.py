@@ -10,8 +10,8 @@ Rule: {"hue": [from, to], "to": targetHue, "sat": multiplier, "light": delta}
   - hue in degrees 0-360; colors with saturation < 0.06 (greys/whites) are left alone.
 
 Usage:
-    python tools/recolor_svg.py templates/eloise            # all variants
-    python tools/recolor_svg.py templates/eloise --variant sage
+    python tools/recolor_svg.py templates/rimbun            # all variants
+    python tools/recolor_svg.py templates/rimbun --variant sage
 """
 from __future__ import annotations
 
@@ -78,7 +78,7 @@ def run(template_dir: Path, only: str | None = None) -> list[Path]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("template", type=Path, help="template package dir, e.g. templates/eloise")
+    ap.add_argument("template", type=Path, help="template package dir, e.g. templates/rimbun")
     ap.add_argument("--variant", help="only this variant id")
     args = ap.parse_args()
     if not (args.template / "manifest.json").exists():

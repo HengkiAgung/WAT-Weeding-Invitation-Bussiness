@@ -66,7 +66,7 @@ Pasangan umum: **script kaligrafi** (Pinyon Script, Imperial Script, Great Vibes
 
 ### 7. Peringatan
 - **Moderasi ucapan wajib**: demo cassandra (payload SQL injection), jeni (spam link), dan syanin (komentar troll) tampil publik.
-- **Eloise kita = turunan Eloise katsudoto**: nama sama, palet, motif renda/amplop/piringan, copy demo, dan **font identik (Exmouth + Instrument Serif)**. Lihat [eloise.md](eloise.md) dan PROGRESS.
+- **Eloise kita dulu turunan Eloise katsudoto** (nama, palet, motif, copy demo, font identik). **Sudah didesain ulang menjadi Rimbun (S4d).** Lihat [eloise.md](eloise.md) dan PROGRESS.
 - Demo anin memakai materi Disney (foto/trailer). Contoh yang tidak boleh ditiru.
 
 ## Tabel

@@ -1,0 +1,247 @@
+{
+  "$schemaVersion": 1,
+  "id": "rimbun",
+  "name": "Rimbun",
+  "version": "2.0.0",
+  "category": "rustic",
+  "tags": [
+    "tropical",
+    "botanical",
+    "rattan",
+    "split-screen"
+  ],
+  "description": {
+    "id": "Kebun tropis yang rimbun: daun monstera, pisang dan pakis, bunga kamboja, bingkai anyaman rotan dan foto berbentuk daun. Sampul terbuka seperti dedaunan yang tersibak.",
+    "en": "A lush tropical garden: monstera, banana and fern leaves, frangipani, woven rattan frames and leaf-shaped photos. The cover opens like parting foliage."
+  },
+  "supportsPhotoless": true,
+  "languages": [
+    "id",
+    "en"
+  ],
+  "entry": "index.html",
+  "styles": [
+    "css/style.css"
+  ],
+  "scripts": [
+    "js/rimbun.js"
+  ],
+  "sections": [
+    {
+      "id": "cover"
+    },
+    {
+      "id": "hero"
+    },
+    {
+      "id": "verse"
+    },
+    {
+      "id": "opening"
+    },
+    {
+      "id": "couple"
+    },
+    {
+      "id": "story"
+    },
+    {
+      "id": "countdown"
+    },
+    {
+      "id": "events"
+    },
+    {
+      "id": "live"
+    },
+    {
+      "id": "rundown"
+    },
+    {
+      "id": "rsvp"
+    },
+    {
+      "id": "qrTicket"
+    },
+    {
+      "id": "gallery"
+    },
+    {
+      "id": "video"
+    },
+    {
+      "id": "igFilter"
+    },
+    {
+      "id": "gift"
+    },
+    {
+      "id": "wishes"
+    },
+    {
+      "id": "turutMengundang"
+    },
+    {
+      "id": "dresscode"
+    },
+    {
+      "id": "protocol"
+    },
+    {
+      "id": "closing"
+    },
+    {
+      "id": "footer"
+    }
+  ],
+  "defaultVariant": "rimba",
+  "variants": [
+    {
+      "id": "rimba",
+      "name": "Rimba & Rotan",
+      "css": "variants/rimba.css",
+      "swatch": [
+        "#1f3a33",
+        "#efe6d6",
+        "#c4955c"
+      ],
+      "ornaments": null
+    },
+    {
+      "id": "sage",
+      "name": "Sage Kebun",
+      "css": "variants/sage.css",
+      "swatch": [
+        "#44533f",
+        "#eef0e8",
+        "#c9a96e"
+      ],
+      "ornaments": {
+        "rules": [
+          {
+            "hue": [
+              60,
+              180
+            ],
+            "to": 100,
+            "sat": 0.45,
+            "light": 0.06
+          }
+        ]
+      }
+    },
+    {
+      "id": "terakota",
+      "name": "Terakota",
+      "css": "variants/terakota.css",
+      "swatch": [
+        "#7a3524",
+        "#f4e7dc",
+        "#c98f5a"
+      ],
+      "ornaments": {
+        "rules": [
+          {
+            "hue": [
+              60,
+              180
+            ],
+            "to": 16,
+            "sat": 0.85,
+            "light": 0.06
+          }
+        ]
+      }
+    },
+    {
+      "id": "kopi",
+      "name": "Kopi Susu",
+      "css": "variants/kopi.css",
+      "swatch": [
+        "#4a3528",
+        "#f3e9dc",
+        "#c8a165"
+      ],
+      "ornaments": {
+        "rules": [
+          {
+            "hue": [
+              60,
+              180
+            ],
+            "to": 32,
+            "sat": 0.6,
+            "light": 0.04
+          }
+        ]
+      }
+    }
+  ],
+  "ornaments": {
+    "source": "assets/svg/",
+    "generated": "assets/ornaments/{variant}/"
+  },
+  "fonts": [
+    {
+      "family": "Allura",
+      "source": "Google Fonts",
+      "license": "OFL-1.1"
+    },
+    {
+      "family": "Fraunces",
+      "source": "Google Fonts",
+      "license": "OFL-1.1"
+    }
+  ],
+  "libs": [
+    {
+      "name": "GSAP (+ScrollTrigger, Observer)",
+      "version": "3.12.5",
+      "license": "GSAP Standard License (free incl. commercial)"
+    },
+    {
+      "name": "AOS",
+      "version": "2.3.4",
+      "license": "MIT"
+    },
+    {
+      "name": "tsParticles",
+      "version": "3.9.1",
+      "license": "MIT"
+    },
+    {
+      "name": "Swiper",
+      "version": "12.2.0",
+      "license": "MIT"
+    },
+    {
+      "name": "GLightbox",
+      "version": "3.3.1",
+      "license": "MIT"
+    },
+    {
+      "name": "qrcode-generator",
+      "version": "1.4.4",
+      "license": "MIT"
+    },
+    {
+      "name": "html2canvas",
+      "version": "1.4.1",
+      "license": "MIT",
+      "lazy": true
+    },
+    {
+      "name": "Phosphor Icons",
+      "version": "2.1.1",
+      "license": "MIT"
+    }
+  ],
+  "limits": {
+    "gallery": 40,
+    "story": 6,
+    "events": 4,
+    "coverImages": 3
+  },
+  "previewImages": [],
+  "extraFields": {}
+}

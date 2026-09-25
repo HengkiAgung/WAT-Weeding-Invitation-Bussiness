@@ -12,8 +12,8 @@ Checks (errors fail the run, warnings don't):
   legal      copyright header in html/css/js
 
 Usage:
-    python tools/validate_template.py templates/eloise
-    python tools/validate_template.py templates/eloise --json   # machine-readable
+    python tools/validate_template.py templates/rimbun
+    python tools/validate_template.py templates/rimbun --json   # machine-readable
 """
 from __future__ import annotations
 

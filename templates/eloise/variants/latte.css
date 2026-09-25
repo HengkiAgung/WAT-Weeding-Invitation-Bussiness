@@ -1,8 +1,0 @@
-/* Eloise variant: Latte & Gold. (c) WAT Wedding Invitation. */
-[data-variant="latte"] {
-  --c-primary: #5a4332; --c-primary-2: #735843; --c-primary-3: #3d2d21; --c-primary-rgb: 90 67 50;
-  --c-on-primary: #f7f0e6; --c-bg: #fffdf9; --c-surface: #f3e9dc;
-  --c-accent: #c8a165; --c-accent-rgb: 200 161 101; --c-accent-light: #eed8ae; --c-accent-dark: #9a7535;
-  --c-accent-ink: #5b3f16; --c-accent-ink-rgb: 91 63 22; --c-heading-alt: #6b4a2e;
-  --c-muted: #8a8177; --c-danger: #a0432c; --c-line: #e0d5c6; --c-shade-rgb: 30 22 14;
-}

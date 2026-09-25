@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--
+  Rimbun — tropical garden wedding invitation template (monstera, pisang, pakis, kamboja, woven rattan).
+  (c) WAT Wedding Invitation. All rights reserved. Licensed per invitation;
+  copying, redistribution or reuse on another domain is prohibited.
+  Bindings: data-section / data-t / data-l / data-l-attr / data-if / data-href / data-src / data-bg / data-orn / data-photo
+  (contract: templates/_core/README.md). No literal copy in this file — all text comes from data or labels.
+-->
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Undangan</title>
+<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta name="copyright" content="WAT Wedding Invitation">
+<!--@HEAD-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.2.0/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
+<link rel="stylesheet" href="css/style.css">
+<!--@VARIANT-->
+</head>
+
+<body class="locked">
+
+<!-- shared SVG clip for arch-shaped event photos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="archClip" clipPathUnits="objectBoundingBox">
+      <path d="M0,1 L0,0.42 C0,0.19 0.22,0 0.5,0 C0.78,0 1,0.19 1,0.42 L1,1 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<div id="loader" role="status" data-l-attr="aria-label:common.loading"><div class="lds-dual-ring"></div></div>
+
+<!-- =====================  COVER / FOLIAGE  ===================== -->
+<div class="top-cover" id="topCover" data-section="cover">
+  <div class="cover" id="cover">
+    <div class="cover-frame">
+      <div class="cover-picture swiper" id="coverSwiper" aria-hidden="true" data-photo><div class="swiper-wrapper" id="coverSlides"></div></div>
+      <div class="cover-shade"></div>
+      <div id="tsparticles" class="cover-particles" aria-hidden="true"></div>
+    </div>
+
+    <div class="cover-opening">
+      <header class="cover-head">
+        <p class="cover-label" data-l="cover.label"></p>
+        <h1 class="script cover-names" data-t="couple.names"></h1>
+      </header>
+
+      <div class="grove" id="grove">
+        <img class="leaf leaf-l1" data-orn="monstera.svg" alt="" width="400" height="480">
+        <img class="leaf leaf-l2" data-orn="pakis.svg" alt="" width="300" height="480">
+        <img class="leaf leaf-r1" data-orn="pisang.svg" alt="" width="260" height="560">
+        <img class="leaf leaf-r2" data-orn="monstera.svg" alt="" width="400" height="480">
+
+        <div class="medallion" id="medallion">
+          <img class="med-ring" data-orn="rotan.svg" alt="" width="420" height="420">
+          <div class="med-core">
+            <div class="med-photo" data-photo data-if="images.couple"><img data-src="images.couple" alt="" loading="eager"></div>
+            <div class="med-guest">
+              <span class="med-hi" data-l="cover.hi"></span>
+              <strong class="med-name" data-t="guest.name"></strong>
+            </div>
+          </div>
+        </div>
+        <img class="grove-flowers" data-orn="kamboja.svg" alt="" width="360" height="280">
+      </div>
+
+      <button class="open-pill" id="openBtn" type="button" data-l-attr="aria-label:cover.openAria">
+        <span class="open-mono" data-t="couple.monogram"></span>
+        <span class="open-text" data-l="cover.open"></span>
+        <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- music (global, not a section) -->
+<button class="music-btn" id="musicBtn" type="button" data-l-attr="aria-label:music.toggle" aria-pressed="false">
+  <img data-orn="rotan.svg" alt="" width="46" height="46"><i class="ph ph-music-notes-simple" aria-hidden="true"></i>
+</button>
+<audio id="bgm" loop preload="none"></audio>
+
+<!-- =====================  MAIN  ===================== -->
+<main class="wrapper" id="main">
+
+  <div class="primary-pane" id="primaryPane" data-section="hero">
+    <div class="hero-bg" id="heroBg" data-bg="images.hero"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <p class="hero-kicker" data-hero data-l="hero.kicker"></p>
+      <h2 class="script hero-names" data-hero data-t="couple.names"></h2>
+      <p class="hero-date" data-hero data-t="date.long"></p>
+      <p class="hero-hash" data-hero data-t="hashtag" data-if="hashtag"></p>
+    </div>
+    <div class="hero-scroll" data-hero aria-hidden="true"><i class="ph ph-caret-double-down"></i></div>
+  </div>
+
+  <div class="secondary-pane" id="secondaryPane">
+
+    <section class="quote-wrap" id="verse" data-section="verse">
+      <div class="quote-bg" data-bg="images.background" data-photo></div>
+      <blockquote class="quote-slide">
+        <i class="ph ph-quotes quote-mark" aria-hidden="true"></i>
+        <p data-aos="fade-up" data-aos-duration="1000" data-t="verse.text"></p>
+        <footer data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-t="verse.source" data-if="verse.source"></footer>
+      </blockquote>
+    </section>
+
+    <section class="opening-wrap" id="opening" data-section="opening">
+      <img class="orn orn-couple-top" data-orn="divider.svg" alt="" data-aos="zoom-in" data-aos-duration="2000" loading="lazy">
+      <p class="opening-greeting" data-aos="fade-up" data-aos-duration="1500" data-t="opening.greeting"></p>
+      <p class="lead" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300" data-t="opening.text"></p>
+    </section>
+
+    <section class="couple-wrap" id="couple" data-section="couple">
+      <p class="kicker" data-aos="fade-up" data-aos-duration="1500" data-l="couple.title"></p>
+      <div class="leafpics" data-photo>
+        <figure class="leafpic lp-a" data-aos="fade-right" data-aos-duration="2400" data-aos-delay="300" data-if="couple.first.photo">
+          <div class="leafpic-img"><img data-src="couple.first.photo" alt="" loading="lazy"></div><figcaption class="script" data-t="couple.first.nickname"></figcaption>
+        </figure>
+        <figure class="leafpic lp-b" data-aos="fade-left" data-aos-duration="2400" data-aos-delay="900" data-if="couple.second.photo">
+          <div class="leafpic-img"><img data-src="couple.second.photo" alt="" loading="lazy"></div><figcaption class="script" data-t="couple.second.nickname"></figcaption>
+        </figure>
+        <img class="orn orn-lp-fern sway" data-orn="pakis.svg" alt="" data-aos="fade-up" data-aos-duration="2600" data-aos-delay="1400" loading="lazy">
+        <img class="orn orn-lp-flower" data-orn="kamboja.svg" alt="" data-aos="zoom-in" data-aos-duration="2200" data-aos-delay="1800" loading="lazy">
+      </div>
+
+      <div class="person person-first" id="personFirst"></div>
+      <div class="amp script" aria-hidden="true" data-aos="zoom-in" data-aos-duration="3000" data-l="common.and"></div>
+      <div class="person person-second" id="personSecond"></div>
+    </section>
+
+    <section class="love-story-outer" id="story" data-section="story">
+      <div class="love-story" id="loveStory">
+        <h2 class="script section-title" data-l="story.title"></h2>
+        <div class="story-stage" id="storyStage"></div>
+        <div class="story-dots" id="storyDots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="save-date-wrap" id="countdown" data-section="countdown">
+      <img class="orn orn-sd-l sway" data-orn="monstera.svg" alt="" data-aos="zoom-in-right" data-aos-duration="3000" loading="lazy">
+      <h2 class="title-serif" data-aos="fade-up" data-aos-duration="1500" data-l="countdown.title"></h2>
+      <p class="sd-date" data-aos="fade-up" data-aos-duration="1800" data-aos-delay="200" data-t="date.short"></p>
+      <div class="countdown" data-aos="fade-up" data-aos-duration="2200" data-aos-delay="400">
+        <div><b id="cdD">00</b><span data-l="countdown.days"></span></div>
+        <div><b id="cdH">00</b><span data-l="countdown.hours"></span></div>
+        <div><b id="cdM">00</b><span data-l="countdown.minutes"></span></div>
+        <div><b id="cdS">00</b><span data-l="countdown.seconds"></span></div>
+      </div>
+      <button class="btn" id="addToCalendar" type="button" data-aos="fade-up" data-aos-duration="2200" data-aos-delay="700">
+        <i class="ph ph-calendar-plus"></i> <span data-l="countdown.addCalendar"></span>
+      </button>
+      <a class="text-link" id="gcalLink" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="900" href="#" data-l="countdown.gcal"></a>
+    </section>
+
+    <section class="agenda-wrap" id="events" data-section="events">
+      <img class="orn orn-ag-tr sway-2" data-orn="pisang.svg" alt="" data-aos="zoom-out-up" data-aos-duration="3400" loading="lazy">
+      <h2 class="script section-title" data-aos="fade-up" data-aos-duration="2200" data-l="events.title"></h2>
+      <p class="lead" data-aos="fade-up" data-aos-duration="2600" data-aos-delay="300" data-l="events.text"></p>
+      <div class="events" id="eventList"></div>
+    </section>
+
+    <section class="live-streaming" id="live" data-section="live">
+      <i class="ph ph-broadcast live-icon" data-aos="zoom-in" data-aos-duration="2000"></i>
+      <h2 class="title-serif light" data-aos="fade-up" data-aos-duration="2000" data-l="live.title"></h2>
+      <p class="live-sched" data-t="live.schedule" data-if="live.schedule"></p>
+      <p data-aos="fade-up" data-aos-duration="2200" data-aos-delay="200" data-l="live.text"></p>
+      <a class="btn btn-light" target="_blank" rel="noopener" data-aos="fade-up" data-aos-duration="2200" data-aos-delay="400" data-href="live.url" data-l="live.button"></a>
+    </section>
+
+    <section class="rundown-container" id="rundown" data-section="rundown">
+      <h2 class="script section-title" data-aos="fade-up" data-aos-duration="2000" data-l="rundown.title"></h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="rsvp-wrap" id="rsvp" data-section="rsvp">
+      <img class="orn orn-rsvp sway" data-orn="pakis.svg" alt="" data-aos="zoom-in" data-aos-duration="3000" loading="lazy">
+      <h2 class="title-serif" data-aos="fade-up" data-aos-duration="1800" data-l="rsvp.title"></h2>
+      <p class="lead" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200" data-l="rsvp.text"></p>
+      <p class="note" data-t="rsvp.deadline" data-if="rsvp.deadline"></p>
+
+      <form class="card-form" id="rsvpForm" data-aos="fade-up" data-aos-duration="2200" data-aos-delay="300" novalidate>
+        <label for="rsvpName" data-l="rsvp.name"></label>
+        <input id="rsvpName" name="name" type="text" autocomplete="name" required maxlength="60" data-l-attr="placeholder:rsvp.namePlaceholder">
+        <fieldset class="seg three">
+          <legend data-l="rsvp.attend"></legend>
+          <label><input type="radio" name="attending" value="yes" checked><span data-l="rsvp.yes"></span></label>
+          <label><input type="radio" name="attending" value="no"><span data-l="rsvp.no"></span></label>
+          <label><input type="radio" name="attending" value="maybe"><span data-l="rsvp.maybe"></span></label>
+        </fieldset>
+        <div id="rsvpPaxRow">
+          <label for="rsvpPax" data-l="rsvp.pax"></label>
+          <select id="rsvpPax" name="pax"></select>
+        </div>
+        <fieldset class="checks" id="rsvpEvents" hidden>
+          <legend data-l="rsvp.events"></legend>
+        </fieldset>
+        <button class="btn" type="submit" data-l="rsvp.submit"></button>
+      </form>
+
+      <div class="rsvp-done" id="rsvpDone" hidden>
+        <div class="ticket" id="ticket">
+          <i class="ph ph-seal-check"></i>
+          <h3 id="rsvpStatus"></h3>
+          <p id="rsvpMsg"></p>
+          <p class="ticket-meta" id="ticketMeta"></p>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-ghost" id="changeRSVP" type="button" data-l="rsvp.change"></button>
+          <button class="btn btn-ghost" id="saveTicket" type="button"><i class="ph ph-download-simple"></i> <span data-l="rsvp.saveImage"></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="qr-wrap" id="qrTicket" data-section="qrTicket">
+      <h2 class="title-serif" data-aos="fade-up" data-l="qr.title"></h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="200" data-l="qr.text"></p>
+      <div class="qr-card" data-aos="zoom-in" data-aos-duration="1800">
+        <div class="qr-box" id="qrBox"></div>
+        <p class="qr-name" data-t="guest.name"></p>
+        <p class="qr-code" id="qrCode"></p>
+      </div>
+    </section>
+
+    <section class="photo-wrap" id="gallery" data-section="gallery">
+      <h2 class="script section-title" data-aos="fade-up" data-aos-duration="2000" data-l="gallery.title"></h2>
+      <div class="swiper gallery-swiper" id="gallerySwiper" data-aos="fade-up" data-aos-duration="2200">
+        <div class="swiper-wrapper" id="swiperWrap"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="flexbin" id="flexbin" data-aos="fade-up" data-aos-duration="2400"></div>
+    </section>
+
+    <section class="video-gallery" id="video" data-section="video">
+      <h2 class="script section-title" data-aos="fade-up" data-aos-duration="2000" data-l="video.title"></h2>
+      <div class="video-thumb" id="videoBox" role="button" tabindex="0" data-aos="zoom-in" data-aos-duration="2400" data-l-attr="aria-label:video.play">
+        <img data-src="video.poster" alt="" loading="lazy">
+        <span class="play-btn"><i class="ph ph-play"></i></span>
+      </div>
+      <p class="video-label" data-aos="fade-up" data-aos-delay="300" data-l="video.label"></p>
+    </section>
+
+    <section class="ig-filter-wrap" id="igFilter" data-section="igFilter">
+      <div class="ig-card" data-aos="fade-up" data-aos-duration="2200">
+        <div class="ig-photo" data-bg="images.couple"><i class="ph ph-instagram-logo"></i></div>
+        <h2 class="title-serif" data-l="igFilter.title"></h2>
+        <p data-l="igFilter.text"></p>
+        <button class="hash-pill" id="hashCopy" type="button" data-if="hashtag" data-l-attr="aria-label:igFilter.copyHashtag"><span data-t="hashtag"></span> <i class="ph ph-copy"></i></button>
+        <a class="btn" target="_blank" rel="noopener" data-href="igFilter.url" data-l="igFilter.button"></a>
+      </div>
+    </section>
+
+    <section class="wedding-gift-wrap" id="gift" data-section="gift">
+      <h2 class="title-serif" data-aos="fade-up" data-aos-duration="1800" data-l="gift.title"></h2>
+      <p class="lead" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200" data-l="gift.text"></p>
+      <div class="kado-wrapper" id="kado"></div>
+    </section>
+
+    <section class="wedding-wish-wrap" id="wishes" data-section="wishes">
+      <h2 class="title-serif" data-aos="fade-up" data-aos-duration="1800" data-l="wishes.title"></h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="200" data-l="wishes.text"></p>
+      <form class="card-form" id="wishForm" data-aos="fade-up" data-aos-duration="2000" novalidate>
+        <label for="wishName" data-l="wishes.name"></label>
+        <input id="wishName" type="text" required maxlength="60" autocomplete="name" data-l-attr="placeholder:wishes.namePlaceholder">
+        <label for="wishMsg" data-l="wishes.message"></label>
+        <textarea id="wishMsg" rows="4" required maxlength="400" data-l-attr="placeholder:wishes.messagePlaceholder"></textarea>
+        <button class="btn" type="submit" data-l="wishes.submit"></button>
+      </form>
+      <div class="wish-list" id="wishList" aria-live="polite"></div>
+      <button class="btn btn-ghost wish-more" id="wishMore" type="button" hidden data-l="wishes.more"></button>
+    </section>
+
+    <section class="inviters-wrap" id="turutMengundang" data-section="turutMengundang">
+      <h2 class="script section-title" data-aos="fade-up" data-l="inviters.title"></h2>
+      <div class="inviters" id="inviters" data-aos="fade-up" data-aos-delay="200"></div>
+    </section>
+
+    <section class="dresscode-wrap" id="dresscode" data-section="dresscode">
+      <h2 class="title-serif" data-aos="fade-up" data-l="dresscode.title"></h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="200" data-t="dresscode.text" data-if="dresscode.text"></p>
+      <div class="swatches" id="swatches" data-l-attr="aria-label:dresscode.colors"></div>
+    </section>
+
+    <section class="protocol-wrap" id="protocol" data-section="protocol">
+      <i class="ph ph-hand-heart" aria-hidden="true"></i>
+      <h2 class="title-serif" data-aos="fade-up" data-l="protocol.title"></h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="200" data-t="protocol.text"></p>
+    </section>
+
+    <section class="ty-wrap" id="closing" data-section="closing">
+      <div class="ty-bg" data-bg="images.closing" data-photo></div>
+      <div class="ty-inner">
+        <p data-aos="fade-up" data-aos-duration="2400" data-t="closing.text"></p>
+        <p class="ty-greeting" data-aos="fade-up" data-aos-duration="2400" data-aos-delay="200" data-t="closing.greeting"></p>
+        <h2 class="script ty-title" data-aos="fade-up" data-aos-duration="2400" data-aos-delay="300" data-l="closing.title"></h2>
+        <p class="ty-signature" data-aos="fade-up" data-aos-delay="400" data-t="closing.signature"></p>
+        <p class="script ty-names" data-aos="fade-up" data-aos-duration="2400" data-aos-delay="600" data-t="couple.names"></p>
+        <p class="ty-family" data-aos="fade-up" data-aos-delay="700" data-t="closing.familyNames" data-if="closing.familyNames"></p>
+      </div>
+    </section>
+
+    <footer class="site-footer" data-section="footer"><a target="_blank" rel="noopener" data-href="credit.url" data-t="credit.text"></a></footer>
+  </div>
+</main>
+
+<div class="video-modal" id="videoModal" hidden>
+  <button class="video-close" id="videoClose" type="button" data-l-attr="aria-label:video.close"><i class="ph ph-x"></i></button>
+  <div class="video-host" id="videoHost"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!--@INVITE-->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.9.1/tsparticles.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12.2.0/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<!--@CORE-->
+<script src="js/rimbun.js"></script>
+</body>
+</html>

@@ -15,6 +15,7 @@ Proyek dikerjakan per sesi (S1–S11). Checkpoint dan keputusan tercatat di **[P
 | S3 | Kerangka template bagian 1: core schema/runtime + Eloise sebagai Template Package | ✅ |
 | S4 | Template ke-2 dari spesifikasi, build/obfuscate, SOP template baru | ✅ |
 | S4c | Riset pesaing katsudoto.id: flow produk + analisis 59 desain | ✅ |
+| S4d | Eloise didesain ulang jadi Rimbun (orisinal), SOP riset pesaing | ✅ |
 | S5 | Scaffold aplikasi Next.js + Prisma + Auth + katalog | ⏳ |
 | S6–S9 | Aplikasi: editor, render publik, Midtrans, tamu massal Excel | — |
 | S10–S11 | Keamanan, admin, deploy | — |
@@ -42,7 +43,7 @@ PROGRESS.md         # Checkpoint antar sesi
 .env                # Secrets (gitignored) — salin dari .env.example
 ```
 
-`wedding-template/` (template referensi "Eloise") adalah repo git terpisah dan di-gitignore. Versi yang dikembangkan ada di `templates/eloise/`.
+`wedding-template/` (referensi awal) adalah repo git terpisah dan di-gitignore. Referensi itu ternyata turunan desain pesaing, jadi template-nya didesain ulang total menjadi `templates/rimbun/` (lihat PROGRESS S4d).
 
 ## Setup
 
@@ -57,12 +58,12 @@ copy .env.example .env           # lalu isi nilainya
 Preview template dengan data contoh:
 
 ```
-python tools/validate_template.py templates/eloise
-python tools/render_template.py templates/eloise --variant sage --serve 8080
+python tools/validate_template.py templates/rimbun
+python tools/render_template.py templates/rimbun --variant terakota --serve 8080
 python tools/render_template.py templates/sekar --variant perak --serve 8080
 ```
 
-Template tersedia: **Eloise** (rustic botani, amplop), **Sekar** (Jawa keraton, pintu gebyok + gunungan), dan **Raudhah** (Islami minimalis, bisa tanpa foto).
+Template tersedia: **Rimbun** (kebun tropis: monstera, kamboja, anyaman rotan), **Sekar** (Jawa keraton, pintu gebyok + gunungan), dan **Raudhah** (Islami minimalis, bisa tanpa foto).
 
 Build produksi (minify + obfuscate + header copyright → `dist/templates/`, gitignored):
 
@@ -91,7 +92,7 @@ Buka `graphify-out/graph.html` di browser untuk melihat graph secara visual.
 ## Dokumen penting
 
 - [PROGRESS.md](PROGRESS.md) — roadmap & checkpoint
-- [knowledge/template-anatomy.md](knowledge/template-anatomy.md) — anatomi template Eloise (section, schema, token, lisensi, gap)
+- [knowledge/template-anatomy.md](knowledge/template-anatomy.md) — anatomi referensi awal "Eloise" (historis; template-nya kini Rimbun)
 - [knowledge/market/](knowledge/market/) — riset pasar: harga kompetitor, katalog section & tema, matriks fitur
 - [knowledge/competitors/katsudoto/](knowledge/competitors/katsudoto/README.md) — flow & fitur katsudoto, plus analisis desain 59 template (`templates/INDEX.md`); riset ide, bukan bahan jiplak
 - [templates/_core/README.md](templates/_core/README.md) — kontrak template: schema data, binding HTML, runtime, API RSVP/ucapan

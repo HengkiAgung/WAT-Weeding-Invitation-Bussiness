@@ -1,8 +1,0 @@
-/* Eloise variant: Dusty Rose. (c) WAT Wedding Invitation. */
-[data-variant="dusty-rose"] {
-  --c-primary: #6b3f4a; --c-primary-2: #85525e; --c-primary-3: #4a2a33; --c-primary-rgb: 107 63 74;
-  --c-on-primary: #fbf1ef; --c-bg: #fffaf9; --c-surface: #f6e6e3;
-  --c-accent: #c9a27e; --c-accent-rgb: 201 162 126; --c-accent-light: #f0d9c4; --c-accent-dark: #9c7150;
-  --c-accent-ink: #5a3a24; --c-accent-ink-rgb: 90 58 36; --c-heading-alt: #7a3f4c;
-  --c-muted: #8f8285; --c-danger: #a0432c; --c-line: #e6d3d0; --c-shade-rgb: 40 20 26;
-}
