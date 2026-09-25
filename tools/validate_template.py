@@ -6,7 +6,7 @@ Checks (errors fail the run, warnings don't):
              data-t/data-if/data-href/data-src/data-bg paths exist in view-model.json,
              data-l / data-l-attr keys exist in i18n id+en, data-orn files exist,
              render markers present, NO literal copy in text nodes, no banned libs, script hosts allow-listed
-  js         t('key') labels exist, W.section('id') ids are in the manifest
+  js         t('key') / 'ns.key' labels exist (template scripts + core.js), W.section('id') ids are in the manifest
   css        color literals only inside :root (style.css) or variant files; variants define every --c-* token
   ornaments  generated variant sets exist and are up to date with tools/recolor_svg.py
   legal      copyright header in html/css/js
@@ -176,21 +176,29 @@ def check_html(tpl: Path, m: dict, vm: dict, labels: dict[str, dict], r: Report)
     return p
 
 
-def check_js(tpl: Path, m: dict, labels: dict[str, dict], r: Report) -> None:
-    ids = {s["id"] if isinstance(s, dict) else s for s in m.get("sections", [])}
-    for js in m.get("scripts", []):
-        src = (tpl / js).read_text(encoding="utf-8")
-        for k in set(re.findall(r"\bt\('([A-Za-z0-9_.]+)'\s*[,)]", src)):
+def check_label_keys(name: str, src: str, labels: dict[str, dict], r: Report, only_in_t: bool = False) -> None:
+    """t('key') calls plus any 'ns.key' literal whose namespace is a label namespace (ternaries, data-copy-msg, …).
+    only_in_t: look for literals only inside t(...) arguments (core.js also holds data paths like 'gift.accounts')."""
+    for k in set(re.findall(r"\bt\('([A-Za-z0-9_.]+)'\s*[,)]", src)):
+        for lang, lab in labels.items():
+            if k not in lab:
+                r.err("js", f"{name}: t({k!r}) missing in i18n/{lang}.json")
+    namespaces = {k.split(".")[0] for lab in labels.values() for k in lab if "." in k}
+    if only_in_t:
+        src = "\n".join(re.findall(r"\bt\(([^()]*)\)", src))
+    for k in set(re.findall(r"""['"]([a-z][A-Za-z]*\.[A-Za-z0-9_.]*[A-Za-z0-9_])['"]""", src)):
+        if k.split(".")[0] in namespaces:
             for lang, lab in labels.items():
                 if k not in lab:
-                    r.err("js", f"{js}: t({k!r}) missing in i18n/{lang}.json")
-        # any other 'ns.key' literal whose namespace is a label namespace (ternaries, data-copy-msg, …)
-        namespaces = {k.split(".")[0] for lab in labels.values() for k in lab if "." in k}
-        for k in set(re.findall(r"""['"]([a-z][A-Za-z]*\.[A-Za-z0-9_.]*[A-Za-z0-9_])['"]""", src)):
-            if k.split(".")[0] in namespaces:
-                for lang, lab in labels.items():
-                    if k not in lab:
-                        r.err("js", f"{js}: label literal {k!r} missing in i18n/{lang}.json")
+                    r.err("js", f"{name}: label literal {k!r} missing in i18n/{lang}.json")
+
+
+def check_js(tpl: Path, m: dict, labels: dict[str, dict], r: Report) -> None:
+    ids = {s["id"] if isinstance(s, dict) else s for s in m.get("sections", [])}
+    check_label_keys("_core/runtime/core.js", (CORE / "runtime" / "core.js").read_text(encoding="utf-8"), labels, r, only_in_t=True)
+    for js in m.get("scripts", []):
+        src = (tpl / js).read_text(encoding="utf-8")
+        check_label_keys(js, src, labels, r)
         for dyn in set(re.findall(r"\bt\('([A-Za-z0-9_.]+\.)'\s*\+", src)):
             r.warn("js", f"{js}: dynamic label prefix {dyn!r}… not statically checked")
         for sid in set(re.findall(r"W\.section\('([A-Za-z]+)'", src)):

@@ -22,7 +22,7 @@ Add a new sellable template to `templates/<id>/` that follows the core contract 
   - `sample-minimal` (quick buy)
 
 ## Steps
-1. **Scaffold.** Create `templates/<id>/` with `manifest.json`, `index.html`, `css/style.css`, `variants/<v>.css`, `js/<id>.js` and `assets/svg/`. Copy the manifest shape from `templates/sekar/manifest.json` (the smallest template); `templates/eloise/` is the richer reference.
+1. **Scaffold.** Create `templates/<id>/` with `manifest.json`, `index.html`, `css/style.css`, `variants/<v>.css`, `js/<id>.js` and `assets/svg/`. Start from `templates/raudhah/` (the smallest template: manifest, HTML with all widget ids, JS on `W.ui`). `templates/sekar/` and `templates/eloise/` are richer references.
 2. **Manifest.**
    - `id` must equal the folder name.
    - List all 22 section ids from `_core/sections.json` in display order. You may leave out optional ones, but every section with status `core` is required. Override a default with `{ "id": "turutMengundang", "default": true }`.
@@ -35,7 +35,7 @@ Add a new sellable template to `templates/<id>/` that follows the core contract 
    - Ornaments are `<img data-orn="file.svg">` so they get recolored per variant.
    - Put a copyright comment at the top of the file.
 4. **CSS.**
-   - Write color only as `--c-*` tokens. Use the same token names as the other templates (see `:root` in either `style.css`). Copy `:root` from Sekar and change the values.
+   - Write color only as `--c-*` tokens. Use the same token names as the other templates (see `:root` in either `style.css`). Copy `:root` from Raudhah and change the values.
    - Write alpha colors as `rgb(var(--c-x-rgb) / .5)`.
    - Single-tone patterns such as batik tiles use `mask: url(...)` with `background: var(--c-accent)`. That recolors them through tokens, so they don't need a generated SVG set.
    - Every variant file defines **every** `--c-*` token under `[data-variant="<v>"]`. The default variant mirrors `:root`.
@@ -47,9 +47,9 @@ Add a new sellable template to `templates/<id>/` that follows the core contract 
      - `?open=1` skips the cover animation and shows all revealed content (editor preview and screenshots).
      - `?open=1#section` scrolls to that section.
      - `prefers-reduced-motion` is respected.
-     - Content must stay visible if an animation library fails to load. Hide reveal targets only after JS adds a class; see `rv-on` in Sekar.
+     - Content must stay visible if an animation library fails to load. `W.ui.reveal()` handles this: hide reveal targets only under `html.rv-on`.
      - Music starts on open through `W.music.attach()` and `W.music.start()`.
-   - Reuse the RSVP, wishes, gift, video-modal and QR code from Sekar. Their DOM ids are part of that code.
+   - Don't write RSVP / wishes / video modal / QR / countdown / reveal / copy-button logic. Call the core widgets `W.ui.*` and use the fixed ids from `templates/_core/README.md` ("Widgets"). The template JS only renders lists (events, story, gallery, gift cards) and handles the cover opening. `templates/raudhah/js/raudhah.js` (~125 lines) is the minimal example.
 6. **Ornaments.** Draw or commission SVGs into `assets/svg/`, using only colors the hue rules target. Add a hue rule to each variant that needs recolored ornaments, then run `python tools/recolor_svg.py templates/<id>`.
 7. **Validate.** Run `python tools/validate_template.py templates/<id>` and fix everything until it reports 0 errors. Also re-run it on the other templates if you touched `_core/` or the validator.
 8. **Visual QA.**
@@ -82,3 +82,4 @@ Add a new sellable template to `templates/<id>/` that follows the core contract 
 - **Headless screenshots.** `requestAnimationFrame` barely runs in headless Chrome, so GSAP timelines stall. Always test with `?open=1`; the template must open instantly on that flag.
 - **Clicked animations.** Test the cover-open animation with `--click "#openBtn" --after-click 900`, which captures mid-animation, then again with `--after-click 3000`, which captures it open. Still check once on a real phone before release.
 - **Label and preset changes.** A new UI string needs new keys in **both** `_core/i18n/id.json` and `en.json`, then `npm run schema:check`. Don't put copy in the template.
+- **Core widget changes.** A change to `W.ui` in `core.js` affects every template. Re-run the RSVP submit smoke test on all of them: `--click "#rsvpForm [type=submit]" --after-click 1500 --scroll "#rsvp"`, which should show the ticket. The validator also checks label keys used in `core.js`.

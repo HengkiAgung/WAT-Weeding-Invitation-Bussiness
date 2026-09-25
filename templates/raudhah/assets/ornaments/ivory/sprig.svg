@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" width="170" height="120">
+  <!-- Olive/leaf sprig with gold buds. (c) WAT Wedding Invitation. All rights reserved. -->
+  <path d="M6 112C40 96 84 64 120 34c14-12 28-22 44-28" fill="none" stroke="#898178" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#a0988f" stroke="#797167" stroke-width="1">
+    <path d="M34 98c-2-12 6-22 18-22-2 12-8 20-18 22Z"/><path d="M40 94c12 2 20 10 20 20-12-2-20-8-20-20Z"/>
+    <path d="M70 74c-2-13 7-23 19-24-2 13-8 21-19 24Z"/><path d="M76 70c12 1 21 9 22 20-12-1-21-8-22-20Z"/>
+    <path d="M104 48c-2-12 5-21 16-23-1 12-7 20-16 23Z"/><path d="M110 44c11 0 19 7 21 17-11 0-19-6-21-17Z"/>
+    <path d="M136 26c0-10 6-17 15-19 0 10-6 17-15 19Z"/>
+  </g>
+  <g fill="#b89a5a" stroke="#6e5a28" stroke-width=".8">
+    <circle cx="58" cy="84" r="3.4"/><circle cx="94" cy="58" r="3"/><circle cx="126" cy="34" r="2.8"/><circle cx="160" cy="8" r="2.6"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+/* Raudhah variant: Sage (default — mirrors css/style.css :root). (c) WAT Wedding Invitation. */
+[data-variant="sage"] {
+  --c-primary: #3f5a4a; --c-primary-2: #557262; --c-primary-3: #2b3f33; --c-primary-rgb: 63 90 74;
+  --c-on-primary: #f7f5ee; --c-bg: #fbfaf5; --c-surface: #eef1e8;
+  --c-accent: #b89a5a; --c-accent-rgb: 184 154 90; --c-accent-light: #e9dcb8; --c-accent-dark: #8a7238;
+  --c-accent-ink: #3d3218; --c-accent-ink-rgb: 61 50 24; --c-heading-alt: #4c6a58;
+  --c-muted: #8a918a; --c-line: #dfe3d8; --c-danger: #a0432c; --c-shade-rgb: 20 30 24;
+}

@@ -1,0 +1,8 @@
+/* Raudhah variant: Ivory & Gold (warm neutral). (c) WAT Wedding Invitation. */
+[data-variant="ivory"] {
+  --c-primary: #5e4f3d; --c-primary-2: #776651; --c-primary-3: #3f3428; --c-primary-rgb: 94 79 61;
+  --c-on-primary: #fbf8f1; --c-bg: #fffdf8; --c-surface: #f5efe3;
+  --c-accent: #b89a5a; --c-accent-rgb: 184 154 90; --c-accent-light: #ecdfbd; --c-accent-dark: #8a7238;
+  --c-accent-ink: #3d3218; --c-accent-ink-rgb: 61 50 24; --c-heading-alt: #6f5c45;
+  --c-muted: #978c7e; --c-line: #e8dfd0; --c-danger: #a0432c; --c-shade-rgb: 34 26 18;
+}

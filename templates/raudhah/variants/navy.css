@@ -1,0 +1,8 @@
+/* Raudhah variant: Navy & Gold. (c) WAT Wedding Invitation. */
+[data-variant="navy"] {
+  --c-primary: #22324f; --c-primary-2: #34466a; --c-primary-3: #152036; --c-primary-rgb: 34 50 79;
+  --c-on-primary: #f5f3ec; --c-bg: #fbfaf6; --c-surface: #e9ecf2;
+  --c-accent: #b89a5a; --c-accent-rgb: 184 154 90; --c-accent-light: #e9dcb8; --c-accent-dark: #8a7238;
+  --c-accent-ink: #3d3218; --c-accent-ink-rgb: 61 50 24; --c-heading-alt: #34466a;
+  --c-muted: #878d99; --c-line: #dde1e9; --c-danger: #a0432c; --c-shade-rgb: 12 18 32;
+}

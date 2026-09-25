@@ -1,0 +1,1035 @@
+{
+ "source": "https://katsudoto.id/desain/ (POST status=get_all_designs)",
+ "captured_at": "2026-09-25",
+ "designs": [
+  {
+   "id": 62,
+   "name": "ningrum",
+   "category": "exclusive",
+   "tags": [
+    "fairytale",
+    "vintage"
+   ],
+   "released_at": "2026-07-20 10:57:00",
+   "used_count": 33,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://nicholasarabella.katsudoto.id/731900",
+   "url_preview_dreamboard": "https://nicholasarabella.katsudoto.id/731900?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/ningrum-original.jpeg"
+  },
+  {
+   "id": 61,
+   "name": "eloise",
+   "category": "exclusive",
+   "tags": [
+    "minimalist",
+    "floral"
+   ],
+   "released_at": "2026-07-13 11:46:00",
+   "used_count": 128,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://annajeremiah.katsudoto.id/107754",
+   "url_preview_dreamboard": "https://annajeremiah.katsudoto.id/107754?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/eloise-original.png"
+  },
+  {
+   "id": 60,
+   "name": "chinese",
+   "category": "exclusive",
+   "tags": [
+    "adat"
+   ],
+   "released_at": "2026-05-28 09:52:00",
+   "used_count": 15,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://evelynhendry.katsudoto.id/435344",
+   "url_preview_dreamboard": "https://evelynhendry.katsudoto.id/435344?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/chinese-original.png"
+  },
+  {
+   "id": 59,
+   "name": "ivana",
+   "category": "exclusive",
+   "tags": [
+    "floral",
+    "nature"
+   ],
+   "released_at": "2026-05-11 18:13:00",
+   "used_count": 38,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://vinoandivelle.katsudoto.id/133695",
+   "url_preview_dreamboard": "https://vinoandivelle.katsudoto.id/133695?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/ivana-original.jpg"
+  },
+  {
+   "id": 58,
+   "name": "alsa",
+   "category": "exclusive",
+   "tags": [
+    "adat",
+    "floral"
+   ],
+   "released_at": "2026-04-27 14:42:00",
+   "used_count": 87,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://alyssarayhan.katsudoto.id/940751",
+   "url_preview_dreamboard": "https://alyssarayhan.katsudoto.id/940751?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/alsa-original.png"
+  },
+  {
+   "id": 57,
+   "name": "silika",
+   "category": "exclusive",
+   "tags": [
+    "adat",
+    "floral"
+   ],
+   "released_at": "2026-04-27 14:05:00",
+   "used_count": 55,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://selenamilo.katsudoto.id/961199",
+   "url_preview_dreamboard": "https://selenamilo.katsudoto.id/961199?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/silika-original.png"
+  },
+  {
+   "id": 56,
+   "name": "arsya",
+   "category": "exclusive",
+   "tags": [
+    "floral",
+    "nature"
+   ],
+   "released_at": "2026-04-09 09:53:00",
+   "used_count": 21,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://arianaadrian.katsudoto.id/821963",
+   "url_preview_dreamboard": "https://arianaadrian.katsudoto.id/821963?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/arsya-original.png"
+  },
+  {
+   "id": 55,
+   "name": "nadia",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2026-01-12 16:38:00",
+   "used_count": 24,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://elarafino.katsudoto.id/241557",
+   "url_preview_dreamboard": "https://elarafino.katsudoto.id/241557?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/nadia-original.jpg"
+  },
+  {
+   "id": 54,
+   "name": "tia",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2026-01-02 10:05:00",
+   "used_count": 7,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://thearonan.katsudoto.id/187469",
+   "url_preview_dreamboard": "https://thearonan.katsudoto.id/187469?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/tia-original.jpg"
+  },
+  {
+   "id": 53,
+   "name": "cassie",
+   "category": "exclusive",
+   "tags": [
+    "fairytale",
+    "nature"
+   ],
+   "released_at": "2025-12-30 15:30:00",
+   "used_count": 69,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://arthaandsandra.katsudoto.id/952317",
+   "url_preview_dreamboard": "https://arthaandsandra.katsudoto.id/952317?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/cassie-original.jpg"
+  },
+  {
+   "id": 52,
+   "name": "aulia",
+   "category": "exclusive",
+   "tags": [
+    "floral",
+    "nature"
+   ],
+   "released_at": "2025-11-11 10:09:00",
+   "used_count": 50,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://aulofandre.katsudoto.id/581249",
+   "url_preview_dreamboard": "https://aulofandre.katsudoto.id/581249?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/aulia-original.jpg"
+  },
+  {
+   "id": 51,
+   "name": "anselma",
+   "category": "exclusive",
+   "tags": [
+    "adat",
+    "floral",
+    "nature"
+   ],
+   "released_at": "2025-10-27 14:58:00",
+   "used_count": 106,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://anselvaro.katsudoto.id/554904",
+   "url_preview_dreamboard": "https://anselvaro.katsudoto.id/554904?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/anselma-original.jpg"
+  },
+  {
+   "id": 50,
+   "name": "charera",
+   "category": "exclusive",
+   "tags": [
+    "fairytale"
+   ],
+   "released_at": "2025-08-12 18:19:00",
+   "used_count": 5,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://leoncelesta.katsudoto.id/728632",
+   "url_preview_dreamboard": "https://leoncelesta.katsudoto.id/728632?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/charera-original.jpg"
+  },
+  {
+   "id": 49,
+   "name": "eleanor",
+   "category": "exclusive",
+   "tags": [
+    "floral",
+    "nature"
+   ],
+   "released_at": "2025-07-31 09:49:00",
+   "used_count": 19,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "http://liliamarcello.katsudoto.id/816257",
+   "url_preview_dreamboard": "http://liliamarcello.katsudoto.id/816257?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/eleanor-original.jpg"
+  },
+  {
+   "id": 48,
+   "name": "jessica",
+   "category": "exclusive",
+   "tags": [
+    "floral"
+   ],
+   "released_at": "2025-07-01 14:04:00",
+   "used_count": 15,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://jenniferedward.katsudoto.id/785289",
+   "url_preview_dreamboard": "https://jenniferedward.katsudoto.id/785289?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/jessica-original.jpg"
+  },
+  {
+   "id": 47,
+   "name": "valerie",
+   "category": "exclusive",
+   "tags": [
+    "floral"
+   ],
+   "released_at": "2025-06-19 10:23:00",
+   "used_count": 2,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://valeriejames.katsudoto.id/173463",
+   "url_preview_dreamboard": "https://valeriejames.katsudoto.id/173463?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/valerie-original.jpg"
+  },
+  {
+   "id": 46,
+   "name": "gienzka",
+   "category": "exclusive",
+   "tags": [
+    "adat",
+    "floral"
+   ],
+   "released_at": "2025-04-30 09:37:00",
+   "used_count": 14,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://gendisbobby.katsudoto.id/739342",
+   "url_preview_dreamboard": "https://gendisbobby.katsudoto.id/739342?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/gienzka-original.jpg"
+  },
+  {
+   "id": 45,
+   "name": "anabelle",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2025-04-17 14:44:00",
+   "used_count": 8,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://kenannabelle.katsudoto.id/190005",
+   "url_preview_dreamboard": "https://kenannabelle.katsudoto.id/190005?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/anabelle-original.jpg"
+  },
+  {
+   "id": 44,
+   "name": "aile",
+   "category": "exclusive",
+   "tags": [
+    "minimalist",
+    "vintage"
+   ],
+   "released_at": "2025-04-07 10:01:00",
+   "used_count": 12,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://juliakevin.katsudoto.id/552440",
+   "url_preview_dreamboard": "https://juliakevin.katsudoto.id/552440?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/aile-original.jpg"
+  },
+  {
+   "id": 43,
+   "name": "sukma",
+   "category": "exclusive",
+   "tags": [
+    "floral"
+   ],
+   "released_at": "2025-03-14 14:10:00",
+   "used_count": 15,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "http://soniafateh.katsudoto.id/585807",
+   "url_preview_dreamboard": "http://soniafateh.katsudoto.id/585807?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/sukma-original.jpg"
+  },
+  {
+   "id": 42,
+   "name": "ribka",
+   "category": "exclusive",
+   "tags": [
+    "floral"
+   ],
+   "released_at": "2025-02-24 08:11:00",
+   "used_count": 15,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://rianribka.katsudoto.id/912865",
+   "url_preview_dreamboard": "https://rianribka.katsudoto.id/912865?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/ribka-original.jpg"
+  },
+  {
+   "id": 41,
+   "name": "katrina",
+   "category": "exclusive",
+   "tags": [
+    "adat"
+   ],
+   "released_at": "2025-02-07 17:38:00",
+   "used_count": 8,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://sandikatrina.katsudoto.id/785653",
+   "url_preview_dreamboard": "https://sandikatrina.katsudoto.id/785653?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/katrina-original.jpg"
+  },
+  {
+   "id": 40,
+   "name": "nadira",
+   "category": "exclusive",
+   "tags": [
+    "floral"
+   ],
+   "released_at": "2024-10-21 17:01:00",
+   "used_count": 6,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://racheldave.katsudoto.id/605540",
+   "url_preview_dreamboard": "https://racheldave.katsudoto.id/605540?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/nadira-original.jpg"
+  },
+  {
+   "id": 39,
+   "name": "kinanti",
+   "category": "exclusive",
+   "tags": [
+    "adat",
+    "floral",
+    "nature"
+   ],
+   "released_at": "2024-10-08 17:38:00",
+   "used_count": 37,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://kinantiadimas.katsudoto.id/968513",
+   "url_preview_dreamboard": "https://kinantiadimas.katsudoto.id/968513?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/kinanti-original.jpg"
+  },
+  {
+   "id": 38,
+   "name": "anin",
+   "category": "exclusive",
+   "tags": [
+    "floral"
+   ],
+   "released_at": "2024-09-27 10:34:30",
+   "used_count": 9,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://eleanoralastor.katsudoto.id/879235",
+   "url_preview_dreamboard": "https://eleanoralastor.katsudoto.id/879235?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/anin-original.jpg"
+  },
+  {
+   "id": 37,
+   "name": "rosalia",
+   "category": "exclusive",
+   "tags": [
+    "floral",
+    "vintage"
+   ],
+   "released_at": "2024-08-28 09:34:30",
+   "used_count": 4,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://penelopejonathan.katsudoto.id/461021",
+   "url_preview_dreamboard": "https://penelopejonathan.katsudoto.id/461021?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/rosalia-original.jpg"
+  },
+  {
+   "id": 36,
+   "name": "hanna",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2024-07-31 09:00:20",
+   "used_count": 6,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://annakristoff.katsudoto.id/185536",
+   "url_preview_dreamboard": "https://annakristoff.katsudoto.id/185536?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/hanna-original.jpg"
+  },
+  {
+   "id": 35,
+   "name": "oceana",
+   "category": "exclusive",
+   "tags": [
+    "fairytale"
+   ],
+   "released_at": "2024-07-08 08:49:57",
+   "used_count": 1,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://aureliasean.katsudoto.id/864113",
+   "url_preview_dreamboard": "https://aureliasean.katsudoto.id/864113?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/oceana-original.jpg"
+  },
+  {
+   "id": 34,
+   "name": "aine",
+   "category": "exclusive",
+   "tags": [
+    "fairytale"
+   ],
+   "released_at": "2024-07-01 09:34:30",
+   "used_count": 5,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://auroramatthew.katsudoto.id/968801",
+   "url_preview_dreamboard": "https://auroramatthew.katsudoto.id/968801?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/aine-original.jpg"
+  },
+  {
+   "id": 33,
+   "name": "serene",
+   "category": "exclusive",
+   "tags": [
+    "minimalist",
+    "nature"
+   ],
+   "released_at": "2024-03-26 14:55:00",
+   "used_count": 1,
+   "is_new": 1,
+   "is_hot": 1,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "http://serenechalten.katsudoto.id/381301",
+   "url_preview_dreamboard": "http://serenechalten.katsudoto.id/381301?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/serene-original.jpg"
+  },
+  {
+   "id": 32,
+   "name": "irish",
+   "category": "exclusive",
+   "tags": [
+    "nature"
+   ],
+   "released_at": "2024-03-21 14:55:00",
+   "used_count": 11,
+   "is_new": 1,
+   "is_hot": 1,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://irishhazel.katsudoto.id/844618",
+   "url_preview_dreamboard": "https://irishhazel.katsudoto.id/844618?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/irish-original.jpg"
+  },
+  {
+   "id": 31,
+   "name": "cassandra",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2024-03-07 17:00:00",
+   "used_count": 17,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://cassandradamiean.katsudoto.id/843472",
+   "url_preview_dreamboard": "https://cassandradamiean.katsudoto.id/843472?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/cassandra-original.jpg"
+  },
+  {
+   "id": 30,
+   "name": "camelia",
+   "category": "exclusive",
+   "tags": [
+    "floral",
+    "fairytale"
+   ],
+   "released_at": "2023-11-29 08:46:14",
+   "used_count": 7,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://camelkalendra.katsudoto.id/106225",
+   "url_preview_dreamboard": "https://camelkalendra.katsudoto.id/106225?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/camelia-original.jpg"
+  },
+  {
+   "id": 29,
+   "name": "noir",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2023-10-14 17:59:02",
+   "used_count": 40,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://oliviamichael.katsudoto.id/629425",
+   "url_preview_dreamboard": "https://oliviamichael.katsudoto.id/629425?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/noir-original.jpg"
+  },
+  {
+   "id": 28,
+   "name": "olan",
+   "category": "exclusive",
+   "tags": [
+    "floral",
+    "nature"
+   ],
+   "released_at": "2023-09-14 17:59:44",
+   "used_count": 27,
+   "is_new": 1,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://axelalice.katsudoto.id/344983",
+   "url_preview_dreamboard": "https://axelalice.katsudoto.id/344983?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/olan-original.jpg"
+  },
+  {
+   "id": 27,
+   "name": "helga",
+   "category": "exclusive",
+   "tags": [
+    "adat",
+    "floral"
+   ],
+   "released_at": "2023-08-14 17:59:44",
+   "used_count": 20,
+   "is_new": 0,
+   "is_hot": 1,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://marcelisa.katsudoto.id/490068",
+   "url_preview_dreamboard": "https://marcelisa.katsudoto.id/490068?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/helga-original.jpg"
+  },
+  {
+   "id": 26,
+   "name": "palace",
+   "category": "exclusive",
+   "tags": [
+    "floral",
+    "fairytale",
+    "nature"
+   ],
+   "released_at": "2023-07-14 17:59:44",
+   "used_count": 15,
+   "is_new": 0,
+   "is_hot": 1,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://bryananne.katsudoto.id/526925",
+   "url_preview_dreamboard": "https://bryananne.katsudoto.id/526925?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/palace-original.jpg"
+  },
+  {
+   "id": 25,
+   "name": "jeni",
+   "category": "exclusive",
+   "tags": [
+    "minimalist",
+    "nature"
+   ],
+   "released_at": "2023-06-14 17:59:44",
+   "used_count": 4,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 0,
+   "for_lite_bundle": 1,
+   "url_preview": "https://nafisajessen.katsudoto.id/184339",
+   "url_preview_dreamboard": "https://nafisajessen.katsudoto.id/184339?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/jeni-original.jpg"
+  },
+  {
+   "id": 24,
+   "name": "sekar",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2023-05-14 17:59:44",
+   "used_count": 0,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 0,
+   "for_lite_bundle": 1,
+   "url_preview": "https://sekarbagus.katsudoto.id/725643",
+   "url_preview_dreamboard": "https://sekarbagus.katsudoto.id/725643?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/sekar-original.jpg"
+  },
+  {
+   "id": 23,
+   "name": "sintia",
+   "category": "exclusive",
+   "tags": [
+    "adat"
+   ],
+   "released_at": "2023-04-14 17:59:44",
+   "used_count": 9,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://rezadita.katsudoto.id/483049",
+   "url_preview_dreamboard": "https://rezadita.katsudoto.id/483049?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/sintia-original.jpg"
+  },
+  {
+   "id": 22,
+   "name": "ayyara",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2023-03-14 17:59:44",
+   "used_count": 4,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://jhonnyjanny.katsudoto.id/",
+   "url_preview_dreamboard": "https://jhonnyjanny.katsudoto.id/?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/ayyara-original.jpg"
+  },
+  {
+   "id": 21,
+   "name": "syakira",
+   "category": "exclusive",
+   "tags": [
+    "floral"
+   ],
+   "released_at": "2023-02-14 17:59:44",
+   "used_count": 41,
+   "is_new": 0,
+   "is_hot": 1,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://daffashakira.katsudoto.id/804203",
+   "url_preview_dreamboard": "https://daffashakira.katsudoto.id/804203?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/syakira-original.jpg"
+  },
+  {
+   "id": 20,
+   "name": "dewanty",
+   "category": "exclusive",
+   "tags": [
+    "fairytale"
+   ],
+   "released_at": "2023-01-14 17:59:44",
+   "used_count": 3,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 0,
+   "for_lite_bundle": 1,
+   "url_preview": "https://pashadewanty.katsudoto.id/905033",
+   "url_preview_dreamboard": "https://pashadewanty.katsudoto.id/905033?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/dewanty-original.jpg"
+  },
+  {
+   "id": 19,
+   "name": "ruri",
+   "category": "exclusive",
+   "tags": [
+    "floral"
+   ],
+   "released_at": "2022-12-14 17:59:44",
+   "used_count": 6,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://reyhanrissa.katsudoto.id/189183",
+   "url_preview_dreamboard": "https://reyhanrissa.katsudoto.id/189183?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/ruri-original.jpg"
+  },
+  {
+   "id": 18,
+   "name": "serlyn",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2022-11-14 17:59:44",
+   "used_count": 5,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://alishakeenan.katsudoto.id/470636",
+   "url_preview_dreamboard": "https://alishakeenan.katsudoto.id/470636?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/serlyn-original.jpg"
+  },
+  {
+   "id": 17,
+   "name": "linda",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2022-10-14 17:59:44",
+   "used_count": 3,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 0,
+   "for_lite_bundle": 1,
+   "url_preview": "https://lindabagus.katsudoto.id/",
+   "url_preview_dreamboard": "https://lindabagus.katsudoto.id/?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/linda-original.jpg"
+  },
+  {
+   "id": 16,
+   "name": "tiani",
+   "category": "exclusive",
+   "tags": [
+    "adat",
+    "minimalist"
+   ],
+   "released_at": "2022-09-14 17:59:44",
+   "used_count": 2,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 0,
+   "for_lite_bundle": 1,
+   "url_preview": "https://tianidimas.katsudoto.id/609544",
+   "url_preview_dreamboard": "https://tianidimas.katsudoto.id/609544?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/tiani-original.jpg"
+  },
+  {
+   "id": 15,
+   "name": "chitra",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2022-08-14 17:59:44",
+   "used_count": 23,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://chitrasandi.katsudoto.id/970223",
+   "url_preview_dreamboard": "https://chitraandsandi.katsudoto.id/430774?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/chitra-original.jpg"
+  },
+  {
+   "id": 14,
+   "name": "tasya",
+   "category": "exclusive",
+   "tags": [
+    "fairytale"
+   ],
+   "released_at": "2022-07-14 17:59:44",
+   "used_count": 1,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 0,
+   "for_lite_bundle": 1,
+   "url_preview": "https://tasyadanarjuna.katsudoto.id",
+   "url_preview_dreamboard": "https://tasyadanarjuna.katsudoto.id?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/tasya-original.jpg"
+  },
+  {
+   "id": 13,
+   "name": "insan",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2022-06-14 17:59:44",
+   "used_count": 8,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://raisari.katsudoto.id/181252",
+   "url_preview_dreamboard": "https://raisari.katsudoto.id/181252?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/insan-original.jpg"
+  },
+  {
+   "id": 12,
+   "name": "ashilla",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2022-05-14 17:59:44",
+   "used_count": 0,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://ashillaheisel.katsudoto.id",
+   "url_preview_dreamboard": "https://ashillaheisel.katsudoto.id?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/ashilla-original.jpg"
+  },
+  {
+   "id": 11,
+   "name": "nadya",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2022-04-14 17:59:44",
+   "used_count": 0,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://weddingnadyarozi.katsudoto.id",
+   "url_preview_dreamboard": "https://weddingnadyarozi.katsudoto.id?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/nadya-original.jpg"
+  },
+  {
+   "id": 10,
+   "name": "syanin",
+   "category": "biasa",
+   "tags": [
+    "fairytale",
+    "minimalist",
+    "vintage"
+   ],
+   "released_at": "2022-03-14 17:59:44",
+   "used_count": 1,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 0,
+   "for_lite_bundle": 1,
+   "url_preview": "https://syaninivan.katsudoto.id",
+   "url_preview_dreamboard": "https://syaninivan.katsudoto.id?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/syanin-original.jpg"
+  },
+  {
+   "id": 9,
+   "name": "chia",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2022-02-14 17:59:44",
+   "used_count": 2,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://fathiarandha.katsudoto.id",
+   "url_preview_dreamboard": "https://fathiarandha.katsudoto.id?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/chia-original.jpg"
+  },
+  {
+   "id": 7,
+   "name": "alunan",
+   "category": "biasa",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2022-01-14 17:59:44",
+   "used_count": 0,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 0,
+   "for_lite_bundle": 1,
+   "url_preview": "https://daffindanela.katsudoto.id/577665",
+   "url_preview_dreamboard": "https://daffindanela.katsudoto.id/577665?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/alunan-original.jpg"
+  },
+  {
+   "id": 6,
+   "name": "chindy",
+   "category": "exclusive",
+   "tags": [
+    "fairytale"
+   ],
+   "released_at": "2021-12-14 17:59:44",
+   "used_count": 6,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://fannygetschindy.katsudoto.id",
+   "url_preview_dreamboard": "https://fannygetschindy.katsudoto.id?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/chindy-original.jpg"
+  },
+  {
+   "id": 5,
+   "name": "nanda",
+   "category": "exclusive",
+   "tags": [
+    "fairytale"
+   ],
+   "released_at": "2021-11-14 17:59:44",
+   "used_count": 1,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 0,
+   "url_preview": "https://dyapertamananterakhir.katsudoto.id",
+   "url_preview_dreamboard": "https://nandaardya.katsudoto.id/169239?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/nanda-original.jpg"
+  },
+  {
+   "id": 2,
+   "name": "juwita",
+   "category": "exclusive",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2021-10-14 17:59:44",
+   "used_count": 4,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://daffinanddanela.katsudoto.id/923752",
+   "url_preview_dreamboard": "https://daffinanddanela.katsudoto.id/923752?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/juwita-original.jpg"
+  },
+  {
+   "id": 1,
+   "name": "senandika",
+   "category": "biasa",
+   "tags": [
+    "minimalist"
+   ],
+   "released_at": "2021-09-14 17:59:44",
+   "used_count": 2,
+   "is_new": 0,
+   "is_hot": 0,
+   "is_editable": 1,
+   "for_lite_bundle": 1,
+   "url_preview": "https://danelawithdaffin.katsudoto.id/934301",
+   "url_preview_dreamboard": "https://danelawithdaffin.katsudoto.id/934301?mode=DREAMBOARD",
+   "preview": "https://katsudoto.id/media/template/preview/thumbnail/senandika-original.jpg"
+  }
+ ]
+}

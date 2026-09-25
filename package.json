@@ -6,7 +6,7 @@
     "schema:export": "node --experimental-strip-types --no-warnings templates/_core/scripts/export-schema.ts",
     "schema:check": "node --experimental-strip-types --no-warnings templates/_core/scripts/check-fixtures.ts",
     "build:templates": "node tools/build_template.mjs --all",
-    "validate:templates": "python tools/validate_template.py templates/eloise && python tools/validate_template.py templates/sekar"
+    "validate:templates": "python tools/validate_template.py templates/eloise && python tools/validate_template.py templates/sekar && python tools/validate_template.py templates/raudhah"
   },
   "engines": {
     "node": ">=22.6"
