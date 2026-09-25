@@ -14,6 +14,7 @@ Proyek dikerjakan per sesi (S1–S11). Checkpoint dan keputusan tercatat di **[P
 | S2 | Riset pasar undangan digital Indonesia | ✅ |
 | S3 | Kerangka template bagian 1: core schema/runtime + Eloise sebagai Template Package | ✅ |
 | S4 | Template ke-2 dari spesifikasi, build/obfuscate, SOP template baru | ✅ |
+| S4c | Riset pesaing katsudoto.id: flow produk + analisis 59 desain | ✅ |
 | S5 | Scaffold aplikasi Next.js + Prisma + Auth + katalog | ⏳ |
 | S6–S9 | Aplikasi: editor, render publik, Midtrans, tamu massal Excel | — |
 | S10–S11 | Keamanan, admin, deploy | — |
@@ -70,6 +71,13 @@ npm run build:templates
 python tools/render_template.py dist/templates/sekar --serve 8080    # cek hasil build
 ```
 
+Riset demo undangan pesaing (screenshot hanya ke `.tmp/`):
+
+```
+node tools/capture_demo.mjs <url-demo> .tmp/demos/<nama>        # cover, frame scroll, contact sheet, meta.json
+python tools/demo_digest.py .tmp/demos/<nama>                   # ringkasan teknis markdown
+```
+
 Knowledge graph memakai [graphify](https://github.com/safishamsi/graphify):
 
 ```
@@ -85,6 +93,7 @@ Buka `graphify-out/graph.html` di browser untuk melihat graph secara visual.
 - [PROGRESS.md](PROGRESS.md) — roadmap & checkpoint
 - [knowledge/template-anatomy.md](knowledge/template-anatomy.md) — anatomi template Eloise (section, schema, token, lisensi, gap)
 - [knowledge/market/](knowledge/market/) — riset pasar: harga kompetitor, katalog section & tema, matriks fitur
+- [knowledge/competitors/katsudoto/](knowledge/competitors/katsudoto/README.md) — flow & fitur katsudoto, plus analisis desain 59 template (`templates/INDEX.md`); riset ide, bukan bahan jiplak
 - [templates/_core/README.md](templates/_core/README.md) — kontrak template: schema data, binding HTML, runtime, API RSVP/ucapan
 - [workflows/analyze_template.md](workflows/analyze_template.md) — SOP analisis template
 - [workflows/create_new_template.md](workflows/create_new_template.md) — SOP membuat template baru (scaffold → validasi → QA visual → build)

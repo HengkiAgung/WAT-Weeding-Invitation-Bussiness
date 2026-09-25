@@ -37,26 +37,46 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - [x] `workflows/create_new_template.md`
 - [x] (S4b) 3rd template `templates/raudhah/` (Islami minimalis, photoless-first: mihrab arches, khatam star mask, lanterns, monogram/initials; 4 variants sage/ivory/navy/dusty-rose) + shared widgets moved to core `W.ui` (rsvp, wishes, video, qrTicket, countdown, copyButtons, inviters, swatches, reveal, validate); Eloise + Sekar refactored onto `W.ui`
 
+### S4c — Competitor study: katsudoto.id
+- [x] Product/flow/pricing/editor/guest-management/guestbook study → `knowledge/competitors/katsudoto/product-flow.md` (adoption table §8)
+- [x] Catalog of 59 designs → `knowledge/competitors/katsudoto/catalog.json`
+- [x] 59 per-template design analyses (layout per section, assets, motion, type, colour, "arah orisinal") + auto technical digest → `knowledge/competitors/katsudoto/templates/*.md`; synthesis + table in `templates/INDEX.md`
+- [x] Tools: `tools/capture_demo.mjs` (phone/desktop capture, open-cover, scroll frames, contact sheets, meta.json) + `tools/demo_digest.py` (meta → markdown, `--inject`)
+- [ ] **User decision**: Eloise IP risk (see log) — rename + redesign signature motifs before selling
+- [ ] **User decision**: approve SOP `workflows/research_competitor_templates.md` (not created — CLAUDE.md asks before new workflows)
+
 ### S5 — App scaffold
 - [ ] Next.js + Prisma schema + migrations, Auth.js (Google + magic link), seed templates from manifests, catalog + demo preview
+- [ ] (from S4c) Catalog filters by tag (adat/floral/fairytale/minimalis/nature/vintage) + "populer"/"baru" badges; demo preview link per template with a sample guest (`?to=`), like katsudoto `url_preview`
 
 ### S6 — Invitation editor
 - [ ] Schema-driven form, live preview iframe, R2 upload (presigned PUT), variant + section toggles, drafts
+- [ ] (from S4c) Schema additions: `events[].main` (drives cover/countdown/WA date), `events[].private`, `events[].note`, event-type presets (akad, pemberkatan, resepsi, ngunduh mantu, teh pai/sangjit, after party), `parents.fatherLate/motherLate` ("Alm./Almh."), `gift.accounts[].qr`, `gift.registry[] {img,name,desc,qty,price,url}` + shipping address, `videos[] {title,url}`, `cover.photos[]` (slideshow), `cover.headline`, `cover.rsvpShortcut`, `credits.photographer`, `music.start/end` (crop), `rsvp.deadline`, `rsvp.questions[]` (RSVP+ meals/accommodation, max 3, privacy per group), `seo {indexable, thumbnail}`
+- [ ] (from S4c) Editor: preview device switch (phone/tablet/desktop × portrait/landscape); section reorder + per-section font size (upper tier); free colour editor as 3 roles (primary/secondary/tertiary × bg/text/button) on top of variant presets; typography (heading/body font, size, weight, case); cover effects (petals/sakura/sparkle/snow × density × speed); custom loading (logo/initials or text)
+- [ ] (from S4c) Core runtime: `W.fx.falling` (light canvas, reduced-motion aware), floating language switch when >1 language, `W.ui.calendar` (month grid), gallery modes (grid/carousel/strip/cards), per-section photo backdrop, wishes pagination, frame-shape + textile-pattern SVG library
 
 ### S7 — Public render & guests
 - [ ] `/{slug}`, `/{slug}/g/{code}`, HMAC render token, presigned asset GET, RSVP/wish API, RSVP dashboard
+- [ ] (from S4c) Guest status funnel `new → sent → opened → going / not going` (+ `reminded`); RSVP reminder + H-n wedding-day reminder (manual WA/email first, WA API later); gift transfer confirmation form (+ quick amounts 50/100/200rb/lainnya) + "dana terkumpul" + registry purchase confirmation (sold out); **wish moderation** (pending/approve, link/HTML filter, rate limit, guests-only toggle) — katsudoto demos show SQLi payloads, spam links and trolls live; guest category badge (VIP/VVIP) on cover
 
 ### S8 — Payment & quick buy
 - [ ] Midtrans Snap + webhook signature verify, Order states, activation; quick-buy flow + auto account
+- [ ] (from S4c) Pricing model "base + add-ons" with live calculator + bundles as anchors (katsudoto: base Rp250rb, add-ons Rp10–150rb, bundles 400/500/700rb); `Entitlement` per feature (upgrade anytime, active instantly); invoice expiry 24 h; voucher/referral code
 
 ### S9 — Bulk guests (Excel)
 - [ ] Import xlsx/csv + validation, guest codes, export links + WA text, downloadable Excel template
+- [ ] (from S4c) Import review screen before commit; guest groups with per-group sessions/RSVP limit/text; **self-registration form link per group** (quota, collects WA/email, auto-sends personal link); "tamu khusus vs tamu umum"
 
 ### S10 — Hardening & admin
 - [ ] Demo watermark, domain lock test, rate limits, CSP, sanitization, admin panel
 
 ### S11 — Deploy & QA
 - [ ] Vercel + Neon + R2 + Midtrans prod, mobile QA (WhatsApp in-app browser), per-invitation OG image
+
+### Backlog (post-MVP, from S4c)
+- Digital guestbook (day-of): usher web app (passkey/QR login; check-in/check-out/tracking modes), QR scan / name search / on-the-spot add, selfie check-in, printed number ticket, gift numbering + titipan, welcome screen (TV), table & souvenir management, doorprize, offline hybrid mode, bulk e-invitation (QR card) download, auto thank-you message
+- New templates (original, see `knowledge/competitors/katsudoto/templates/INDEX.md` §6): Pasundan, Sekar Taman (light variant), Monokrom Foto, Film Summer, Peranakan, Garis (mono line-art), adat series skins (Minang/Bugis/Batak/Bali/Betawi), faceless avatar option
+- Wedding planner (budget, seserahan, seragam, vendor, to-do) as retention bonus
 
 ## Decision / issue log
 - 2026-09-24 (S1): Eloise uses lightGallery (GPLv3) and Exmouth (commercial font) → must license or replace before selling (planned in S3).
@@ -85,3 +105,7 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - 2026-09-24 (S4b): Raudhah = market priority #3 (Islami minimalis tanpa foto, S2 theme catalog). Photoless-first: monogram in cover/hero arch, script initials instead of couple photos, star/lantern ornaments. Fonts Marcellus / Lora / Alex Brush (OFL). Marcellus digits look like letters ("0"≈"O") → numbers use Lora.
 - 2026-09-24 (S4b): Validator now also checks label keys used in `core.js` (only inside `t(...)`, since core also has data paths like `'gift.accounts'`). Regression: RSVP submit (clicked) shows the ticket in all 3 templates, source and dist builds; no console errors.
 - 2026-09-24 (S4b): graphify `--update` after S3–S4b: 38 changed files (27 code AST, 11 docs via 2 semantic subagents, ~179k tokens) → 1019 nodes, 1437 edges, 68 communities, health OK. `.graphifyignore` now skips `dist/`, template/fixture assets, `package-lock.json`. Note: generated `templates/_core/schema.json` adds ~20 low-value JSON-Schema communities → consider ignoring it on the next rebuild (schema.ts already covers it).
+- 2026-09-25 (S4c): **Eloise IP risk.** katsudoto.id sells a template named "Eloise" (id 61, Jul 2026, their most used: 128). Our `wedding-template/` → `templates/eloise` matches it in name, olive/cream palette, lace-oval/envelope/vinyl/pearl motifs, demo copy ("Portrait of Us", Maya Angelou quote, "The First Hello", "Click to open invitation"), library stack (identical versions) and **fonts (Exmouth + Instrument Serif)**. Our code/assets are rewritten (placeholder SVGs, own runtime), but the *design* is derivative → before selling: rename, replace signature motifs + composition, rewrite all default copy (e.g. `gallery.title` "Portrait of Us" in `_core/i18n/en.json`). Also consider renaming Sekar: katsudoto has a "Sekar" too (different design, name only).
+- 2026-09-25 (S4c): Scope choice — user asked to scrape and clone all katsudoto templates. Not done: their HTML/CSS/JS, painted PNG ornaments, photos and some fonts are copyrighted (demos even contain third-party material, e.g. Disney). Delivered the user's fallback instead: detailed per-template design analyses with an "arah orisinal" section, so new templates are designed from patterns, not copied. Screenshots stay in `.tmp/demos/` (gitignored), never committed.
+- 2026-09-25 (S4c): Capture quirks (handled in `capture_demo.mjs`): AOS animations up to 3.5 s → default 3 s wait per scroll step; open-button text varies ("Open Invitation", "Buka Undangan", "Step Inside", "Start The Journey", "Let's Go") → text heuristics + `--open` selector; old (2021–22) templates keep the window scroll-locked → unlock + beyond-viewport clip fallback; contact-sheet viewport must be an integer (CDP "Invalid parameters").
+- 2026-09-25 (S4c): Market facts: katsudoto (since 2018, 11.8k couples) Premium Rp250rb (1 yr) … Rp700rb (lifetime) + à-la-carte add-ons; Lite Rp100rb / 2 months; wedding planner Rp99rb; guestbook sold via WhatsApp only. Their pages are heavy (≈150 images, ~15 libs, 100–500 AOS nodes) → our light runtime is a real differentiator on low-end phones / WhatsApp in-app browser.

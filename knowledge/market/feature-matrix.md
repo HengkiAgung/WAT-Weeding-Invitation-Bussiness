@@ -35,6 +35,17 @@
 | Undangan non-nikah (khitan, aqiqah, ultah) | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ fase 1 (schema siap `category`) |
 | Masa aktif | 6 bln | ? | lifetime | unlimited | lifetime | 6–12 bln | lifetime | per tier + perpanjangan |
 
+## Tambahan 2026-09-25: Katsudoto (pesaing terdekat)
+Katsudoto memiliki hampir semua baris di tabel atas (✅), termasuk WA blast (Smart WhatsApp berbayar per pesan), QR check-in + usher app + layar sapa, ganti warna/font (add-on, hanya desain "editable"), on/off + urutan section, filter IG, multi bahasa, dan masa aktif selamanya (add-on).
+Yang **tidak** mereka punya atau lemah:
+- quick buy tanpa onboarding. Mereka tetap minta daftar, OTP email, lalu form detail sebelum bayar;
+- ganti template tetap bisa, tapi warna/font hanya di sebagian desain;
+- halaman berat (≈150 gambar, ~15 library);
+- dana amplop hanya dari konfirmasi manual;
+- buku tamu dibeli manual via WA.
+
+Fitur mereka yang kita adopsi (lihat `../competitors/katsudoto/product-flow.md` §8): acara utama/privat, RSVP+ (menu/akomodasi), batas waktu RSVP, status funnel tamu + reminder, form pendaftaran tamu per grup, registry kado + sold out, konfirmasi transfer + nominal cepat, efek partikel cover, crop lagu, SEO toggle + thumbnail share, harga dasar + add-on.
+
 ## Pembeda yang realistis (fokus MVP)
 1. **Quick buy**: bayar dulu, undangan langsung aktif dengan data minimum, dilengkapi belakangan.
 2. **Excel → link + teks WA** self-serve di tier menengah (pesaing: tim manual atau aplikasi terpisah).
