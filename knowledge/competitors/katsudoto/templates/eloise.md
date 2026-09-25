@@ -11,7 +11,7 @@ captured_at: 2026-09-25
 ---
 # Eloise (katsudoto) — analisis desain
 
-> ⚠️ **Relevan langsung ke repo kita**: `wedding-template/` (sumber template `templates/eloise`) adalah rekonstruksi desain ini. Buktinya: nama sama, palet olive & krem, bingkai renda oval, amplop, piringan hitam, mutiara, kertas sobek, dan stack library identik. Copy teks demo juga sama: kutipan Maya Angelou, "The First Hello", "Portrait of Us", "Click to open invitation". Lihat catatan risiko IP di `PROGRESS.md`.
+> ⚠️ **Relevan langsung ke repo kita**: `wedding-template/` (sumber template `templates/eloise`) adalah rekonstruksi desain ini. Buktinya: nama sama, palet olive & krem, bingkai renda oval, amplop, piringan hitam, mutiara, kertas sobek, dan stack library identik. Copy teks demo juga sama: kutipan Maya Angelou, "The First Hello", "Portrait of Us", "Click to open invitation". Lihat catatan risiko IP di `PROGRESS.md`. **Status 2026-09-25: sudah ditangani. Template kita didesain ulang total menjadi `templates/rimbun/` (kebun tropis + anyaman rotan, font Allura/Fraunces).**
 
 ## Ringkasan
 **Garden-romantic minimalis**: hijau zaitun gelap (olive) + putih/krem, renda putih, mutiara, dan lili calla. Fotografi prewed outdoor (bukit berkabut, pohon willow) dan studio putih. Tenang dan elegan, cocok untuk pernikahan taman/intimate. Ini desain terpopuler di katalog (128 pemakaian, Jul 2026).

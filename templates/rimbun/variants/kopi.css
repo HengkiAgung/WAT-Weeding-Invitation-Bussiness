@@ -1,0 +1,8 @@
+/* Rimbun variant: Kopi Susu. (c) WAT Wedding Invitation. */
+[data-variant="kopi"] {
+  --c-primary: #4a3528; --c-primary-2: #604636; --c-primary-3: #33241a; --c-primary-rgb: 74 53 40;
+  --c-on-primary: #f7efe4; --c-bg: #fcf8f2; --c-surface: #f3e9dc;
+  --c-accent: #c8a165; --c-accent-rgb: 200 161 101; --c-accent-light: #ead2a2; --c-accent-dark: #93703a;
+  --c-accent-ink: #4f3517; --c-accent-ink-rgb: 79 53 23; --c-heading-alt: #5a3d25;
+  --c-muted: #857b72; --c-danger: #a0432c; --c-line: #dfd2c2; --c-shade-rgb: 30 20 14;
+}

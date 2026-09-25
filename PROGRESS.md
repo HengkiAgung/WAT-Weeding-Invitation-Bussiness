@@ -42,8 +42,28 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - [x] Catalog of 59 designs → `knowledge/competitors/katsudoto/catalog.json`
 - [x] 59 per-template design analyses (layout per section, assets, motion, type, colour, "arah orisinal") + auto technical digest → `knowledge/competitors/katsudoto/templates/*.md`; synthesis + table in `templates/INDEX.md`
 - [x] Tools: `tools/capture_demo.mjs` (phone/desktop capture, open-cover, scroll frames, contact sheets, meta.json) + `tools/demo_digest.py` (meta → markdown, `--inject`)
-- [ ] **User decision**: Eloise IP risk (see log) — rename + redesign signature motifs before selling
-- [ ] **User decision**: approve SOP `workflows/research_competitor_templates.md` (not created — CLAUDE.md asks before new workflows)
+- [x] User decision (2026-09-25): fix Eloise IP risk now → done in S4d
+- [x] User approved SOP → `workflows/research_competitor_templates.md`
+
+### S4d — Eloise → Rimbun (original redesign)
+- [x] `templates/eloise/` → `templates/rimbun/` ("Rimbun", tropical garden). Replaced every signature piece:
+  - name;
+  - cover: envelope + wax seal + polaroid → a woven rattan medallion framed by monstera, fern and banana leaves; the leaves part, the medallion grows, and the cover closes as an iris;
+  - couple polaroids → leaf-shaped photos in a woven rim;
+  - vinyl music button → spinning rattan ring;
+  - lace/pearls → woven-rattan bands (CSS `--weave`) under titles and cards;
+  - falling petals → dry leaves;
+  - fonts Pinyon Script + Instrument Serif → Allura + Fraunces;
+  - default palette olive → rimba green + rattan.
+- [x] Ornaments are code: `templates/rimbun/art/build_art.py` generates 7 original SVGs (monstera, pisang, pakis, kamboja, rotan, daun, divider). Variants: rimba (default), sage, terakota, kopi, recoloured by hue rules.
+- [x] Default copy that matched the competitor demo replaced:
+  - `en.json` gallery/video titles;
+  - fixture story art ("THE FIRST HELLO" → "CHAPTER ONE").
+- [x] Verified:
+  - validator OK for all 3 templates; `schema:check` OK;
+  - screenshots of the cover (rimba id + terakota en), mid-open and opened states, couple section;
+  - RSVP ticket from source and `dist` build (js 25.5 kB, css 30.2 kB).
+- [ ] Decide whether to rename Sekar too (katsudoto has an unrelated "Sekar"; the name is a generic Javanese word, the design is ours). Kept for now.
 
 ### S5 — App scaffold
 - [ ] Next.js + Prisma schema + migrations, Auth.js (Google + magic link), seed templates from manifests, catalog + demo preview
@@ -73,9 +93,24 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 ### S11 — Deploy & QA
 - [ ] Vercel + Neon + R2 + Midtrans prod, mobile QA (WhatsApp in-app browser), per-invitation OG image
 
+### Next templates (original concepts, from S4c research — build after S5 or in between)
+Each follows `workflows/create_new_template.md`. Run the originality check (step 9 of `research_competitor_templates.md`) before release. The katsudoto file in brackets is only a *demand signal*; do not use it as a design source.
+1. **Pasundan** — Sunda: siger + kujang icons, Priangan landscape (tea hills, Tangkuban Parahu) as flat/line art, Mega Mendung / Garutan batik textures, green-gold or maroon. Section style: cinematic cover without a frame (name over mist). [demand: anselma, 106 uses]
+2. **Sekar Taman** — light variant/sibling of Sekar: cream paper, green-sogan gunungan line-art, watercolour-style melati/kantil (our own), formal Indonesian Islamic copy by default. [alsa 87, silika 55, kinanti 37]
+3. **Monokrom Foto** — no ornaments. Gallery photos become per-section backdrops, frosted-glass cards, countdown on the cover, small-caps serif. Needs core `sections.*.bgPhoto`. [noir 40]
+4. **Film Summer** — photo-first, casual handwriting script, month calendar with the date circled, two-tone rundown pills. Needs `W.ui.calendar`. [nadia 24]
+5. **Peranakan** — Lasem/encim batik (red-blue), Peranakan tiles, paper lanterns; event types Teh Pai / Sangjit; lobed photo frames. [chinese 15]
+6. **Garis** — one-colour line-art of Indonesian flora (melati, cempaka, anggrek bulan, pakis) → the cheapest variant system (mask + `--c-accent`). Editorial full-width couple photos. [hanna]
+7. **Adat series skins** — one layout, swappable ornament and texture sets: Minang (gonjong, songket, marawa colours), Bugis (rumah panggung, tenun chevron), Batak (gorga, ulos), Bali (candi bentar, endek), Betawi (gigi balang, ondel-ondel). Needs a manifest "skin" concept. [katrina, sintia]
+8. **Avatar faceless option** — illustrated couple characters (hijab / non-hijab; beskap, kebaya, jas, gaun), colours follow the variant. Usable in any template instead of photos; upsell. [alunan, serene]
+9. **Poster / Kota** — condensed display type, names over photos, big chapter numbers, brick/concrete palette; masculine / anti-mainstream segment. [ayyara, cassandra]
+10. **Pasar Malam** (nostalgia), **Laut Nusantara** (Raja Ampat, phinisi), **Heritage Kota** (pencil sketches of Gedung Sate / Lawang Sewu), **Raden Saleh** (public-domain romantic Javanese landscapes — verify PD status of the reproductions) — niche, later.
+
+Shared core work these templates need is listed under S6 (from S4c): frame-shape + textile-pattern SVG library, `W.fx.falling`, calendar, photo backdrops, gallery modes.
+
 ### Backlog (post-MVP, from S4c)
 - Digital guestbook (day-of): usher web app (passkey/QR login; check-in/check-out/tracking modes), QR scan / name search / on-the-spot add, selfie check-in, printed number ticket, gift numbering + titipan, welcome screen (TV), table & souvenir management, doorprize, offline hybrid mode, bulk e-invitation (QR card) download, auto thank-you message
-- New templates (original, see `knowledge/competitors/katsudoto/templates/INDEX.md` §6): Pasundan, Sekar Taman (light variant), Monokrom Foto, Film Summer, Peranakan, Garis (mono line-art), adat series skins (Minang/Bugis/Batak/Bali/Betawi), faceless avatar option
+- New templates → see "Next templates" above
 - Wedding planner (budget, seserahan, seragam, vendor, to-do) as retention bonus
 
 ## Decision / issue log
@@ -109,3 +144,5 @@ Full plan: `C:\Users\xeon6\.claude\plans\aku-ingin-membuat-bisnis-cuddly-jellyfi
 - 2026-09-25 (S4c): Scope choice — user asked to scrape and clone all katsudoto templates. Not done: their HTML/CSS/JS, painted PNG ornaments, photos and some fonts are copyrighted (demos even contain third-party material, e.g. Disney). Delivered the user's fallback instead: detailed per-template design analyses with an "arah orisinal" section, so new templates are designed from patterns, not copied. Screenshots stay in `.tmp/demos/` (gitignored), never committed.
 - 2026-09-25 (S4c): Capture quirks (handled in `capture_demo.mjs`): AOS animations up to 3.5 s → default 3 s wait per scroll step; open-button text varies ("Open Invitation", "Buka Undangan", "Step Inside", "Start The Journey", "Let's Go") → text heuristics + `--open` selector; old (2021–22) templates keep the window scroll-locked → unlock + beyond-viewport clip fallback; contact-sheet viewport must be an integer (CDP "Invalid parameters").
 - 2026-09-25 (S4c): Market facts: katsudoto (since 2018, 11.8k couples) Premium Rp250rb (1 yr) … Rp700rb (lifetime) + à-la-carte add-ons; Lite Rp100rb / 2 months; wedding planner Rp99rb; guestbook sold via WhatsApp only. Their pages are heavy (≈150 images, ~15 libs, 100–500 AOS nodes) → our light runtime is a real differentiator on low-end phones / WhatsApp in-app browser.
+- 2026-09-25 (S4d): Eloise IP risk resolved by a full redesign → **Rimbun**. What changed: name, cover concept and animation, photo frames, music button, ornaments (all regenerated from `art/build_art.py`), fonts, palette, and default copy. What stayed: the data contract, section ids, widget ids and `W.ui` behaviour, so existing invitations render unchanged. `knowledge/template-anatomy.md` still describes the historical `wedding-template/` (Eloise) as a record; it is not a design source. S1–S4b log entries that say "eloise" refer to the same template before the rename.
+- 2026-09-25 (S4d): Headless check of the open animation: the cover iris uses `clip-path` keyframes and the leaves use GSAP. The mid-state capture (`--after-click 800`) shows the leaves parting and the medallion growing; at 3500 ms the cover is gone. Still check once on a real phone (GSAP + clip-path on low-end Android).

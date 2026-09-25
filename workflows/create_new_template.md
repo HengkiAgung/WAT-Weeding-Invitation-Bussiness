@@ -22,7 +22,7 @@ Add a new sellable template to `templates/<id>/` that follows the core contract 
   - `sample-minimal` (quick buy)
 
 ## Steps
-1. **Scaffold.** Create `templates/<id>/` with `manifest.json`, `index.html`, `css/style.css`, `variants/<v>.css`, `js/<id>.js` and `assets/svg/`. Start from `templates/raudhah/` (the smallest template: manifest, HTML with all widget ids, JS on `W.ui`). `templates/sekar/` and `templates/eloise/` are richer references.
+1. **Scaffold.** Create `templates/<id>/` with `manifest.json`, `index.html`, `css/style.css`, `variants/<v>.css`, `js/<id>.js` and `assets/svg/`. Start from `templates/raudhah/` (the smallest template: manifest, HTML with all widget ids, JS on `W.ui`). `templates/sekar/` and `templates/rimbun/` are richer references. Rimbun also shows how to keep ornaments as code: `templates/rimbun/art/build_art.py` generates its SVGs.
 2. **Manifest.**
    - `id` must equal the folder name.
    - List all 22 section ids from `_core/sections.json` in display order. You may leave out optional ones, but every section with status `core` is required. Override a default with `{ "id": "turutMengundang", "default": true }`.
@@ -83,3 +83,4 @@ Add a new sellable template to `templates/<id>/` that follows the core contract 
 - **Clicked animations.** Test the cover-open animation with `--click "#openBtn" --after-click 900`, which captures mid-animation, then again with `--after-click 3000`, which captures it open. Still check once on a real phone before release.
 - **Label and preset changes.** A new UI string needs new keys in **both** `_core/i18n/id.json` and `en.json`, then `npm run schema:check`. Don't put copy in the template.
 - **Core widget changes.** A change to `W.ui` in `core.js` affects every template. Re-run the RSVP submit smoke test on all of them: `--click "#rsvpForm [type=submit]" --after-click 1500 --scroll "#rsvp"`, which should show the ticket. The validator also checks label keys used in `core.js`.
+- **Originality check (2026-09-25).** The first template (Eloise) turned out to be a reconstruction of a competitor's design (katsudoto "Eloise": same name, motifs, demo copy, fonts). It was rebuilt as Rimbun. Before starting a concept, read `knowledge/competitors/katsudoto/templates/INDEX.md` and the "Arah orisinal" part of any similar competitor template. Before release, check the new template against them: name, signature motif, cover composition, fonts, and default copy must all differ. Research workflow: `workflows/research_competitor_templates.md`.

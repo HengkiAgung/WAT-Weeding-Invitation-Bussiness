@@ -14,7 +14,7 @@
 4. Jangan pakai nama template mereka (Eloise, Sekar, Ningrum, …) untuk produk kita.
 
 ## Cara memperbarui
-Belum ada SOP resmi di `workflows/` (usulan: `workflows/research_competitor_templates.md`, menunggu persetujuan). Langkah yang dipakai:
+SOP: [workflows/research_competitor_templates.md](../../../workflows/research_competitor_templates.md). Ringkas:
 - daftar desain: `POST https://katsudoto.id/desain/` dengan form `status=get_all_designs` (JSON) → simpan ke `catalog.json`;
 - capture tiap demo dengan `node tools/capture_demo.mjs <url> .tmp/demos/<nama>`. Kalau cover tidak terbuka, tambahkan `--open "<selector>"`. Untuk animasi yang lambat, pakai `--step-wait 3500`;
 - lihat `sheet-*.png` + `cover.png`, lalu tulis narasi;

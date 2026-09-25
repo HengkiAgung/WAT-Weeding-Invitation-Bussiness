@@ -1,0 +1,8 @@
+/* Rimbun variant: Terakota. (c) WAT Wedding Invitation. */
+[data-variant="terakota"] {
+  --c-primary: #7a3524; --c-primary-2: #924632; --c-primary-3: #5a2519; --c-primary-rgb: 122 53 36;
+  --c-on-primary: #fbf3ec; --c-bg: #fdf9f5; --c-surface: #f4e7dc;
+  --c-accent: #c98f5a; --c-accent-rgb: 201 143 90; --c-accent-light: #ecc79c; --c-accent-dark: #93602f;
+  --c-accent-ink: #4d2c12; --c-accent-ink-rgb: 77 44 18; --c-heading-alt: #6b2f20;
+  --c-muted: #8a7b72; --c-danger: #9b2f24; --c-line: #e3d2c4; --c-shade-rgb: 40 16 10;
+}

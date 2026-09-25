@@ -8,9 +8,9 @@ Output goes to .tmp/preview/<template>/ (disposable) together with the template 
 fixture assets and the core runtime, so it can be opened with any static server.
 
 Usage:
-    python tools/render_template.py templates/eloise
-    python tools/render_template.py templates/eloise --data templates/_core/fixtures/sample-kristen-en.json --variant dusty-rose
-    python tools/render_template.py templates/eloise --no-guest --sections '{"gallery": false}' --serve 8080
+    python tools/render_template.py templates/rimbun
+    python tools/render_template.py templates/rimbun --data templates/_core/fixtures/sample-kristen-en.json --variant terakota
+    python tools/render_template.py templates/rimbun --no-guest --sections '{"gallery": false}' --serve 8080
     python tools/render_template.py dist/templates/sekar          # production build from tools/build_template.mjs
 """
 from __future__ import annotations

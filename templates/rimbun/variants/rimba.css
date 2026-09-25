@@ -1,0 +1,8 @@
+/* Rimbun variant: Rimba & Rotan (default — mirrors css/style.css :root). (c) WAT Wedding Invitation. */
+[data-variant="rimba"] {
+  --c-primary: #1f3a33; --c-primary-2: #2c4d44; --c-primary-3: #142722; --c-primary-rgb: 31 58 51;
+  --c-on-primary: #f6f1e7; --c-bg: #fbf8f2; --c-surface: #efe6d6;
+  --c-accent: #c4955c; --c-accent-rgb: 196 149 92; --c-accent-light: #e8c894; --c-accent-dark: #8e6536;
+  --c-accent-ink: #4a3218; --c-accent-ink-rgb: 74 50 24; --c-heading-alt: #5a3d1f;
+  --c-muted: #857f74; --c-danger: #a0432c; --c-line: #dccfbc; --c-shade-rgb: 12 26 22;
+}
